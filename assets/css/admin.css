@@ -1,0 +1,8 @@
+/* General */
+#wpj-updater-plugin-settings th { width: 130px; }
+
+
+/* Greater than or equal to Tablet */
+@media (min-width: 783px) {
+    .form-settings td input { width: 650px; }
+}
