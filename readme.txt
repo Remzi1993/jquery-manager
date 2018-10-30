@@ -20,7 +20,7 @@ I will not provide help on JavaScript and jQuery!
 
 **Reporting problems**
 
-Please post bug reports and request for help on [GitHub Issues page](https://github.com/Ramoonus/jQuery-Updater/issues). I will only provide support on issues caused by this plugin, not your own JavaScript and/or jQuery code.
+Please post bug reports and request for help on [GitHub Issues page](https://github.com/Remzi1993/wp-jquery-updater/issues). I will only provide support on issues caused by this plugin, not your own JavaScript and/or jQuery code.
 
 If you run into any bugs, turning this plugin off will fully deactivate everything.
 

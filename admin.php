@@ -6,9 +6,9 @@ defined('ABSPATH') or exit();
  * Generate the admin page
  */
 function wpj_updater_plugin_settings() {
-    //For debugging
-    $plugin_settings = new wpj_updater_plugin;
-    $plugin_settings->debug();
+    // For debugging
+    // $plugin_settings = new wpj_updater_plugin;
+    // $plugin_settings->debug();
     ?>
     <div class="wrap">
         <h1><?php echo __('WP jQuery Updater', 'wpj_updater_plugin_settings');?></h1>

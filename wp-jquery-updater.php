@@ -40,7 +40,7 @@ function wpj_updater_plugin_activation(){
 register_activation_hook( __FILE__, 'wpj_updater_plugin_activation' );
 
 /*
- * Create WP jQuery Updater menu item in WordPress admin backend
+ * Create WP jQuery Updater menu item in WordPress admin backend in the Tools section
  * Remzi Cavdar
  */
 function wpj_updater_plugin_menu() {
@@ -50,7 +50,7 @@ function wpj_updater_plugin_menu() {
 add_action( 'admin_menu', 'wpj_updater_plugin_menu' );
 
 function wpj_updater_plugin_register_settings() {
-	// jQuery CDN settings
+	// jQuery and jQuery Migrate settings
     register_setting( 'wpj_updater_plugin_settings', 'wpj_updater_jquery_url', 'wpj_updater_plugin_validation' );
     register_setting( 'wpj_updater_plugin_settings', 'wpj_updater_jquery_migrate_url', 'wpj_updater_plugin_validation' );
 }
@@ -64,7 +64,7 @@ function wpj_updater_plugin_validation($input) {
 
 // Set default values here
 function wpj_updater_plugin_default_values(){
-	// jQuery CDN
+	// jQuery and jQuery Migrate default url settings upon activation
 	add_option( 'wpj_updater_jquery_url', WPJ_UPDATER_PLUGIN_JQUERY );
 	add_option( 'wpj_updater_jquery_migrate_url', WPJ_UPDATER_PLUGIN_JQUERY_MIGRATE );
 }
