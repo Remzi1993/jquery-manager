@@ -37,5 +37,7 @@ A: Short answer: Yes Long Answer: I honestly don't know. I didn't use PHP7 featu
 A: Deactivate the plugin and report this to me, so that I could look into this matter.
 
 == Changelog ==
+= 1.0.1 =
+* Disabled debugging mode, changed readme.txt and clarified some comments
 = 1.0.0 =
 * First version, uses jQuery 3.3.1 and jQuery Migrate 3.0.1
