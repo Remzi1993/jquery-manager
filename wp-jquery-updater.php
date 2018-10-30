@@ -12,7 +12,7 @@
  * Plugin Name:       WP jQuery Updater
  * Plugin URI:        https://twitter.com/remzicavdar
  * Description:       With this plugin you're able to manage jQuery.
- * Version:           1.0.2
+ * Version:           1.0.3
  * Author:            Remzi Cavdar
  * Author URI:        https://www.linkedin.com/in/remzicavdar/
  * License:           GPL 3.0
@@ -107,13 +107,13 @@ function wpj_updater_plugin_front_end_scripts() {
 
         // Deregister WP core jQuery
         wp_deregister_script('jquery');
-        // Enqueue jQuery in the footer
-        wp_enqueue_script( 'jquery', $plugin->jquery, array(), null, true );
+        // Enqueue jQuery in the head
+        wp_enqueue_script( 'jquery', $plugin->jquery, array(), null, false );
 
         // Deregister WP core jQuery Migrate
         wp_deregister_script('jquery-migrate');
         // Enqueue jQuery Migrate in the footer
-        wp_enqueue_script( 'jquery-migrate', $plugin->jquery_migrate, array(), null, true );
+        wp_enqueue_script( 'jquery-migrate', $plugin->jquery_migrate, array('jquery'), null, true );
     }
 }
 
@@ -142,7 +142,7 @@ function wpj_updater_plugin_add_defer_attribute( $tag, $handle ) {
 
         // Add script handles to the array below
         $scripts_to_defer = array(
-                'jquery-migrate',
+            'jquery-migrate',
         );
 
         foreach ( $scripts_to_defer as $defer_script ) {
