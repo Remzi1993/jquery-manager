@@ -3,7 +3,7 @@ Contributors: Remzi Cavdar
 Tags: jquery, update, jquery ui, javascript, jq, jquery migrate, jquery updater
 Requires at least: 4.9
 Tested up to: 4.9
-Stable tag: 1.0.0
+Stable tag: 1.0.2
 
 This plugin updates jQuery and jQuery Migrate to the latest stable version on your website.
 
@@ -37,6 +37,8 @@ A: Short answer: Yes Long Answer: I honestly don't know. I didn't use PHP7 featu
 A: Deactivate the plugin and report this to me, so that I could look into this matter.
 
 == Changelog ==
+= 1.0.2 =
+* Cleanup
 = 1.0.1 =
 * Disabled debugging mode, changed readme.txt and clarified some comments
 = 1.0.0 =

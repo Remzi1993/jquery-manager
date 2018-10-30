@@ -12,7 +12,7 @@
  * Plugin Name:       WP jQuery Updater
  * Plugin URI:        https://twitter.com/remzicavdar
  * Description:       With this plugin you're able to manage jQuery.
- * Version:           1.0.1
+ * Version:           1.0.2
  * Author:            Remzi Cavdar
  * Author URI:        https://www.linkedin.com/in/remzicavdar/
  * License:           GPL 3.0
@@ -93,7 +93,7 @@ class wpj_updater_plugin {
 	}
 }
 
-// Front-end not excuted in the admin and the custimizer (for compatibility reasons)
+// Front-end not excuted in the admin and the customizer (for compatibility reasons)
 // See: https://core.trac.wordpress.org/ticket/45130 and https://core.trac.wordpress.org/ticket/37110
 function wpj_updater_plugin_front_end_scripts() {
     $wp_admin = is_admin();
@@ -115,12 +115,11 @@ function wpj_updater_plugin_front_end_scripts() {
         // Enqueue jQuery Migrate in the footer
         wp_enqueue_script( 'jquery-migrate', $plugin->jquery_migrate, array(), null, true );
     }
-
 }
 
 // Back end specific
 // Load only on tools.php?page=wpj-updater-plugin-settings (plugin settings)
-function wpj_updater_plugin_admin_scripts_specific($hook) {
+function wpj_updater_plugin_admin_scripts($hook) {
 
 	if( $hook != 'tools_page_wpj-updater-plugin-settings' ) {
 		return;
@@ -133,7 +132,7 @@ function wpj_updater_plugin_admin_scripts_specific($hook) {
 
 // Register styles and scripts
 add_action( 'wp_enqueue_scripts', 'wpj_updater_plugin_front_end_scripts' );
-add_action( 'admin_enqueue_scripts', 'wpj_updater_plugin_admin_scripts_specific' );
+add_action( 'admin_enqueue_scripts', 'wpj_updater_plugin_admin_scripts' );
 
 // Defer jQuery Migrate
 function wpj_updater_plugin_add_defer_attribute( $tag, $handle ) {
