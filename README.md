@@ -7,5 +7,5 @@ The development and issue tracker is located here
 [![GitHub license](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://github.com/Remzi1993/wp-jquery-updater/blob/master/LICENSE)
 
 ## Bug reports ##
-For bugs, issues use the GitHub [issues](https://github.com/Ramoonus/jQuery-Updater/issues) page.
+For bugs, issues use the GitHub [issues](https://github.com/Remzi1993/wp-jquery-updater/issues) page.
 If you have any (non bug related) questions, contact me directly
