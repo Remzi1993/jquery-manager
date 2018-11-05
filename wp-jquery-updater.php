@@ -10,9 +10,9 @@
  *
  * @wordpress-plugin
  * Plugin Name:       WP jQuery Updater
- * Plugin URI:        https://twitter.com/remzicavdar
+ * Plugin URI:        https://github.com/Remzi1993/wp-jquery-updater
  * Description:       With this plugin you're able to manage jQuery.
- * Version:           1.0.3
+ * Version:           1.0.4
  * Author:            Remzi Cavdar
  * Author URI:        https://www.linkedin.com/in/remzicavdar/
  * License:           GPL 3.0
@@ -33,11 +33,29 @@ define( 'WPJ_UPDATER_PLUGIN_JQUERY', plugins_url('/assets/js/jquery-3.3.1.min.js
 // jQuery Migrate version
 define( 'WPJ_UPDATER_PLUGIN_JQUERY_MIGRATE', plugins_url('/assets/js/jquery-migrate-3.0.1.js',__FILE__ ) );
 
+// Plugin updater GitHub Repository
+require WPJ_UPDATER_PLUGIN_DIR_PATH . 'plugin-update-checker/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://github.com/Remzi1993/wp-jquery-updater',
+	__FILE__,
+	'wpj_updater_plugin'
+);
+
+$myUpdateChecker->getVcsApi()->enableReleaseAssets();
+
 // Activation
 function wpj_updater_plugin_activation(){
     do_action( 'wpj_updater_plugin_default_options' );
 }
 register_activation_hook( __FILE__, 'wpj_updater_plugin_activation' );
+
+// Set default values here (wp database options)
+function wpj_updater_plugin_default_values(){
+	// jQuery and jQuery Migrate default url settings upon activation
+	add_option( 'wpj_updater_jquery_url', WPJ_UPDATER_PLUGIN_JQUERY );
+	add_option( 'wpj_updater_jquery_migrate_url', WPJ_UPDATER_PLUGIN_JQUERY_MIGRATE );
+}
+add_action( 'wpj_updater_plugin_default_options', 'wpj_updater_plugin_default_values' );
 
 /*
  * Create WP jQuery Updater menu item in WordPress admin backend in the Tools section
@@ -55,20 +73,10 @@ function wpj_updater_plugin_register_settings() {
     register_setting( 'wpj_updater_plugin_settings', 'wpj_updater_jquery_migrate_url', 'wpj_updater_plugin_validation' );
 }
 
-/*
- * Sanitize it
- */
+// Sanitize it
 function wpj_updater_plugin_validation($input) {
 	return sanitize_text_field($input);
 }
-
-// Set default values here
-function wpj_updater_plugin_default_values(){
-	// jQuery and jQuery Migrate default url settings upon activation
-	add_option( 'wpj_updater_jquery_url', WPJ_UPDATER_PLUGIN_JQUERY );
-	add_option( 'wpj_updater_jquery_migrate_url', WPJ_UPDATER_PLUGIN_JQUERY_MIGRATE );
-}
-add_action( 'wpj_updater_plugin_default_options', 'wpj_updater_plugin_default_values' );
 
 class wpj_updater_plugin {
 	public $jquery;
@@ -83,8 +91,8 @@ class wpj_updater_plugin {
 
 	public function debug() {
         echo '<h1>Debug information:</h1>';
-        echo '<strong>Domain name:</strong> ' . AD_PLUGIN_DOMAIN_NAME . '<br>';
-        echo '<strong>URL:</strong> ' . AD_PLUGIN_SITE_URL . '<br>';
+        echo '<strong>Domain name:</strong> ' . WPJ_UPDATER_PLUGIN_DOMAIN_NAME . '<br>';
+        echo '<strong>URL:</strong> ' . WPJ_UPDATER_PLUGIN_SITE_URL . '<br>';
         echo '<strong>Plugin directory path:</strong> ' . WPJ_UPDATER_PLUGIN_DIR_PATH . '<br>';
         echo '<strong>Plugin URL directory path:</strong> ' . WPJ_UPDATER_PLUGIN_DIR_URL . '<br>';
         echo '<h2>Plugin settings:</h2>';
@@ -93,7 +101,7 @@ class wpj_updater_plugin {
 	}
 }
 
-// Front-end not excuted in the admin and the customizer (for compatibility reasons)
+// Front-end not excuted in the wp admin and the wp customizer (for compatibility reasons)
 // See: https://core.trac.wordpress.org/ticket/45130 and https://core.trac.wordpress.org/ticket/37110
 function wpj_updater_plugin_front_end_scripts() {
     $wp_admin = is_admin();
