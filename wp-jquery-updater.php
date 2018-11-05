@@ -12,7 +12,7 @@
  * Plugin Name:       WP jQuery Updater
  * Plugin URI:        https://github.com/Remzi1993/wp-jquery-updater
  * Description:       With this plugin you're able to manage jQuery.
- * Version:           1.0.4
+ * Version:           1.0.5
  * Author:            Remzi Cavdar
  * Author URI:        https://www.linkedin.com/in/remzicavdar/
  * License:           GPL 3.0
