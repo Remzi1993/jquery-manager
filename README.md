@@ -1,4 +1,4 @@
-# WP jQuery Updater for WordPress #
+# jQuery Manager for WordPress #
 The development and issue tracker is located here
 
 [![GitHub issues](https://img.shields.io/github/issues/Remzi1993/wp-jquery-updater.svg)](https://github.com/Remzi1993/wp-jquery-updater/issues)
