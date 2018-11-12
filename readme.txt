@@ -1,13 +1,13 @@
-=== WP jQuery Updater ===
+=== jQuery Manager ===
 Contributors: Remzi Cavdar
 Tags: jquery, update, jquery ui, javascript, jq, jquery migrate, jquery updater
 Requires at least: 4.9
 Tested up to: 4.9
 
-This plugin updates jQuery and jQuery Migrate to the latest stable version on your website.
+This plugin let's you manage jQuery and jQuery Migrate for your WordPress website. You're able to select a particular jQuery and/or jQuery Migrate version.
 
 == Description ==
-This plugin updates [jQuery](https://jquery.com) to the latest stable version, which is most likely not available with the latest stable release of WordPress.
+This plugin let's you choose which version you want to use [jQuery](https://jquery.com) to the latest stable version, which is most likely not available with the latest stable release of WordPress.
 
 [jQuery Migrate](http://jquery.com/download/#jquery-migrate-plugin) is also included with logging active, so that developers are able to identify deprecated code.
 

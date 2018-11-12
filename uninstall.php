@@ -31,5 +31,5 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 }
 
 // Deleting plugin options
-delete_option( 'wpj_updater_jquery_url' );
-delete_option( 'wpj_updater_jquery_migrate_url' );
+delete_option( 'wp_jquery_manager_plugin_jquery_settings' );
+delete_option( 'wp_jquery_manager_plugin_jquery_migrate_settings' );
