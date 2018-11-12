@@ -20,3 +20,7 @@ This developer tool also let's you turn off jQuery and/or jQuery Migrate.
 ## Bug reports
 For bugs, issues use the GitHub [issues](https://github.com/Remzi1993/wp-jquery-manager/issues) page.
 If you have any (non bug related) questions, contact me directly
+
+## Screenshots
+<img src="https://raw.githubusercontent.com/Remzi1993/wp-jquery-manager/master/assets/img/screenshot-1.png">
+<img src="https://raw.githubusercontent.com/Remzi1993/wp-jquery-manager/master/assets/img/screenshot-2.png">
