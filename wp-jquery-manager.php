@@ -31,13 +31,13 @@ define( 'WP_JQUERY_MANAGER_PLUGIN_DOMAIN_NAME', $_SERVER['HTTP_HOST'] );
 
 // Plugin updater GitHub Repository
 require WP_JQUERY_MANAGER_PLUGIN_DIR_PATH . 'inc/plugin-update-checker/plugin-update-checker.php';
-$wp_jquery_manager_plugin_github_updater = Puc_v4_Factory::buildUpdateChecker(
+$wp_jquery_manager_plugin_updater = Puc_v4_Factory::buildUpdateChecker(
 	'https://github.com/Remzi1993/wp-jquery-manager',
 	__FILE__,
 	'wp_jquery_manager_plugin'
 );
 
-$wp_jquery_manager_plugin_github_updater->getVcsApi()->enableReleaseAssets();
+$wp_jquery_manager_plugin_updater->getVcsApi()->enableReleaseAssets();
 
 // Include weDevs Settings API wrapper class
 require WP_JQUERY_MANAGER_PLUGIN_DIR_PATH . 'inc/class.settings-api.php';
@@ -160,7 +160,7 @@ if ( !class_exists( 'wp_jquery_manager_plugin' ) ) {
 	                    'label'   => __( 'jQuery Migrate loading', $this->text_domain ),
 	                    'desc'    => __( 'Choose how to load jQuery Migrate - &lt;head&gt; or before &lt;/body&gt; (default is in the head)', $this->text_domain ),
 	                    'type'    => 'radio',
-						'default' => 'head',
+						'default' => 'body',
 	                    'options' => array(
 							'head'	=> 'Head',
 							'body'	=> 'Body'
@@ -295,7 +295,7 @@ function wp_jquery_manager_plugin_admin_scripts($hook) {
 	}
 
 	// CSS
-	wp_enqueue_style( 'wpj-updater-admin', plugins_url('/assets/css/admin.css', __FILE__), array(), null );
+	wp_enqueue_style( 'wp-jquery-manager-plugin-admin', WP_JQUERY_MANAGER_PLUGIN_DIR_URL . 'assets/css/admin.css', array(), null );
 
 }
 
@@ -345,9 +345,9 @@ add_filter( 'script_loader_tag', 'wp_jquery_manager_plugin_add_attribute', 10, 2
 
 
 // Deactivation
-register_deactivation_hook( __FILE__, 'wpj_updater_plugin_deactivation' );
+register_deactivation_hook( __FILE__, 'wp_jquery_manager_plugin_deactivation' );
 
-function wpj_updater_plugin_deactivation() {
+function wp_jquery_manager_plugin_deactivation() {
 	delete_option( 'wp_jquery_manager_plugin_jquery_settings' );
 	delete_option( 'wp_jquery_manager_plugin_jquery_migrate_settings' );
 }

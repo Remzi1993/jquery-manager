@@ -4,7 +4,7 @@ Tags: jquery, update, jquery ui, javascript, jq, jquery migrate, jquery updater
 Requires at least: 4.9
 Tested up to: 4.9
 
-Manage jQuery and jQuery Migrate on a WordPress website, select a specific jQuery and/or jQuery Migrate version. Use this as a debugging tool for your jQuery code.
+Manage jQuery and jQuery Migrate on a WordPress website, select a specific jQuery and/or jQuery Migrate version. The ultimate jQuery debugging tool for WordPress
 
 == Description ==
 Manage [jQuery](https://jquery.com) and [jQuery Migrate](http://jquery.com/download/#jquery-migrate-plugin) on a WordPress website, select a specific jQuery and/or jQuery Migrate version. Use this as a debugging tool for your jQuery code.

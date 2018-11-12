@@ -1,10 +1,7 @@
 /* General */
-#wpj-updater-plugin-jquery-settings th { width: 80px; }
 
-#wpj-updater-plugin-jquery-migrate-settings th { width: 130px; }
-#jquery-migrate-title { display: inline-block; margin-right: 10px; margin-bottom: 0; }
 
 /* Greater than or equal to Tablet */
 @media (min-width: 783px) {
-    .plugin-settings td input:not([type="checkbox"]) { width: 650px; }
+    
 }
