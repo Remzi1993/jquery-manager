@@ -10,9 +10,9 @@
  *
  * @wordpress-plugin
  * Plugin Name:       jQuery Manager for WordPress
- * Plugin URI:        https://github.com/Remzi1993/wp-jquery-updater
- * Description:       Manage your WordPress jQuery and jQuery Migrate version and debugging tool.
- * Version:           1.1.0
+ * Plugin URI:        https://github.com/Remzi1993/wp-jquery-manager
+ * Description:       Manage jQuery and jQuery Migrate on a WordPress website, select a specific jQuery and/or jQuery Migrate version. Use this as a debugging tool for your code.
+ * Version:           1.1.1
  * Author:            Remzi Cavdar
  * Author URI:        https://www.linkedin.com/in/remzicavdar/
  * License:           GPL 3.0
@@ -31,13 +31,13 @@ define( 'WP_JQUERY_MANAGER_PLUGIN_DOMAIN_NAME', $_SERVER['HTTP_HOST'] );
 
 // Plugin updater GitHub Repository
 require WP_JQUERY_MANAGER_PLUGIN_DIR_PATH . 'inc/plugin-update-checker/plugin-update-checker.php';
-$wpj_updater_plugin_github_updater = Puc_v4_Factory::buildUpdateChecker(
-	'https://github.com/Remzi1993/wp-jquery-updater',
+$wp_jquery_manager_plugin_github_updater = Puc_v4_Factory::buildUpdateChecker(
+	'https://github.com/Remzi1993/wp-jquery-manager',
 	__FILE__,
 	'wp_jquery_manager_plugin'
 );
 
-$wpj_updater_plugin_github_updater->getVcsApi()->enableReleaseAssets();
+$wp_jquery_manager_plugin_github_updater->getVcsApi()->enableReleaseAssets();
 
 // Include weDevs Settings API wrapper class
 require WP_JQUERY_MANAGER_PLUGIN_DIR_PATH . 'inc/class.settings-api.php';
@@ -169,7 +169,7 @@ if ( !class_exists( 'wp_jquery_manager_plugin' ) ) {
 					array(
 						'name'		=> 'jquery_migrate_delay',
 						'label'		=> __( 'jQuery Migrate delay execution', $this->text_domain ),
-						'desc'		=> __( 'Experimental! Most plugins and/or themes do not support this', $this->text_domain ),
+						'desc'		=> __( 'Default is defer, if you experience issues, try to turn this off', $this->text_domain ),
 						'type'		=> 'radio',
 						'default'	=> 'defer',
 						'options'	=> array(
@@ -185,6 +185,13 @@ if ( !class_exists( 'wp_jquery_manager_plugin' ) ) {
 	    }
 
 	    public function plugin_settings_page() {
+			// Debugging
+			// echo '<h1>Debug information</h1>';
+			// echo '<strong>Plugin directory:</strong> ' . WP_JQUERY_MANAGER_PLUGIN_DIR_PATH . '<br>';
+			// echo '<strong>Plugin URL:</strong> ' . WP_JQUERY_MANAGER_PLUGIN_DIR_URL . '<br>';
+			// echo '<strong>Domain name:</strong> ' . WP_JQUERY_MANAGER_PLUGIN_DOMAIN_NAME . '<br>';
+			// echo '<strong>URL:</strong> ' . WP_JQUERY_MANAGER_PLUGIN_SITE_URL . '<br>';
+
 	        echo '<div class="wrap">';
 
 	        $this->settings_api->show_navigation();
