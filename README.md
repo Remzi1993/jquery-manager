@@ -14,8 +14,8 @@ Because none of the developer tools let's you select a specific version of jQuer
 This developer tool also let's you turn off jQuery and/or jQuery Migrate.
 
 ## I have a few people I need to thank
-@YahnisElsts for his amazing work on a updater, we're using in this open source project: https://github.com/YahnisElsts/plugin-update-checker
-@tareq1988 for his awesome settings API abstraction class: https://github.com/tareq1988/wordpress-settings-api-class
+@YahnisElsts for his amazing work on a updater, we're using in this open source project: https://github.com/YahnisElsts/plugin-update-checker <br>
+@tareq1988 for his awesome settings API abstraction class: https://github.com/tareq1988/wordpress-settings-api-class <br>
 
 ## Bug reports
 For bugs, issues use the GitHub [issues](https://github.com/Remzi1993/wp-jquery-manager/issues) page.
