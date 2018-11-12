@@ -12,7 +12,7 @@
  * Plugin Name:       jQuery Manager for WordPress
  * Plugin URI:        https://github.com/Remzi1993/wp-jquery-manager
  * Description:       Manage jQuery and jQuery Migrate on a WordPress website, select a specific jQuery and/or jQuery Migrate version. Use this as a debugging tool for your code.
- * Version:           1.1.1
+ * Version:           1.1.3
  * Author:            Remzi Cavdar
  * Author URI:        https://www.linkedin.com/in/remzicavdar/
  * License:           GPL 3.0

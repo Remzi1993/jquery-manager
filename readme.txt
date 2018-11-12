@@ -4,12 +4,12 @@ Tags: jquery, update, jquery ui, javascript, jq, jquery migrate, jquery updater
 Requires at least: 4.9
 Tested up to: 4.9
 
-This plugin let's you manage jQuery and jQuery Migrate for your WordPress website. You're able to select a particular jQuery and/or jQuery Migrate version.
+Manage jQuery and jQuery Migrate on a WordPress website, select a specific jQuery and/or jQuery Migrate version. Use this as a debugging tool for your jQuery code.
 
 == Description ==
-This plugin let's you choose which version you want to use [jQuery](https://jquery.com) to the latest stable version, which is most likely not available with the latest stable release of WordPress.
+Manage [jQuery](https://jquery.com) and [jQuery Migrate](http://jquery.com/download/#jquery-migrate-plugin) on a WordPress website, select a specific jQuery and/or jQuery Migrate version. Use this as a debugging tool for your jQuery code.
 
-[jQuery Migrate](http://jquery.com/download/#jquery-migrate-plugin) is also included with logging active, so that developers are able to identify deprecated code.
+By default jQuery Migrate will be loaded at the end of the body tag and with defer, also an uncompressed development build is being used with logging active, so that developers are able to identify deprecated code.
 
 **No** modification to the WordPress installation is made, therefore deactivation and/or uninstallation of this plugin returns your site to it`s original state.
 
@@ -20,18 +20,18 @@ I will not provide support on debugging your JavaScript and/or jQuery code. (Onl
 
 **Reporting problems**
 
-Please post bug reports, feature and/or support requests on the [GitHub issues page](https://github.com/Remzi1993/wp-jquery-updater/issues). I will only provide support on issues caused by this plugin, not your own JavaScript and/or jQuery code. (Again, I will provide support or fix all your issues if you're willing to hire me to debug and/or optimize your website)
+Please post bug reports, feature and/or support requests on the [GitHub issues page](https://github.com/Remzi1993/wp-jquery-manager/issues). I will only provide support on issues caused by this plugin, not your own JavaScript and/or jQuery code. (Again, I will provide support or fix all your issues if you're willing to hire me to debug and/or optimize your website)
 
 If you run into any bugs, turning this plugin off (by deactivation the plugin) will fully deactivate everything and return your website to it`s original state.
 
 == Installation ==
 Installation via WordPress admin
 1. Navigate to > `Plugins` > `Add New`
-2. On your top left > click on `Upload Plugin` and select your .zip file you downloaded from [Github releases](https://github.com/Remzi1993/wp-jquery-updater/releases) and click `Install Now`
+2. On your top left > click on `Upload Plugin` and select your .zip file you downloaded from [Github releases](https://github.com/Remzi1993/wp-jquery-manager/releases) and click `Install Now`
 3. By activating the plugin, jQuery and jQuery Migrate are updated to the latest stable version.
 
 Installation via FTP, SFTP or SSH
-1. Unzip (unpack/uncompress) the .zip file you downloaded from [Github releases](https://github.com/Remzi1993/wp-jquery-updater/releases)
+1. Unzip (unpack/uncompress) the .zip file you downloaded from [Github releases](https://github.com/Remzi1993/wp-jquery-manager/releases)
 2. Upload the folder `wp-jquery-updater` to the `/wp-content/plugins/` directory on your server
 3. By activating the plugin, jQuery and jQuery Migrate are updated to the latest stable version.
 
@@ -44,4 +44,4 @@ This plugin breaks my site! How do I fix it?
 2. Deactivate the plugin and report this to me, so that I could look into this matter.
 
 == Changelog ==
-See changelog on [GitHub](https://github.com/Remzi1993/wp-jquery-updater/releases)
+See changelog on [GitHub](https://github.com/Remzi1993/wp-jquery-manager/releases)
