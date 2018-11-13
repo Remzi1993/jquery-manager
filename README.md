@@ -26,7 +26,7 @@ Go to the [releases](https://github.com/Remzi1993/wp-jquery-manager/releases) pa
 3. By activating the plugin, jQuery and jQuery Migrate are updated to the latest stable version. (Plugin settings are located under `Tools`)
 
 ## I have a few people I would like to thank
-[@YahnisElsts](https://github.com/YahnisElsts) for his amazing work on a updater, we're using in this open source project:<br> https://github.com/YahnisElsts/plugin-update-checker <br><br>
+[@YahnisElsts](https://github.com/YahnisElsts) for his amazing work on a updater, that we're using in this open source project:<br> https://github.com/YahnisElsts/plugin-update-checker <br><br>
 [@tareq1988](https://github.com/tareq1988) for his awesome WordPress Settings API abstraction class:<br> https://github.com/tareq1988/wordpress-settings-api-class <br>
 
 ## Bug reports
