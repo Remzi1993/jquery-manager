@@ -33,5 +33,5 @@ Go to the [releases](https://github.com/Remzi1993/wp-jquery-manager/releases) pa
 Report bugs, issues, questions and/or feature request on our GitHub [issues](https://github.com/Remzi1993/wp-jquery-manager/issues) page.
 
 ## Screenshots
-<img src="https://raw.githubusercontent.com/Remzi1993/wp-jquery-manager/master/assets/img/screenshot-1.png">
-<img src="https://raw.githubusercontent.com/Remzi1993/wp-jquery-manager/master/assets/img/screenshot-2.png">
+<img src="https://raw.githubusercontent.com/Remzi1993/wp-jquery-manager/master/assets/img/screenshot-1.jpg">
+<img src="https://raw.githubusercontent.com/Remzi1993/wp-jquery-manager/master/assets/img/screenshot-2.jpg">

@@ -12,7 +12,7 @@
  * Plugin Name:       jQuery Manager for WordPress
  * Plugin URI:        https://github.com/Remzi1993/wp-jquery-manager
  * Description:       Manage jQuery and jQuery Migrate on a WordPress website, select a specific jQuery and/or jQuery Migrate version. Use this as a debugging tool for your code.
- * Version:           1.1.3
+ * Version:           1.2.0
  * Author:            Remzi Cavdar
  * Author URI:        https://www.linkedin.com/in/remzicavdar/
  * License:           GPL 3.0
@@ -123,7 +123,7 @@ if ( !class_exists( 'wp_jquery_manager_plugin' ) ) {
 					array(
 	                    'name'    => 'jquery_delay',
 	                    'label'   => __( 'jQuery delay execution', $this->text_domain ),
-	                    'desc'    => __( 'Experimental! Most plugins and/or themes do not support this', $this->text_domain ),
+	                    'desc'    => __( 'Experimental! Some plugins and/or themes do not support this', $this->text_domain ),
 	                    'type'    => 'radio',
 						'default' => 'off',
 	                    'options' => array(
@@ -160,7 +160,7 @@ if ( !class_exists( 'wp_jquery_manager_plugin' ) ) {
 	                    'label'   => __( 'jQuery Migrate loading', $this->text_domain ),
 	                    'desc'    => __( 'Choose how to load jQuery Migrate - &lt;head&gt; or before &lt;/body&gt; (default is in the head)', $this->text_domain ),
 	                    'type'    => 'radio',
-						'default' => 'body',
+						'default' => 'head',
 	                    'options' => array(
 							'head'	=> 'Head',
 							'body'	=> 'Body'
@@ -169,9 +169,9 @@ if ( !class_exists( 'wp_jquery_manager_plugin' ) ) {
 					array(
 						'name'		=> 'jquery_migrate_delay',
 						'label'		=> __( 'jQuery Migrate delay execution', $this->text_domain ),
-						'desc'		=> __( 'Default is defer, if you experience issues, try to turn this off', $this->text_domain ),
+						'desc'		=> __( 'Experimental! Some plugins and/or themes do not support this', $this->text_domain ),
 						'type'		=> 'radio',
-						'default'	=> 'defer',
+						'default'	=> 'off',
 						'options'	=> array(
 							'off'	=> 'Off',
 							'async'	=> 'Async',
@@ -234,6 +234,7 @@ function wp_jquery_manager_plugin_front_end_scripts() {
 	// jQuery
 	if ( $wp_admin || $wp_customizer ) {
 		// echo 'We are in the WP Admin or in the WP Customizer';
+		return;
 	}
 	elseif ( !isset( $jquery_options['jquery'] ) ) { // Default setting
 		// Deregister WP core jQuery
@@ -265,7 +266,7 @@ function wp_jquery_manager_plugin_front_end_scripts() {
 		wp_deregister_script('jquery-migrate');
 
 		// Enqueue jQuery Migrate in the body
-		wp_enqueue_script( 'jquery-migrate', WP_JQUERY_MANAGER_PLUGIN_DIR_URL . 'assets/js/jquery-migrate-3.0.1.js', array('jquery'), null, true );
+		wp_enqueue_script( 'jquery-migrate', WP_JQUERY_MANAGER_PLUGIN_DIR_URL . 'assets/js/jquery-migrate-3.0.1.js', array('jquery'), null, false );
 	}
 	elseif ( $jquery_migrate_options['jquery_migrate'] != 'off' ) {
 		// Deregister WP core jQuery Migrate
@@ -309,14 +310,15 @@ add_action( 'admin_enqueue_scripts', 'wp_jquery_manager_plugin_admin_scripts' );
 
 // Defer jQuery Migrate
 function wp_jquery_manager_plugin_add_attribute( $tag, $handle ) {
-        if ( is_admin() || is_customize_preview() ) {
-                return $tag;
-        }
+	if ( is_admin() || is_customize_preview() ) {
+		return $tag;
+	}
 
-		$jquery_options = (array) get_option( 'wp_jquery_manager_plugin_jquery_settings' );
-		$jquery_migrate_options = (array) get_option( 'wp_jquery_manager_plugin_jquery_migrate_settings' );
+	$jquery_options = (array) get_option( 'wp_jquery_manager_plugin_jquery_settings' );
+	$jquery_migrate_options = (array) get_option( 'wp_jquery_manager_plugin_jquery_migrate_settings' );
 
-		switch ( isset($jquery_options['jquery_delay']) ) {
+	if ( isset( $jquery_options['jquery_delay'] ) ) {
+		switch ( $jquery_options['jquery_delay'] ) {
 			case 'async':
 					if ( 'jquery' === $handle ) {
 						return str_replace( "src", "async src", $tag );
@@ -328,8 +330,10 @@ function wp_jquery_manager_plugin_add_attribute( $tag, $handle ) {
 					}
 				break;
 		}
+	}
 
-		switch ( isset($jquery_migrate_options['jquery_migrate_delay']) ) {
+	if ( isset( $jquery_migrate_options['jquery_migrate_delay'] ) ) {
+		switch ( $jquery_migrate_options['jquery_migrate_delay'] ) {
 			case 'async':
 					if ( 'jquery-migrate' === $handle ) {
 						return str_replace( "src", "async src", $tag );
@@ -341,8 +345,9 @@ function wp_jquery_manager_plugin_add_attribute( $tag, $handle ) {
 					}
 				break;
 		}
+	}
 
-        return $tag;
+	return $tag;
 }
 add_filter( 'script_loader_tag', 'wp_jquery_manager_plugin_add_attribute', 10, 2 );
 
