@@ -11,16 +11,15 @@ Manage [jQuery](https://jquery.com) and [jQuery Migrate](https://jquery.com/down
 
 By default jQuery Migrate uses an uncompressed development build with logging active, so that developers are able to identify deprecated code.
 
-**No** modification to the WordPress installation is made, therefore deactivation and/or uninstallation of this plugin returns your site to it`s original state.
-
-**Warning**
+**Warning, this is also a Developer / Debugging tool**
 
 If you are not familiar with beta testing, bug fixing, JavaScript, jQuery and/or running bleeding edge software than I **don't** recommend using this plugin.
 I will not provide support on debugging your JavaScript and/or jQuery code. (Only if you like to hire me, of course)
 
 **Reporting problems**
 
-Please post bug reports, feature and/or support requests on the [GitHub issues page](https://github.com/Remzi1993/wp-jquery-manager/issues). I will only provide support on issues caused by this plugin, not your own JavaScript and/or jQuery code. (Again, I will provide support or fix all your issues if you're willing to hire me to debug and/or optimize your website)
+Report bugs, issues, questions and/or feature request on our [GitHub issues page](https://github.com/Remzi1993/wp-jquery-manager/issues).
+I will only provide support on issues caused by this plugin, not your own JavaScript and/or jQuery code. (Again, I will provide support or fix all your issues if you're willing to hire me to debug and/or optimize your website)
 
 If you run into any bugs, turning this plugin off (by deactivation the plugin) will fully deactivate everything and return your website to it`s original state.
 
@@ -28,12 +27,12 @@ If you run into any bugs, turning this plugin off (by deactivation the plugin) w
 Installation via WordPress admin
 1. Navigate to > `Plugins` > `Add New`
 2. On your top left > click on `Upload Plugin` and select your .zip file you downloaded from [GitHub releases](https://github.com/Remzi1993/wp-jquery-manager/releases) and click `Install Now`
-3. By activating the plugin, jQuery and jQuery Migrate are updated to the latest stable version.
+3. By activating the plugin, jQuery and jQuery Migrate are updated to the latest stable version. (Plugin settings are located under `Tools`)
 
 Installation via FTP, SFTP or SSH
-1. Unzip (unpack/uncompress) the .zip file you downloaded from [GitHub releases](https://github.com/Remzi1993/wp-jquery-manager/releases)
+1. Unzip (extract/unpack/uncompress) the .zip file you downloaded from [GitHub releases](https://github.com/Remzi1993/wp-jquery-manager/releases)
 2. Upload the folder `wp-jquery-manager` to the `/wp-content/plugins/` directory on your server
-3. By activating the plugin, jQuery and jQuery Migrate are updated to the latest stable version.
+3. By activating the plugin, jQuery and jQuery Migrate are updated to the latest stable version. (Plugin settings are located under `Tools`)
 
 == Frequently Asked Questions ==
 Is this plugin compatible with PHP 5.2 / 5.3 / 5.4 / 5.5 / 5.6, 7, 7.1, 7.2, HHVM and/or whatever?
@@ -41,7 +40,10 @@ Is this plugin compatible with PHP 5.2 / 5.3 / 5.4 / 5.5 / 5.6, 7, 7.1, 7.2, HHV
 2. Long answer: I honestly don't know for sure. I didn't used PHP7's new features or something, but I don't know for sure. I made a simple plugin.
 
 This plugin breaks my site! How do I fix it?
-2. Deactivate the plugin and report this to me, so that I could look into this matter.
+2. Deactivate the plugin and [report](https://github.com/Remzi1993/wp-jquery-manager/issues) this to me, so that I could look into this.
+
+Does this plugin modify my WP installation?
+3. **No** modification to the WordPress installation is made, therefore deactivation and/or uninstallation of this plugin returns your site to it`s original state.
 
 == Changelog ==
 See changelog on [GitHub](https://github.com/Remzi1993/wp-jquery-manager/releases)
