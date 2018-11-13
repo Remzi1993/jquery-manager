@@ -3,7 +3,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/Remzi1993/wp-jquery-manager.svg)](https://github.com/Remzi1993/wp-jquery-manager/stargazers)
 [![GitHub license](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://github.com/Remzi1993/wp-jquery-manager/blob/master/LICENSE)
 # jQuery Manager for WordPress
-jQuery Manager for WordPress is a open source project and I would like to invite anyone to contribute. Development and issue tracker is located here on GitHub.
+jQuery Manager for WordPress is an open source project and I would like to invite anyone to contribute. The development and issue tracker is located here on GitHub.
 
 ## About this debugging tool
 Manage jQuery and jQuery Migrate on a WordPress website, select a specific jQuery and/or jQuery Migrate version. The ultimate jQuery debugging tool for WordPress
