@@ -228,50 +228,50 @@ function wp_jquery_manager_plugin_front_end_scripts() {
 	$wp_admin = is_admin();
 	$wp_customizer = is_customize_preview();
 
-    $jquery_options = get_option( 'wp_jquery_manager_plugin_jquery_settings' );
-	$jquery_migrate_options = get_option( 'wp_jquery_manager_plugin_jquery_migrate_settings' );
+	$jquery_options = (array) get_option( 'wp_jquery_manager_plugin_jquery_settings' );
+	$jquery_migrate_options = (array) get_option( 'wp_jquery_manager_plugin_jquery_migrate_settings' );
 
 	// jQuery
 	if ( $wp_admin || $wp_customizer ) {
 		// echo 'We are in the WP Admin or in the WP Customizer';
 	}
-	elseif ( $jquery_options['jquery'] == 'off' ) {
+	elseif ( !isset( $jquery_options['jquery'] ) ) { // Default setting
 		// Deregister WP core jQuery
 		wp_deregister_script('jquery');
+
+		// Enqueue jQuery in the head
+		wp_enqueue_script( 'jquery', WP_JQUERY_MANAGER_PLUGIN_DIR_URL . 'assets/js/jquery-3.3.1.min.js', array(), null, false );
 	}
 	elseif ( $jquery_options['jquery'] != 'off' ) {
 		// Deregister WP core jQuery
 		wp_deregister_script('jquery');
 
-		if ( empty( $jquery_options['jquery_version'] ) ) {
-			$jquery_version = 'assets/js/jquery-3.3.1.min.js';
-		}
-		else {
-			$jquery_version = 'assets/js/' . $jquery_options['jquery_version'];
-		}
+		$jquery_version = 'assets/js/' . $jquery_options['jquery_version'];
 
 		// Enqueue jQuery in the head
 		wp_enqueue_script( 'jquery', WP_JQUERY_MANAGER_PLUGIN_DIR_URL . $jquery_version, array(), null, false );
+	}
+	elseif ( $jquery_options['jquery'] == 'off' ) {
+		// Deregister WP core jQuery
+		wp_deregister_script('jquery');
 	}
 
 	// jQuery Migrate
 	if ( $wp_admin || $wp_customizer ) {
 		// echo 'We are in the WP Admin or in the WP Customizer';
 	}
-	elseif ( $jquery_migrate_options['jquery_migrate'] == 'off' ) {
-		// Deregister WP core jQuery
-		wp_deregister_script('jquery-migrate');
-	}
-	elseif ( $jquery_migrate_options['jquery_migrate'] != 'off' ) {
-		// Deregister WP core jQuery
+	elseif ( !isset( $jquery_migrate_options['jquery_migrate'] ) ) { // Default setting
+		// Deregister WP core jQuery Migrate
 		wp_deregister_script('jquery-migrate');
 
-		if ( empty( $jquery_migrate_options['jquery_migrate_version'] ) ) {
-			$jquery_migrate_version = 'assets/js/jquery-migrate-3.0.1.js';
-		}
-		else {
-			$jquery_migrate_version = 'assets/js/' . $jquery_migrate_options['jquery_migrate_version'];
-		}
+		// Enqueue jQuery Migrate in the body
+		wp_enqueue_script( 'jquery-migrate', WP_JQUERY_MANAGER_PLUGIN_DIR_URL . 'assets/js/jquery-migrate-3.0.1.js', array('jquery'), null, true );
+	}
+	elseif ( $jquery_migrate_options['jquery_migrate'] != 'off' ) {
+		// Deregister WP core jQuery Migrate
+		wp_deregister_script('jquery-migrate');
+
+		$jquery_migrate_version = 'assets/js/' . $jquery_migrate_options['jquery_migrate_version'];
 
 		if ( $jquery_migrate_options['jquery_migrate_head_body'] == 'body' ) {
 			// Enqueue jQuery before </body>
@@ -281,7 +281,10 @@ function wp_jquery_manager_plugin_front_end_scripts() {
 			// Enqueue jQuery in the head
 			wp_enqueue_script( 'jquery-migrate', WP_JQUERY_MANAGER_PLUGIN_DIR_URL . $jquery_migrate_version, array('jquery'), null, false );
 		}
-
+	} // End jQuery Migrate
+	elseif ( $jquery_migrate_options['jquery_migrate'] == 'off' ) {
+		// Deregister WP core jQuery
+		wp_deregister_script('jquery-migrate');
 	}
 
 }
@@ -310,10 +313,10 @@ function wp_jquery_manager_plugin_add_attribute( $tag, $handle ) {
                 return $tag;
         }
 
-		$jquery_options = get_option( 'wp_jquery_manager_plugin_jquery_settings' );
-		$jquery_migrate_options = get_option( 'wp_jquery_manager_plugin_jquery_migrate_settings' );
+		$jquery_options = (array) get_option( 'wp_jquery_manager_plugin_jquery_settings' );
+		$jquery_migrate_options = (array) get_option( 'wp_jquery_manager_plugin_jquery_migrate_settings' );
 
-		switch ($jquery_options['jquery_delay']) {
+		switch ( isset($jquery_options['jquery_delay']) ) {
 			case 'async':
 					if ( 'jquery' === $handle ) {
 						return str_replace( "src", "async src", $tag );
@@ -326,7 +329,7 @@ function wp_jquery_manager_plugin_add_attribute( $tag, $handle ) {
 				break;
 		}
 
-		switch ($jquery_migrate_options['jquery_migrate_delay']) {
+		switch ( isset($jquery_migrate_options['jquery_migrate_delay']) ) {
 			case 'async':
 					if ( 'jquery-migrate' === $handle ) {
 						return str_replace( "src", "async src", $tag );
