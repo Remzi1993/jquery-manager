@@ -12,7 +12,7 @@ Manage jQuery and jQuery Migrate on a WordPress website, select a specific jQuer
 Because none of the developer tools let's you select a specific version of jQuery and/or jQuery Migrate. Providing both the production and the minified version.
 This developer tool also let's you turn on/off jQuery and/or jQuery Migrate.
 
-## Download jQuery Manager for WordPress
+## [Download](https://github.com/Remzi1993/wp-jquery-manager/releases) jQuery Manager for WordPress
 Go to the [releases](https://github.com/Remzi1993/wp-jquery-manager/releases) page and download the .zip file.
 
 ### Installation via WordPress admin
