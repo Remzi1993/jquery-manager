@@ -11,12 +11,12 @@
  * @wordpress-plugin
  * Plugin Name:       jQuery Manager for WordPress
  * Plugin URI:        https://github.com/Remzi1993/wp-jquery-manager
- * Description:       Manage jQuery and jQuery Migrate on a WordPress website, select a specific jQuery and/or jQuery Migrate version. The ultimate jQuery debugging tool for WordPress
- * Version:           1.2.1
+ * Description:       Manage jQuery and jQuery Migrate on a WordPress website, select a specific jQuery and/or jQuery Migrate version. The ultimate jQuery debugging tool for WordPress. This plugin is a open source project, made possible by your contribution (code). Development is done on GitHub.
+ * Version:           1.2.2
  * Author:            Remzi Cavdar
- * Author URI:        https://www.linkedin.com/in/remzicavdar/
- * License:           GPL 3.0
- * License URI:       https://www.gnu.org/licenses/gpl-3.0.en.html
+ * Author URI:        https://twitter.com/remzicavdar
+ * License:           GPLv3
+ * License URI:       https://www.gnu.org/licenses/gpl-3.0
  */
 
 // If this file is called directly, abort.
@@ -36,12 +36,24 @@ $wp_jquery_manager_plugin_updater = Puc_v4_Factory::buildUpdateChecker(
 	__FILE__,
 	'wp_jquery_manager_plugin'
 );
-
+// Updater options
 $wp_jquery_manager_plugin_updater->getVcsApi()->enableReleaseAssets();
+$wp_jquery_manager_plugin_updater->setBranch('master');
 
 // Include weDevs Settings API wrapper class
-require WP_JQUERY_MANAGER_PLUGIN_DIR_PATH . 'inc/class.settings-api.php';
+require WP_JQUERY_MANAGER_PLUGIN_DIR_PATH . 'inc/settings-api.php';
 
+// Add settings link to our plugin section on the plugin list page
+function wp_jquery_manager_plugin_add_action_links ( $links ) {
+	$mylinks = array(
+		'<a href="' . admin_url( 'tools.php?page=wp-jquery-manager-plugin-settings' ) . '">Settings</a>',
+	);
+
+	return array_merge( $links, $mylinks );
+}
+add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), 'wp_jquery_manager_plugin_add_action_links' );
+
+// Our plugin class
 if ( !class_exists( 'wp_jquery_manager_plugin' ) ) {
 
 	class wp_jquery_manager_plugin {
@@ -243,10 +255,10 @@ function wp_jquery_manager_plugin_front_end_scripts() {
 		// Enqueue jQuery in the head
 		wp_enqueue_script( 'jquery', WP_JQUERY_MANAGER_PLUGIN_DIR_URL . 'assets/js/jquery-3.3.1.min.js', array(), null, false );
 	}
-	elseif ( $jquery_options['jquery'] != 'off' ) {
+	elseif ( $jquery_options['jquery'] == 'on' ) {
 		// Deregister WP core jQuery
 		wp_deregister_script('jquery');
-
+		// Get jQuery version
 		$jquery_version = 'assets/js/' . $jquery_options['jquery_version'];
 
 		// Enqueue jQuery in the head
@@ -255,11 +267,13 @@ function wp_jquery_manager_plugin_front_end_scripts() {
 	elseif ( $jquery_options['jquery'] == 'off' ) {
 		// Deregister WP core jQuery
 		wp_deregister_script('jquery');
-	}
+
+	} // End jQuery
 
 	// jQuery Migrate
 	if ( $wp_admin || $wp_customizer ) {
 		// echo 'We are in the WP Admin or in the WP Customizer';
+		return;
 	}
 	elseif ( !isset( $jquery_migrate_options['jquery_migrate'] ) ) { // Default setting
 		// Deregister WP core jQuery Migrate
@@ -268,12 +282,13 @@ function wp_jquery_manager_plugin_front_end_scripts() {
 		// Enqueue jQuery Migrate in the body
 		wp_enqueue_script( 'jquery-migrate', WP_JQUERY_MANAGER_PLUGIN_DIR_URL . 'assets/js/jquery-migrate-3.0.1.js', array('jquery'), null, false );
 	}
-	elseif ( $jquery_migrate_options['jquery_migrate'] != 'off' ) {
+	elseif ( $jquery_migrate_options['jquery_migrate'] == 'on' ) {
 		// Deregister WP core jQuery Migrate
 		wp_deregister_script('jquery-migrate');
-
+		// Get jQuery Migrate version
 		$jquery_migrate_version = 'assets/js/' . $jquery_migrate_options['jquery_migrate_version'];
 
+		// Setting head or body
 		if ( $jquery_migrate_options['jquery_migrate_head_body'] == 'body' ) {
 			// Enqueue jQuery before </body>
 			wp_enqueue_script( 'jquery-migrate', WP_JQUERY_MANAGER_PLUGIN_DIR_URL . $jquery_migrate_version, array('jquery'), null, true );
@@ -282,13 +297,15 @@ function wp_jquery_manager_plugin_front_end_scripts() {
 			// Enqueue jQuery in the head
 			wp_enqueue_script( 'jquery-migrate', WP_JQUERY_MANAGER_PLUGIN_DIR_URL . $jquery_migrate_version, array('jquery'), null, false );
 		}
-	} // End jQuery Migrate
+
+	}
 	elseif ( $jquery_migrate_options['jquery_migrate'] == 'off' ) {
 		// Deregister WP core jQuery
 		wp_deregister_script('jquery-migrate');
-	}
 
-}
+	} // End jQuery Migrate
+
+} // End function wp_jquery_manager_plugin_front_end_scripts
 
 // Back end specific
 // Load only on tools.php?page=wpj-updater-plugin-settings (plugin settings)
@@ -308,9 +325,12 @@ add_action( 'wp_enqueue_scripts', 'wp_jquery_manager_plugin_front_end_scripts' )
 add_action( 'admin_enqueue_scripts', 'wp_jquery_manager_plugin_admin_scripts' );
 
 
-// Defer jQuery Migrate
+// Defer jQuery and/or jQuery Migrate
 function wp_jquery_manager_plugin_add_attribute( $tag, $handle ) {
 	if ( is_admin() || is_customize_preview() ) {
+		return $tag;
+	}
+	elseif ( !isset( $jquery_options['jquery_delay'] ) && !isset( $jquery_migrate_options['jquery_migrate_delay'] ) ) { // No settings, default. Exit and stop wasting time :)
 		return $tag;
 	}
 
