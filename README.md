@@ -13,7 +13,8 @@ Because none of the developer tools let's you select a specific version of jQuer
 :white_check_mark: Turn on/off jQuery and/or jQuery Migrate<br>
 :white_check_mark: Activate a specific version of jQuery and/or jQuery Migrate<br>
 :white_check_mark: Choose how to load **jQuery Migrate** in the `Head` or at the end of the `Body`<br>
-:white_check_mark: `Async` or `defer` jQuery and/or jQuery Migrate
+:white_check_mark: `Async` or `defer` jQuery and/or jQuery Migrate<br>
+:white_check_mark: Added a debugging mode :new:
 
 ## [Download](https://github.com/Remzi1993/wp-jquery-manager/releases) jQuery Manager for WordPress
 Go to the [releases](https://github.com/Remzi1993/wp-jquery-manager/releases) page and download the .zip file.
