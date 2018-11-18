@@ -14,7 +14,8 @@ Because none of the developer tools let's you select a specific version of jQuer
 :white_check_mark: Activate a specific version of jQuery and/or jQuery Migrate<br>
 :white_check_mark: Choose how to load **jQuery Migrate** in the `Head` or at the end of the `Body`<br>
 :white_check_mark: `Async` or `defer` jQuery and/or jQuery Migrate<br>
-:new: Debugging mode<br>
+:white_check_mark: Development done using WordPress coding standards, also a lot of "jQuery Updater" plugins are outdated and buggy / bloated<br>
+:new: Debug mode<br>
 :thumbsup: Active development<br>
 :thumbsup: Active support<br>
 :office: This is also my fulltime job, I optimize WordPress websites and work for Advanza Direct, see https://advanzadirect.nl <br>
