@@ -26,6 +26,8 @@ defined('ABSPATH') or exit();
 // http://php.net/manual/en/dir.constants.php & https://www.quora.com/Should-class-constants-be-all-uppercase-in-PHP
 define( 'WP_JQUERY_MANAGER_PLUGIN_DIR_PATH', str_replace( "\\", "/", plugin_dir_path(__FILE__) ) );
 define( 'WP_JQUERY_MANAGER_PLUGIN_DIR_URL', plugin_dir_url( __FILE__ ) );
+define( 'WP_JQUERY_MANAGER_PLUGIN_SLUG', 'wp-jquery-manager-plugin-settings' );
+define( 'WP_JQUERY_MANAGER_PLUGIN_ADMIN_URL', admin_url( 'tools.php?page=' . WP_JQUERY_MANAGER_PLUGIN_SLUG ) );
 define( 'WP_JQUERY_MANAGER_PLUGIN_SITE_URL', get_site_url() );
 define( 'WP_JQUERY_MANAGER_PLUGIN_DOMAIN_NAME', $_SERVER['HTTP_HOST'] );
 
@@ -56,7 +58,7 @@ require WP_JQUERY_MANAGER_PLUGIN_DIR_PATH . 'inc/settings-api.php';
 // Add settings link to our plugin section on the plugin list page
 function wp_jquery_manager_plugin_add_action_links ( $links ) {
 	$mylinks = array(
-		'<a href="' . admin_url( 'tools.php?page=wp-jquery-manager-plugin-settings' ) . '">Settings</a>',
+		'<a href="' . WP_JQUERY_MANAGER_PLUGIN_ADMIN_URL . '">Settings</a>',
 	);
 
 	return array_merge( $links, $mylinks );
@@ -70,6 +72,11 @@ if ( !class_exists( 'wp_jquery_manager_plugin' ) ) {
 	class wp_jquery_manager_plugin {
 		private $settings_api;
 		public $text_domain;
+
+		// Menu and plugin settings
+		public $title = 'jQuery Manager';
+		public $capability = 'administrator';
+		public $slug = WP_JQUERY_MANAGER_PLUGIN_SLUG;
 
 	    public function __construct() {
 	        $this->settings_api = new WeDevs_Settings_API;
@@ -89,10 +96,10 @@ if ( !class_exists( 'wp_jquery_manager_plugin' ) ) {
 	    }
 
 	    public function admin_menu() {
-			$page_title = 'jQuery Manager';
-			$menu_title = 'jQuery Manager';
-			$capability = 'administrator';
-			$menu_slug = 'wp-jquery-manager-plugin-settings';
+			$page_title = $this->title;
+			$menu_title = $this->title;
+			$capability = $this->capability;
+			$menu_slug = $this->slug;
 			$function = array( $this, 'plugin_settings_page' );
 
 			add_management_page( $page_title, $menu_title, $capability, $menu_slug, $function );
@@ -164,7 +171,7 @@ if ( !class_exists( 'wp_jquery_manager_plugin' ) ) {
 	                ),
 					array(
 	                    'name'		=> 'debug_mode',
-	                    'label'		=> __( 'Enable debugging', $this->text_domain ),
+	                    'label'		=> __( 'Debug mode', $this->text_domain ),
 	                    'desc'		=> __( 'On / Off', $this->text_domain ),
 						'default'	=> 'off',
 	                    'type'		=> 'checkbox'
@@ -223,22 +230,23 @@ if ( !class_exists( 'wp_jquery_manager_plugin' ) ) {
 
 	    public function plugin_settings_page() {
 			$jquery_options = (array) get_option( 'wp_jquery_manager_plugin_jquery_settings' );
+
 			// For debugging
 			if ( isset( $jquery_options['debug_mode'] ) ) {
 				if ( $jquery_options['debug_mode'] == 'on' ) {
 					echo '<h1>Debug information</h1>';
 					echo '<strong>Plugin directory:</strong> ' . WP_JQUERY_MANAGER_PLUGIN_DIR_PATH . '<br>';
 					echo '<strong>Plugin URL:</strong> ' . WP_JQUERY_MANAGER_PLUGIN_DIR_URL . '<br>';
+					echo '<strong>Plugin admin URL:</strong> ' . WP_JQUERY_MANAGER_PLUGIN_ADMIN_URL . '<br>';
 					echo '<strong>Domain name:</strong> ' . WP_JQUERY_MANAGER_PLUGIN_DOMAIN_NAME . '<br>';
 					echo '<strong>URL:</strong> ' . WP_JQUERY_MANAGER_PLUGIN_SITE_URL . '<br>';
 				}
 			}
 
+			// Plugin settings
 	        echo '<div class="wrap">';
-
 	        $this->settings_api->show_navigation();
 	        $this->settings_api->show_forms();
-
 	        echo '</div>';
 	    }
 
@@ -382,14 +390,12 @@ function wp_jquery_manager_plugin_front_end_scripts() {
 // Back end specific
 // Load only on tools.php?page=wpj-updater-plugin-settings (plugin settings)
 function wp_jquery_manager_plugin_admin_scripts($hook) {
-
-	if( $hook != 'tools_page_wp-jquery-manager-plugin-settings' ) {
+	if( $hook != 'tools_page_' . WP_JQUERY_MANAGER_PLUGIN_SLUG ) {
 		return;
 	}
 
 	// CSS
 	wp_enqueue_style( 'wp-jquery-manager-plugin-admin', WP_JQUERY_MANAGER_PLUGIN_DIR_URL . 'assets/css/admin.css', array(), null );
-
 }
 
 // Register styles and scripts
