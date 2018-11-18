@@ -9,10 +9,10 @@ jQuery Manager for WordPress is an open source project and I would like to invit
 Manage jQuery and jQuery Migrate on a WordPress website, select a specific jQuery and/or jQuery Migrate version. The ultimate jQuery debugging tool for WordPress
 
 ## Why yet another jQuery Updater / Manager / Developer / Debugging tool?
-Because none of the developer tools let's you select a specific version of jQuery and/or jQuery Migrate. Providing both the production and the minified version. See features below! :trophy:
-:white_check_mark: Turn on/off jQuery and/or jQuery Migrate
-:white_check_mark: Activate a specific version of jQuery and/or jQuery Migrate
-:white_check_mark: Choose how to load **jQuery Migrate** in the 'Head' or at the end of the 'Body'
+Because none of the developer tools let's you select a specific version of jQuery and/or jQuery Migrate. Providing both the production and the minified version. See features below! :trophy:<br>
+:white_check_mark: Turn on/off jQuery and/or jQuery Migrate<br>
+:white_check_mark: Activate a specific version of jQuery and/or jQuery Migrate<br>
+:white_check_mark: Choose how to load **jQuery Migrate** in the 'Head' or at the end of the 'Body'<br>
 :white_check_mark: 'Async' or 'defer' jQuery and/or jQuery Migrate
 
 ## [Download](https://github.com/Remzi1993/wp-jquery-manager/releases) jQuery Manager for WordPress
