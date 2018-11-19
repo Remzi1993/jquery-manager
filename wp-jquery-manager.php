@@ -9,14 +9,16 @@
  * that starts the plugin.
  *
  * @wordpress-plugin
- * Plugin Name:       jQuery Manager for WordPress
- * Plugin URI:        https://github.com/Remzi1993/wp-jquery-manager
- * Description:       Manage jQuery and jQuery Migrate on a WordPress website, select a specific jQuery and/or jQuery Migrate version. The ultimate jQuery debugging tool for WordPress. This plugin is a open source project, made possible by your contribution (code). Development is done on GitHub.
- * Version:           1.3.0
- * Author:            Remzi Cavdar
- * Author URI:        https://twitter.com/remzicavdar
- * License:           GPLv3
- * License URI:       https://www.gnu.org/licenses/gpl-3.0
+ * Plugin Name:		jQuery Manager for WordPress
+ * Plugin URI:		https://github.com/Remzi1993/wp-jquery-manager
+ * Description:		Manage jQuery and jQuery Migrate on a WordPress website, select a specific jQuery and/or jQuery Migrate version. The ultimate jQuery debugging tool for WordPress. This plugin is a open source project, made possible by your contribution (code). Development is done on GitHub.
+ * Version:			1.3.0
+ * Author:			Remzi Cavdar
+ * Author URI:		https://twitter.com/remzicavdar
+ * License:			GPLv3
+ * License URI:		https://www.gnu.org/licenses/gpl-3.0
+ * Text Domain:		wp-jquery-manager
+ * Domain Path:		/languages
  */
 
 // If this file is called directly, abort.
@@ -28,6 +30,7 @@ define( 'WP_JQUERY_MANAGER_PLUGIN_DIR_PATH', str_replace( "\\", "/", plugin_dir_
 define( 'WP_JQUERY_MANAGER_PLUGIN_DIR_URL', plugin_dir_url( __FILE__ ) );
 define( 'WP_JQUERY_MANAGER_PLUGIN_SLUG', 'wp-jquery-manager-plugin-settings' );
 define( 'WP_JQUERY_MANAGER_PLUGIN_ADMIN_URL', admin_url( 'tools.php?page=' . WP_JQUERY_MANAGER_PLUGIN_SLUG ) );
+define( 'WP_JQUERY_MANAGER_PLUGIN_TEXT_DOMAIN', 'wp-jquery-manager' );
 define( 'WP_JQUERY_MANAGER_PLUGIN_SITE_URL', get_site_url() );
 define( 'WP_JQUERY_MANAGER_PLUGIN_DOMAIN_NAME', $_SERVER['HTTP_HOST'] );
 
@@ -40,6 +43,9 @@ define( 'WP_JQUERY_MANAGER_PLUGIN_JQUERY_1X', 'jquery-1.12.4' );
 define( 'WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_3X', 'jquery-migrate-3.0.1' );
 define( 'WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_1X', 'jquery-migrate-1.4.1' );
 
+// Settings
+define( 'WP_JQUERY_MANAGER_PLUGIN_JQUERY_SETTINGS', (array) get_option( 'wp_jquery_manager_plugin_jquery_settings' ) );
+define( 'WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_SETTINGS', (array) get_option( 'wp_jquery_manager_plugin_jquery_migrate_settings' ) );
 
 // Plugin updater GitHub Repository
 require WP_JQUERY_MANAGER_PLUGIN_DIR_PATH . 'inc/plugin-update-checker/plugin-update-checker.php';
@@ -51,6 +57,9 @@ $wp_jquery_manager_plugin_updater = Puc_v4_Factory::buildUpdateChecker(
 // Updater options
 $wp_jquery_manager_plugin_updater->getVcsApi()->enableReleaseAssets();
 $wp_jquery_manager_plugin_updater->setBranch('master');
+
+// Activation / upgrade process
+require WP_JQUERY_MANAGER_PLUGIN_DIR_PATH . 'upgrade-process.php';
 
 // Include weDevs Settings API wrapper class
 require WP_JQUERY_MANAGER_PLUGIN_DIR_PATH . 'inc/settings-api.php';
@@ -80,7 +89,7 @@ if ( !class_exists( 'wp_jquery_manager_plugin' ) ) {
 
 	    public function __construct() {
 	        $this->settings_api = new WeDevs_Settings_API;
-			$this->text_domain = 'wp_jquery_manager_plugin';
+			$this->text_domain = WP_JQUERY_MANAGER_PLUGIN_TEXT_DOMAIN;
 
 	        add_action( 'admin_init', array( $this, 'admin_init' ) );
 	        add_action( 'admin_menu', array( $this, 'admin_menu' ) );
@@ -158,15 +167,15 @@ if ( !class_exists( 'wp_jquery_manager_plugin' ) ) {
 	                    )
 	                ),
 					array(
-	                    'name'    => 'jquery_delay',
-	                    'label'   => __( 'jQuery delay execution', $this->text_domain ),
-	                    'desc'    => __( 'Experimental! Some plugins and/or themes do not support this', $this->text_domain ),
+	                    'name'    => 'jquery_execution',
+	                    'label'   => __( 'jQuery execution', $this->text_domain ),
+	                    'desc'    => __( 'Experimental! Some plugins and/or themes may not support this', $this->text_domain ),
 	                    'type'    => 'radio',
-						'default' => 'off',
+						'default' => 'default',
 	                    'options' => array(
-							'off'	=> 'Off',
-							'async'	=> 'Async',
-	                        'defer'	=> 'Defer'
+							'default'	=> 'Default / Normal',
+							'async'		=> 'Async',
+	                        'defer'		=> 'Defer'
 	                    )
 	                ),
 					array(
@@ -201,25 +210,25 @@ if ( !class_exists( 'wp_jquery_manager_plugin' ) ) {
 					),
 					array(
 	                    'name'    => 'jquery_migrate_head_body',
-	                    'label'   => __( 'jQuery Migrate loading', $this->text_domain ),
-	                    'desc'    => __( 'Choose how to load jQuery Migrate - &lt;head&gt; or before &lt;/body&gt; (default is in the head)', $this->text_domain ),
+	                    'label'   => __( 'jQuery Migrate code', $this->text_domain ),
+	                    'desc'    => __( 'Choose where to put jQuery Migrate in the <strong>&lt;head&gt;</strong> or at the end of the <strong>&lt;body&gt;</strong> tag, just before it closes (default is in the head)', $this->text_domain ),
 	                    'type'    => 'radio',
 						'default' => 'head',
 	                    'options' => array(
-							'head'	=> 'Head',
-							'body'	=> 'Body'
+							'head'	=> '&lt;head&gt;',
+							'body'	=> '&lt;body&gt;'
 	                    )
 	                ),
 					array(
-						'name'		=> 'jquery_migrate_delay',
-						'label'		=> __( 'jQuery Migrate delay execution', $this->text_domain ),
+						'name'		=> 'jquery_migrate_execution',
+						'label'		=> __( 'jQuery Migrate execution', $this->text_domain ),
 						'desc'		=> __( 'Experimental! Some plugins and/or themes do not support this', $this->text_domain ),
 						'type'		=> 'radio',
-						'default'	=> 'off',
+						'default'	=> 'default',
 						'options'	=> array(
-							'off'	=> 'Off',
-							'async'	=> 'Async',
-							'defer'	=> 'Defer'
+							'default'	=> 'Default / Normal',
+							'async'		=> 'Async',
+							'defer'		=> 'Defer'
 						)
 					)
 	            ) // End jQuery Migrate settings
@@ -229,7 +238,7 @@ if ( !class_exists( 'wp_jquery_manager_plugin' ) ) {
 	    }
 
 	    public function plugin_settings_page() {
-			$jquery_options = (array) get_option( 'wp_jquery_manager_plugin_jquery_settings' );
+			$jquery_options = WP_JQUERY_MANAGER_PLUGIN_JQUERY_SETTINGS;
 
 			// For debugging
 			if ( isset( $jquery_options['debug_mode'] ) ) {
@@ -279,8 +288,8 @@ function wp_jquery_manager_plugin_front_end_scripts() {
 	$wp_admin = is_admin();
 	$wp_customizer = is_customize_preview();
 
-	$jquery_options = (array) get_option( 'wp_jquery_manager_plugin_jquery_settings' );
-	$jquery_migrate_options = (array) get_option( 'wp_jquery_manager_plugin_jquery_migrate_settings' );
+	$jquery_options = WP_JQUERY_MANAGER_PLUGIN_JQUERY_SETTINGS;
+	$jquery_migrate_options = WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_SETTINGS;
 
 	$margin_j = "margin: 40px 0 0 20px;";
 	$margin_jm = "margin: 140px 0 0 20px;";
@@ -344,7 +353,7 @@ function wp_jquery_manager_plugin_front_end_scripts() {
 		// Default jQuery Migrate version
 		$jquery_migrate_version = 'assets/js/' . WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_3X . '.js';
 
-		// Enqueue jQuery Migrate in the body
+		// Enqueue jQuery Migrate in the head
 		wp_enqueue_script( 'jquery-migrate', WP_JQUERY_MANAGER_PLUGIN_DIR_URL . $jquery_migrate_version, array('jquery'), null, false );
 
 		// When debugging is enabled
@@ -363,11 +372,11 @@ function wp_jquery_manager_plugin_front_end_scripts() {
 
 		// Setting head or body
 		if ( $jquery_migrate_options['jquery_migrate_head_body'] == 'head' ) {
-			// Enqueue jQuery in the head
+			// Enqueue jQuery Migrate in the head
 			wp_enqueue_script( 'jquery-migrate', WP_JQUERY_MANAGER_PLUGIN_DIR_URL . $jquery_migrate_version, array('jquery'), null, false );
 		}
 		else {
-			// Enqueue jQuery before </body>
+			// Enqueue jQuery Migrate before </body>
 			wp_enqueue_script( 'jquery-migrate', WP_JQUERY_MANAGER_PLUGIN_DIR_URL . $jquery_migrate_version, array('jquery'), null, true );
 		}
 
@@ -379,7 +388,7 @@ function wp_jquery_manager_plugin_front_end_scripts() {
 		}
 	}
 	elseif ( $jquery_migrate_options['jquery_migrate'] == 'off' ) {
-		// Deregister WP core jQuery
+		// Deregister WP core jQuery Migrate
 		wp_deregister_script('jquery-migrate');
 
 	} // End jQuery Migrate
@@ -408,39 +417,39 @@ function wp_jquery_manager_plugin_add_attribute( $tag, $handle ) {
 	if ( is_admin() || is_customize_preview() ) {
 		return $tag;
 	}
-	elseif ( !isset( $jquery_options['jquery_delay'] ) && !isset( $jquery_migrate_options['jquery_migrate_delay'] ) ) { // No settings, default. Exit and stop wasting time :)
+	elseif ( !isset( $jquery_options['jquery_execution'] ) && !isset( $jquery_migrate_options['jquery_migrate_execution'] ) ) { // No settings, default. Exit and stop wasting time :)
 		return $tag;
 	}
 
-	$jquery_options = (array) get_option( 'wp_jquery_manager_plugin_jquery_settings' );
-	$jquery_migrate_options = (array) get_option( 'wp_jquery_manager_plugin_jquery_migrate_settings' );
+	$jquery_options = WP_JQUERY_MANAGER_PLUGIN_JQUERY_SETTINGS;
+	$jquery_migrate_options = WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_SETTINGS;
 
-	if ( isset( $jquery_options['jquery_delay'] ) ) {
-		switch ( $jquery_options['jquery_delay'] ) {
+	if ( isset( $jquery_options['jquery_execution'] ) ) {
+		switch ( $jquery_options['jquery_execution'] ) {
 			case 'async':
-					if ( 'jquery' === $handle ) {
-						return str_replace( "src", "async src", $tag );
-					}
+				if ( 'jquery' === $handle ) {
+					return str_replace( "src", "async src", $tag );
+				}
 				break;
 			case 'defer':
-					if ( 'jquery' === $handle ) {
-						return str_replace( "src", "defer src", $tag );
-					}
+				if ( 'jquery' === $handle ) {
+					return str_replace( "src", "defer src", $tag );
+				}
 				break;
 		}
 	}
 
-	if ( isset( $jquery_migrate_options['jquery_migrate_delay'] ) ) {
-		switch ( $jquery_migrate_options['jquery_migrate_delay'] ) {
+	if ( isset( $jquery_migrate_options['jquery_migrate_execution'] ) ) {
+		switch ( $jquery_migrate_options['jquery_migrate_execution'] ) {
 			case 'async':
-					if ( 'jquery-migrate' === $handle ) {
-						return str_replace( "src", "async src", $tag );
-					}
+				if ( 'jquery-migrate' === $handle ) {
+					return str_replace( "src", "async src", $tag );
+				}
 				break;
 			case 'defer':
-					if ( 'jquery-migrate' === $handle ) {
-						return str_replace( "src", "defer src", $tag );
-					}
+				if ( 'jquery-migrate' === $handle ) {
+					return str_replace( "src", "defer src", $tag );
+				}
 				break;
 		}
 	}
