@@ -45,3 +45,8 @@ Report bugs, issues, questions and/or feature request on our GitHub [issues](htt
 ## Screenshots
 <img src="https://raw.githubusercontent.com/Remzi1993/wp-jquery-manager/master/assets/img/screenshot-1.jpg">
 <img src="https://raw.githubusercontent.com/Remzi1993/wp-jquery-manager/master/assets/img/screenshot-2.jpg">
+
+## Do you want to help with development?
+Use the following command to clone the repository:
+`$ git clone git://github.com/Remzi1993/openssl-installer.git`
+Working on some awesome feature? Create a new branch and when you're finished do a pull request.
