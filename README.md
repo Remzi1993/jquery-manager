@@ -12,10 +12,10 @@ Manage jQuery and jQuery Migrate on a WordPress website, select a specific jQuer
 Because none of the developer tools let's you select a specific version of jQuery and/or jQuery Migrate. Providing both the production and the minified version. See features below! :trophy:<br>
 :white_check_mark: **Turn on/off** jQuery and/or jQuery Migrate<br>
 :white_check_mark: Activate a **specific version** of jQuery and/or jQuery Migrate<br>
-:white_check_mark: Choose how to load **jQuery Migrate** in the `Head` or at the end of the `Body` **What's the effect?** [source 1](https://flaviocopes.com/javascript-async-defer/)<br>
-:white_check_mark: **`Async`** or `**defer**` jQuery and/or jQuery Migrate **What's the effect?** [source 2](https://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html), [source 3](https://bitsofco.de/async-vs-defer/)<br>
+:white_check_mark: Choose how to load **jQuery Migrate** in the **`Head`** or at the end of the **`Body`** **What's the effect?** [source 1](https://flaviocopes.com/javascript-async-defer/)<br>
+:white_check_mark: **`Async`** or **`defer`** jQuery and/or jQuery Migrate **What's the effect?** [source 2](https://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html), [source 3](https://bitsofco.de/async-vs-defer/)<br>
 :white_check_mark: Development done using [WordPress Coding Standards](https://make.wordpress.org/core/handbook/best-practices/coding-standards/), also a lot of "jQuery Updater" plugins are outdated and/or buggy / bloated<br>
-:white_check_mark: Only excuted in the front-end, doesn't interfere with WordPress admin/backend and WP customizer (for compatibility reasons) See: https://core.trac.wordpress.org/ticket/45130 and https://core.trac.wordpress.org/ticket/37110 <br>
+:white_check_mark: Only executed in the front-end, **doesn't interfere with WordPress admin/backend and WP customizer** (for compatibility reasons) See: https://core.trac.wordpress.org/ticket/45130 and https://core.trac.wordpress.org/ticket/37110 <br>
 :new: Debug mode<br>
 :thumbsup: Active development<br>
 :thumbsup: Active support<br>
