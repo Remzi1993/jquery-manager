@@ -48,5 +48,5 @@ Report bugs, issues, questions and/or feature request on our GitHub [issues](htt
 
 ## Do you want to help with development?
 Use the following command to clone the repository:<br>
-`$ git clone git://github.com/Remzi1993/openssl-installer.git`<br>
+`$ git clone git://github.com/Remzi1993/wp-jquery-manager.git`<br>
 Working on some awesome feature? Create a new branch and when you're finished do a pull request.
