@@ -1,16 +1,54 @@
 <?php
-// Checks the version number
+// Check if the user has changed the settings, has old versions of jQuery and/or jQuery Migrate settings and han excute the upgrade process
 function wp_jquery_manager_plugin_check_version() {
 	$jquery_options = WP_JQUERY_MANAGER_PLUGIN_JQUERY_SETTINGS;
 	$jquery_migrate_options = WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_SETTINGS;
 
 	if ( isset( $jquery_options['jquery_version'] ) ) {
-		wp_jquery_manager_plugin_activation_upgrade_process();
-	}
-	elseif ( isset( $jquery_migrate_options['jquery_migrate_version'] ) ) {
-		wp_jquery_manager_plugin_activation_upgrade_process();
-	}
-}
+
+		switch ( !$jquery_options['jquery_version'] ) {
+			case WP_JQUERY_MANAGER_PLUGIN_JQUERY_3X . '.js':
+				wp_jquery_manager_plugin_activation_upgrade_process();
+				break;
+			case WP_JQUERY_MANAGER_PLUGIN_JQUERY_3X . '.min.js':
+				wp_jquery_manager_plugin_activation_upgrade_process();
+				break;
+			case WP_JQUERY_MANAGER_PLUGIN_JQUERY_2X . '.js':
+				wp_jquery_manager_plugin_activation_upgrade_process();
+				break;
+			case WP_JQUERY_MANAGER_PLUGIN_JQUERY_2X . '.min.js':
+				wp_jquery_manager_plugin_activation_upgrade_process();
+				break;
+			case WP_JQUERY_MANAGER_PLUGIN_JQUERY_1X . '.js':
+				wp_jquery_manager_plugin_activation_upgrade_process();
+				break;
+			case WP_JQUERY_MANAGER_PLUGIN_JQUERY_1X . '.min.js':
+				wp_jquery_manager_plugin_activation_upgrade_process();
+				break;
+		} // End switch case
+
+	} // End if statement
+
+	if ( isset( $jquery_migrate_options['jquery_migrate_version'] ) ) {
+
+		switch ( !$jquery_migrate_options['jquery_migrate_version'] ) {
+			case WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_3X . '.js':
+				wp_jquery_manager_plugin_activation_upgrade_process();
+				break;
+			case WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_3X . '.min.js':
+				wp_jquery_manager_plugin_activation_upgrade_process();
+				break;
+			case WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_1X . '.js':
+				wp_jquery_manager_plugin_activation_upgrade_process();
+				break;
+			case WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_1X . '.min.js':
+				wp_jquery_manager_plugin_activation_upgrade_process();
+				break;
+		} // End switch case
+
+	} // End if statement
+
+} // End function
 add_action('plugins_loaded', 'wp_jquery_manager_plugin_check_version');
 
 // Activation / upgrade process
@@ -33,6 +71,7 @@ function wp_jquery_manager_plugin_activation_upgrade_process() {
 		} // End switch case
 		// Update entire array
 		update_option('wp_jquery_manager_plugin_jquery_settings', $jquery_options);
+		// echo 'Shit Remzi';
 	}
 
 	if ( isset( $jquery_migrate_options['jquery_migrate_version'] ) ) {
@@ -49,6 +88,7 @@ function wp_jquery_manager_plugin_activation_upgrade_process() {
 		} // End switch case
 		// Update entire array
 		update_option('wp_jquery_manager_plugin_jquery_migrate_settings', $jquery_migrate_options);
+		// echo 'Shit Remzi 2';
 	}
 }
 register_activation_hook(__FILE__, 'wp_jquery_manager_plugin_activation_upgrade_process');
