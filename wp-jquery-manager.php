@@ -421,7 +421,7 @@ function wp_jquery_manager_plugin_front_end_scripts() {
 
 
 // Back end specific
-// Load only on tools.php?page=wpj-updater-plugin-settings (plugin settings)
+// Load only on tools.php?page=wp-jquery-manager-plugin-settings (plugin settings)
 function wp_jquery_manager_plugin_admin_scripts($hook) {
 	if( $hook != 'tools_page_' . WP_JQUERY_MANAGER_PLUGIN_SLUG ) {
 		return;
