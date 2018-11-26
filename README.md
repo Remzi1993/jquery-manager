@@ -1,9 +1,11 @@
-
 [![GitHub release](https://img.shields.io/github/release/Remzi1993/wp-jquery-manager.svg?style=flat-square)](https://github.com/Remzi1993/wp-jquery-manager/releases/latest)
 [![GitHub issues](https://img.shields.io/github/issues/Remzi1993/wp-jquery-manager.svg?style=flat-square)](https://github.com/Remzi1993/wp-jquery-manager/issues)
 [![GitHub forks](https://img.shields.io/github/forks/Remzi1993/wp-jquery-manager.svg?style=flat-square)](https://github.com/Remzi1993/wp-jquery-manager/network/members)
 [![GitHub stars](https://img.shields.io/github/stars/Remzi1993/wp-jquery-manager.svg?style=flat-square)](https://github.com/Remzi1993/wp-jquery-manager/stargazers)
 [![GitHub license](https://img.shields.io/badge/license-GPLv3-blue.svg?style=flat-square)](https://github.com/Remzi1993/wp-jquery-manager/blob/master/LICENSE)
+
+![GitHub Releases](https://img.shields.io/github/downloads/Remzi1993/wp-jquery-manager.svg?style=flat-square)
+
 
 
 # jQuery Manager for WordPress
