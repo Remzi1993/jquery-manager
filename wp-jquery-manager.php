@@ -12,7 +12,7 @@
  * Plugin Name:		jQuery Manager for WordPress
  * Plugin URI:		https://github.com/Remzi1993/wp-jquery-manager
  * Description:		Manage jQuery and jQuery Migrate on a WordPress website, select a specific jQuery and/or jQuery Migrate version. The ultimate jQuery debugging tool for WordPress. This plugin is a open source project, made possible by your contribution (code). Development is done on GitHub.
- * Version:			1.5.0
+ * Version:			1.5.1
  * Author:			Remzi Cavdar
  * Author URI:		https://twitter.com/remzicavdar
  * License:			GPLv3
@@ -164,6 +164,7 @@ if ( !class_exists( 'wp_jquery_manager_plugin' ) ) {
 	                    'type'    => 'select',
 	                    'default' => $jquery_3x . '.min.js',
 	                    'options' => array(
+							'jquery-3.3.0.min.js'	=> 'jquery-3.3.0.min.js', // Debug / test old version
 	                        $jquery_3x . '.min.js'	=> $jquery_3x . '.min.js',
 							$jquery_3x . '.js'		=> $jquery_3x . '.js',
 							$jquery_2x . '.min.js'	=> $jquery_2x . '.min.js',
@@ -208,6 +209,7 @@ if ( !class_exists( 'wp_jquery_manager_plugin' ) ) {
 						'type'    => 'select',
 						'default' => $jquery_migrate_3x . '.js',
 						'options' => array(
+							'jquery-migrate-3.0.0.min.js'	=> 'jquery-migrate-3.0.0.min.js', // Debug / test old version
 							$jquery_migrate_3x . '.js'		=> $jquery_migrate_3x . '.js',
 							$jquery_migrate_3x . '.min.js'	=> $jquery_migrate_3x . '.min.js',
 							$jquery_migrate_1x . '.js'		=> $jquery_migrate_1x . '.js',
@@ -375,7 +377,7 @@ function wp_jquery_manager_plugin_front_end_scripts() {
 		$jquery_migrate_version = 'assets/js/' . WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_3X . '.js';
 
 		// Register and than enqueue jQuery Migrate in the head
-		wp_register_script( 'jquery-migrate', WP_JQUERY_MANAGER_PLUGIN_DIR_URL . $jquery_migrate_version, array( 'jquery' ), null, false );
+		wp_register_script( 'jquery-migrate', WP_JQUERY_MANAGER_PLUGIN_DIR_URL . $jquery_migrate_version, array(), null, false );
 		wp_enqueue_script( 'jquery-migrate' );
 
 		// When debugging is enabled
@@ -395,12 +397,12 @@ function wp_jquery_manager_plugin_front_end_scripts() {
 		// Setting head or body
 		if ( $jquery_migrate_options['jquery_migrate_head_body'] == 'head' ) {
 			// Enqueue jQuery Migrate in the head
-			wp_register_script( 'jquery-migrate', WP_JQUERY_MANAGER_PLUGIN_DIR_URL . $jquery_migrate_version, array('jquery'), null, false );
+			wp_register_script( 'jquery-migrate', WP_JQUERY_MANAGER_PLUGIN_DIR_URL . $jquery_migrate_version, array(), null, false );
 			wp_enqueue_script( 'jquery-migrate' );
 		}
 		else {
 			// Enqueue jQuery Migrate before </body>
-			wp_register_script( 'jquery-migrate', WP_JQUERY_MANAGER_PLUGIN_DIR_URL . $jquery_migrate_version, array('jquery'), null, true );
+			wp_register_script( 'jquery-migrate', WP_JQUERY_MANAGER_PLUGIN_DIR_URL . $jquery_migrate_version, array(), null, true );
 			wp_enqueue_script( 'jquery-migrate' );
 		}
 
