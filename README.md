@@ -1,8 +1,5 @@
 <!-- [![GitHub issues](https://img.shields.io/github/issues/Remzi1993/wp-jquery-manager.svg)](https://github.com/Remzi1993/wp-jquery-manager/issues) -->
-![GitHub issues](https://img.shields.io/github/issues/Remzi1993/wp-jquery-manager.svg)
-
-
-![GitHub issues](https://img.shields.io/github/issues/Remzi1993/wp-jquery-manager.svg?style=flat-square)
+![GitHub issues](https://img.shields.io/github/issues/Remzi1993/wp-jquery-manager.svg?style=flat-square) (https://github.com/Remzi1993/wp-jquery-manager/issues)
 
 [![GitHub forks](https://img.shields.io/github/forks/Remzi1993/wp-jquery-manager.svg)](https://github.com/Remzi1993/wp-jquery-manager/network/members)
 [![GitHub stars](https://img.shields.io/github/stars/Remzi1993/wp-jquery-manager.svg)](https://github.com/Remzi1993/wp-jquery-manager/stargazers)
