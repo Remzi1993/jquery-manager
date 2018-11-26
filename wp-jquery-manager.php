@@ -12,7 +12,7 @@
  * Plugin Name:		jQuery Manager for WordPress
  * Plugin URI:		https://github.com/Remzi1993/wp-jquery-manager
  * Description:		Manage jQuery and jQuery Migrate on a WordPress website, select a specific jQuery and/or jQuery Migrate version. The ultimate jQuery debugging tool for WordPress. This plugin is a open source project, made possible by your contribution (code). Development is done on GitHub.
- * Version:			1.5.1
+ * Version:			1.6.0
  * Author:			Remzi Cavdar
  * Author URI:		https://twitter.com/remzicavdar
  * License:			GPLv3
@@ -164,7 +164,6 @@ if ( !class_exists( 'wp_jquery_manager_plugin' ) ) {
 	                    'type'    => 'select',
 	                    'default' => $jquery_3x . '.min.js',
 	                    'options' => array(
-							'jquery-3.3.0.min.js'	=> 'jquery-3.3.0.min.js', // Debug / test old version
 	                        $jquery_3x . '.min.js'	=> $jquery_3x . '.min.js',
 							$jquery_3x . '.js'		=> $jquery_3x . '.js',
 							$jquery_2x . '.min.js'	=> $jquery_2x . '.min.js',
@@ -209,7 +208,6 @@ if ( !class_exists( 'wp_jquery_manager_plugin' ) ) {
 						'type'    => 'select',
 						'default' => $jquery_migrate_3x . '.js',
 						'options' => array(
-							'jquery-migrate-3.0.0.min.js'	=> 'jquery-migrate-3.0.0.min.js', // Debug / test old version
 							$jquery_migrate_3x . '.js'		=> $jquery_migrate_3x . '.js',
 							$jquery_migrate_3x . '.min.js'	=> $jquery_migrate_3x . '.min.js',
 							$jquery_migrate_1x . '.js'		=> $jquery_migrate_1x . '.js',
@@ -422,14 +420,13 @@ function wp_jquery_manager_plugin_front_end_scripts() {
 } // End function wp_jquery_manager_plugin_front_end_scripts
 
 
-// Back end specific
+// Back end specific CSS
 // Load only on tools.php?page=wp-jquery-manager-plugin-settings (plugin settings)
 function wp_jquery_manager_plugin_admin_scripts($hook) {
 	if( $hook != 'tools_page_' . WP_JQUERY_MANAGER_PLUGIN_SLUG ) {
 		return;
 	}
 
-	// CSS
 	wp_enqueue_style( 'wp-jquery-manager-plugin-admin', WP_JQUERY_MANAGER_PLUGIN_DIR_URL . 'assets/css/admin.css', array(), null );
 }
 
@@ -438,7 +435,7 @@ add_action( 'wp_enqueue_scripts', 'wp_jquery_manager_plugin_front_end_scripts' )
 add_action( 'admin_enqueue_scripts', 'wp_jquery_manager_plugin_admin_scripts' );
 
 
-// Defer jQuery and/or jQuery Migrate
+// Defer and/or async jQuery and/or jQuery Migrate
 function wp_jquery_manager_plugin_add_attribute( $tag, $handle ) {
 	if ( is_admin() || is_customize_preview() ) {
 		return $tag;
