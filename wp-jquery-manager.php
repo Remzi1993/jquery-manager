@@ -308,7 +308,7 @@ function wp_jquery_manager_plugin_front_end_scripts() {
 		return;
 	}
 	elseif ( !isset( $jquery_options['jquery'] ) ) { // Default setting
-		// Deregister WP core jQuery, see https://github.com/Remzi1993/wp-jquery-manager/issues/2
+		// Deregister WP core jQuery, see https://github.com/Remzi1993/wp-jquery-manager/issues/2 and https://github.com/WordPress/WordPress/blob/master/wp-includes/script-loader.php#L226
 		wp_deregister_script( 'jquery' );
 		wp_deregister_script( 'jquery-core' );
 
