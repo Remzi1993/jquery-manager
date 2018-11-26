@@ -1,6 +1,7 @@
 <?php
 // Check if the user has changed the settings, has old versions of jQuery and/or jQuery Migrate settings and han excute the upgrade process
 function wp_jquery_manager_plugin_check_version() {
+	// Get entire arrays - jQuery settings and jQuery Migrate settings
 	$jquery_options = WP_JQUERY_MANAGER_PLUGIN_JQUERY_SETTINGS;
 	$jquery_migrate_options = WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_SETTINGS;
 
@@ -71,7 +72,6 @@ function wp_jquery_manager_plugin_activation_upgrade_process() {
 		} // End switch case
 		// Update entire array
 		update_option('wp_jquery_manager_plugin_jquery_settings', $jquery_options);
-		// echo 'Shit Remzi';
 	}
 
 	if ( isset( $jquery_migrate_options['jquery_migrate_version'] ) ) {
@@ -88,7 +88,6 @@ function wp_jquery_manager_plugin_activation_upgrade_process() {
 		} // End switch case
 		// Update entire array
 		update_option('wp_jquery_manager_plugin_jquery_migrate_settings', $jquery_migrate_options);
-		// echo 'Shit Remzi 2';
 	}
 }
 register_activation_hook(__FILE__, 'wp_jquery_manager_plugin_activation_upgrade_process');
