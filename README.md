@@ -7,6 +7,18 @@
 ![GitHub Releases](https://img.shields.io/github/downloads/Remzi1993/wp-jquery-manager.svg?style=flat-square)
 
 
+https://github.com/Remzi1993/wp-jquery-manager/releases/latest
+
+
+https://github.com/Remzi1993/wp-jquery-manager/releases/download/1.4.0/wp-jquery-manager-1.4.0.zip
+
+
+
+![GitHub Releases](https://img.shields.io/github/downloads/Remzi1993/wp-jquery-manager/latest/total.svg)
+
+
+
+
 
 # jQuery Manager for WordPress
 jQuery Manager for WordPress is an open source project and I would like to invite anyone to contribute. The development and issue tracker is located here on GitHub.
