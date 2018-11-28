@@ -1,6 +1,4 @@
-sudo: false
-dist: trusty
-
+# Tell Travis CI we're using PHP
 language: php
 
 notifications:
@@ -17,6 +15,7 @@ cache:
     - vendor
     - $HOME/.composer/cache
 
+# Versions of PHP to test against
 matrix:
   include:
     - php: 5.6
@@ -27,7 +26,6 @@ matrix:
       env: WP_VERSION=latest
     - php: 7.2
       env: WP_VERSION=latest
-      dist: precise
 
 before_script:
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
