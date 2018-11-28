@@ -6,7 +6,9 @@ notifications:
   email: false
 
 php:
+  - '7.0'
   - '7.1'
+  - '7.2'
   - nightly
 
 matrix:
@@ -21,7 +23,6 @@ services:
 cache:
   apt: true
   directories:
-    - vendor
     - $HOME/.composer/cache/files
 
 addons:
@@ -34,6 +35,11 @@ addons:
       - nginx
   hosts:
     - wp.localhost
+    - test1.wp.localhost
+    - test2.wp.localhost
+    - blog0.wp.localhost
+    - blog1.wp.localhost
+    - blog2.wp.localhost
 
 env:
   global:
@@ -45,6 +51,10 @@ env:
     - WP_TABLE_PREFIX="wp_"
     - WP_ADMIN_USERNAME="admin"
     - WP_ADMIN_PASSWORD="admin"
+    - WP_SUBDOMAIN_1="test1"
+    - WP_SUBDOMAIN_1_TITLE="Test Subdomain 1"
+    - WP_SUBDOMAIN_2="test2"
+    - WP_SUBDOMAIN_2_TITLE="Test Subdomain 2"
   matrix:
     - WP_VERSION=latest
     - WP_VERSION=nightly
@@ -65,29 +75,23 @@ before_install:
   - export PATH=vendor/bin:$PATH
 
 install:
-  - composer install --prefer-dist
-  # install WordPress
+  - composer update
+  # install WordPress in the `wordpress` folder
   - cd $WP_FOLDER
   - wp core download --version=$WP_VERSION
   - wp config create --dbname="$DB_NAME" --dbuser="root" --dbpass="" --dbhost="127.0.0.1" --dbprefix="$WP_TABLE_PREFIX"
-  - wp core install --url="$WP_URL" --title="Test" --admin_user="$WP_ADMIN_USERNAME" --admin_password="$WP_ADMIN_PASSWORD" --admin_email="admin@$WP_DOMAIN" --skip-email
+  - wp core multisite-install --url="$WP_URL" --base="/" --subdomains --title="Test" --admin_user="$WP_ADMIN_USERNAME" --admin_password="$WP_ADMIN_PASSWORD" --admin_email="admin@$WP_DOMAIN" --skip-email
   - wp rewrite structure '/%postname%/' --hard
+  - wp site create --slug="$WP_SUBDOMAIN_1" --title="$WP_SUBDOMAIN_1_TITLE"
+  - wp site create --slug="$WP_SUBDOMAIN_2" --title="$WP_SUBDOMAIN_2_TITLE"
   # update WordPress database to avoid prompts
-  - wp core update-db
-  # copy the plugin in the WordPress plugin folder
-  - cp -r $TRAVIS_BUILD_DIR $WP_FOLDER/wp-content/plugins/idlikethis
-  # show the plugins folder contents to make sure the plugin folder is there
-  - ls $WP_FOLDER/wp-content/plugins
-  # activate the plugin
-  - wp plugin activate idlikethis
-  # make sure the plugin is active on the site
-  - wp plugin list --status=active
+  - wp core update-db --network
+  # empty all sites of all content
+  - wp site list --field=url | xargs -n1 -I % wp --url=% site empty --yes
   # export a dump of the just installed database to the _data folder
   - wp db export $TRAVIS_BUILD_DIR/tests/_data/dump.sql
   # get back to the build folder
   - cd $TRAVIS_BUILD_DIR
-  # open up the site folder to allow the PHP application to read/write/execute on it
-  - sudo chmod -R 777 $WP_FOLDER
   # copy the Nginx configuration file to the available sites
   - sudo cp build/travis-nginx-conf /etc/nginx/sites-available/$WP_DOMAIN
   - sudo sed -e "s?%WP_FOLDER%?$WP_FOLDER?g" --in-place /etc/nginx/sites-available/$WP_DOMAIN
@@ -103,8 +107,16 @@ before_script:
   # build Codeception modules
   - codecept build
 
+   # set the correct path to phantomjs bin
+  - sed -i "s_%%phantomjs%%_$(which phantomjs)_" $TRAVIS_BUILD_DIR/.env
+
 script:
-  - codecept run acceptance
-  - codecept run functional
-  - codecept run integration
   - codecept run unit
+  - codecept run acceptance
+  - codecept run phantomjs
+  - codecept run functional
+  - codecept run climodule
+  - codecept run wpmodule
+  - codecept run wploadersuite
+  - codecept run muloader
+  - codecept run cli
