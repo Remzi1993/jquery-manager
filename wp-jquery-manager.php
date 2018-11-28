@@ -24,6 +24,10 @@
 // If this file is called directly, abort.
 defined('ABSPATH') or exit();
 
+if ( defined('WP_CLI') && WP_CLI ) {
+     $_SERVER['HTTP_HOST'] = 'localhost';
+}
+
 // Config - CONSTANTS
 // http://php.net/manual/en/dir.constants.php & https://www.quora.com/Should-class-constants-be-all-uppercase-in-PHP
 define( 'WP_JQUERY_MANAGER_PLUGIN_DIR_PATH', str_replace( "\\", "/", plugin_dir_path(__FILE__) ) );
