@@ -1,5 +1,9 @@
-# Do not give sudo access
-sudo: false
+# Give sudo to environment
+sudo: required
+
+# Make Docker available inside the container
+services:
+  - docker
 
 # Use the PHP environment
 language: php
@@ -40,5 +44,15 @@ before_script:
 
 # Run tests
 script:
-  # Run just unit tests
+  # Run just unit tests first -- if they fail we never spend the time building the environment for integration tests
   - composer unit-tests
+  # Install full test environment using composer script
+  - composer wp-install
+  # Run integration tests
+  - composer wp-tests
+# IF tests passed run coverage and sniffs
+after_sucess:
+  # Run coverage
+  - vendor/bin/phpunit --coverage-clover=coverage.xml
+  # Report to codecov
+  - bash <(curl -s https://codecov.io/bash) CODECOV_KEY
