@@ -52,3 +52,5 @@ Report bugs, issues, questions and/or feature request on our GitHub [issues](htt
 Use the following command to clone the repository:<br>
 `$ git clone git://github.com/Remzi1993/wp-jquery-manager.git`<br>
 Working on some awesome feature? Create a new branch and when you're finished do a pull request.
+
+[![forthebadge](https://forthebadge.com/images/badges/built-with-wordpress.svg)](https://forthebadge.com)
