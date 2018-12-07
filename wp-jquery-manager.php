@@ -48,8 +48,8 @@ define( 'WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_3X', 'jquery-migrate-3.0.1' );
 define( 'WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_1X', 'jquery-migrate-1.4.1' );
 
 // Settings
-define( 'WP_JQUERY_MANAGER_PLUGIN_JQUERY_SETTINGS', (array) get_option( 'wp_jquery_manager_plugin_jquery_settings' ) );
-define( 'WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_SETTINGS', (array) get_option( 'wp_jquery_manager_plugin_jquery_migrate_settings' ) );
+$wp_jquery_manager_plugin_jquery_settings = (array) get_option( 'wp_jquery_manager_plugin_jquery_settings' );
+$wp_jquery_manager_plugin_jquery_migrate_settings = (array) get_option( 'wp_jquery_manager_plugin_jquery_migrate_settings' );
 
 // Plugin updater GitHub Repository
 require WP_JQUERY_MANAGER_PLUGIN_DIR_PATH . 'inc/plugin-update-checker/plugin-update-checker.php';
@@ -248,7 +248,7 @@ if ( !class_exists( 'wp_jquery_manager_plugin' ) ) {
 	    }
 
 	    public function plugin_settings_page() {
-			$jquery_options = WP_JQUERY_MANAGER_PLUGIN_JQUERY_SETTINGS;
+			$jquery_options = $GLOBALS['wp_jquery_manager_plugin_jquery_settings'];
 
 			// For debugging
 			if ( isset( $jquery_options['debug_mode'] ) ) {
@@ -299,8 +299,8 @@ function wp_jquery_manager_plugin_front_end_scripts() {
 	$wp_admin = is_admin();
 	$wp_customizer = is_customize_preview();
 
-	$jquery_options = WP_JQUERY_MANAGER_PLUGIN_JQUERY_SETTINGS;
-	$jquery_migrate_options = WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_SETTINGS;
+    $jquery_options = $GLOBALS['wp_jquery_manager_plugin_jquery_settings'];
+    $jquery_migrate_options = $GLOBALS['wp_jquery_manager_plugin_jquery_migrate_settings'];
 
 	$margin_j = "margin: 40px 0 0 20px;";
 	$margin_jm = "margin: 140px 0 0 20px;";
@@ -449,8 +449,8 @@ function wp_jquery_manager_plugin_add_attribute( $tag, $handle ) {
 		return $tag;
 	}
 
-	$jquery_options = WP_JQUERY_MANAGER_PLUGIN_JQUERY_SETTINGS;
-	$jquery_migrate_options = WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_SETTINGS;
+    $jquery_options = $GLOBALS['wp_jquery_manager_plugin_jquery_settings'];
+    $jquery_migrate_options = $GLOBALS['wp_jquery_manager_plugin_jquery_migrate_settings'];
 
 	if ( isset( $jquery_options['jquery_execution'] ) ) {
 		switch ( $jquery_options['jquery_execution'] ) {
