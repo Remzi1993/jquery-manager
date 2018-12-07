@@ -22,6 +22,9 @@ function wp_jquery_manager_plugin_upgrade_process() {
 		return;
 	}
 
+	$jquery_options = $GLOBALS['wp_jquery_manager_plugin_jquery_settings'];
+	$jquery_migrate_options = $GLOBALS['wp_jquery_manager_plugin_jquery_migrate_settings'];
+
 	// jQuery
 	if ( !empty( $jquery_options['jquery_version'] ) ) {
 		// Upgrade previous jQuery settings
