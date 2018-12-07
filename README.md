@@ -22,7 +22,6 @@ Because none of the developer tools let's you select a specific version of jQuer
 :new: Debug mode<br>
 :thumbsup: Active development<br>
 :thumbsup: Active support<br>
-:office: This is also my fulltime job, I optimize WordPress websites and work for Advanza Direct, see https://advanzadirect.nl <br>
 :arrows_counterclockwise: Working on more features
 
 ## [Download](https://github.com/Remzi1993/wp-jquery-manager/releases) jQuery Manager for WordPress
