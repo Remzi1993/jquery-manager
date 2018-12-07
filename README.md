@@ -6,12 +6,15 @@
 [![Travis (.org) branch](https://img.shields.io/travis/Remzi1993/wp-jquery-manager/master.svg)](https://travis-ci.org/Remzi1993/wp-jquery-manager)
 
 # jQuery Manager for WordPress
+
 jQuery Manager for WordPress is an open source project and I would like to invite anyone to contribute. The development and issue tracker is located here on GitHub.
 
 ## About this debugging tool
+
 Manage jQuery and jQuery Migrate on a WordPress website, select a specific jQuery and/or jQuery Migrate version. The ultimate jQuery debugging tool for WordPress
 
 ## Why yet another jQuery Updater / Manager / Developer / Debugging tool?
+
 Because none of the developer tools let's you select a specific version of jQuery and/or jQuery Migrate. Providing both the production and the minified version. See features below! :trophy:<br>
 :white_check_mark: **Turn on/off** jQuery and/or jQuery Migrate<br>
 :white_check_mark: Activate a **specific version** of jQuery and/or jQuery Migrate<br>
@@ -25,30 +28,41 @@ Because none of the developer tools let's you select a specific version of jQuer
 :arrows_counterclockwise: Working on more features
 
 ## [Download](https://github.com/Remzi1993/wp-jquery-manager/releases) jQuery Manager for WordPress
+
 Go to the [releases](https://github.com/Remzi1993/wp-jquery-manager/releases) page and download the .zip file.
 
 ### Installation via WordPress admin
+
 1. Navigate to > `Plugins` > `Add New`
 2. On your top left > click on `Upload Plugin` and select your .zip file you downloaded earlier and click `Install Now`
 3. By activating the plugin, jQuery and jQuery Migrate are updated to the latest stable version. (Plugin settings are located under `Tools`)
 
 ### Installation via FTP, SFTP or SSH
-1. Unzip (extract/unpack/uncompress) the .zip file you downloaded from [GitHub releases](https://github.com/Remzi1993/wp-jquery-manager/releases)
+
+1. Unzip (extract/unpack/uncompress) the .zip file you downloaded from
+   [GitHub releases](https://github.com/Remzi1993/wp-jquery-manager/releases)
 2. Upload the folder `wp-jquery-manager` to the `/wp-content/plugins/` directory on your server
-3. By activating the plugin, jQuery and jQuery Migrate are updated to the latest stable version. (Plugin settings are located under `Tools`)
+3. By activating the plugin, jQuery and jQuery Migrate are updated to the latest stable version.
+   (Plugin settings are located under `Tools`)
 
 ## I have a few people I would like to thank
-[@YahnisElsts](https://github.com/YahnisElsts) for his amazing work on a updater, that we're using in this open source project:<br> https://github.com/YahnisElsts/plugin-update-checker <br><br>
+
+[@YahnisElsts](https://github.com/YahnisElsts) for his amazing work on a updater, that we're using in this
+open source project:<br> https://github.com/YahnisElsts/plugin-update-checker <br><br>
 [@tareq1988](https://github.com/tareq1988) for his awesome WordPress Settings API abstraction class:<br> https://github.com/tareq1988/wordpress-settings-api-class <br>
 
 ## Bug reports
-Report bugs, issues, questions and/or feature request on our GitHub [issues](https://github.com/Remzi1993/wp-jquery-manager/issues) page.
+
+Report bugs, issues, questions and/or feature request on our GitHub
+[issues](https://github.com/Remzi1993/wp-jquery-manager/issues) page.
 
 ## Screenshots
+
 <img src="https://raw.githubusercontent.com/Remzi1993/wp-jquery-manager/master/assets/img/screenshot-1.jpg">
 <img src="https://raw.githubusercontent.com/Remzi1993/wp-jquery-manager/master/assets/img/screenshot-2.jpg">
 
 ## Do you want to help with development?
+
 Use the following command to clone the repository:<br>
 `$ git clone git://github.com/Remzi1993/wp-jquery-manager.git`<br>
 Working on some awesome feature? Create a new branch and when you're finished do a pull request.
