@@ -304,8 +304,8 @@ function wp_jquery_manager_plugin_front_end_scripts() {
 
 	$margin_j = "margin: 40px 0 0 20px;";
 	$margin_jm = "margin: 140px 0 0 20px;";
-	$style_j = "position: fixed; top: 0; left: 0; z-index: 9999; color: black; background: gray; " . $margin_j .  " padding: 20px;";
-	$style_jm = "position: fixed; top: 0; left: 0; z-index: 9999; color: black; background: gray; " . $margin_jm .  " padding: 20px;";
+	$style_j = "position: fixed; top: 0; left: 0; z-index: 9999; color: black; background: gray; " . $margin_j .  " padding: 20px; font-size: 30px;";
+	$style_jm = "position: fixed; top: 0; left: 0; z-index: 9999; color: black; background: gray; " . $margin_jm .  " padding: 20px; font-size: 30px;";
 
 	// jQuery
 	if ( $wp_admin || $wp_customizer ) {
@@ -313,7 +313,7 @@ function wp_jquery_manager_plugin_front_end_scripts() {
 		return;
 	}
 	elseif ( !isset( $jquery_options['jquery'] ) ) { // Default setting
-		// Deregister WP core jQuery, see https://github.com/Remzi1993/wp-jquery-manager/issues/2 and https://github.com/WordPress/WordPress/blob/master/wp-includes/script-loader.php#L226
+		// Deregister WP core jQuery, see https://github.com/Remzi1993/wp-jquery-manager/issues/2 and https://github.com/WordPress/WordPress/blob/91da29d9afaa664eb84e1261ebb916b18a362aa9/wp-includes/script-loader.php#L226
 		wp_deregister_script( 'jquery' );
 		wp_deregister_script( 'jquery-core' );
 
@@ -336,7 +336,7 @@ function wp_jquery_manager_plugin_front_end_scripts() {
 		// When debugging is enabled
 		if ( isset( $jquery_options['debug_mode'] ) ) {
 			if ( $jquery_options['debug_mode'] == 'on' ) {
-				echo '<h1 style="'. $style_j .'">jQuery version: ' . WP_JQUERY_MANAGER_PLUGIN_JQUERY_3X . '</h1>';
+				echo '<div style="'. $style_j .'">jQuery version: ' . WP_JQUERY_MANAGER_PLUGIN_JQUERY_3X . '</div>';
 			}
 		}
 	}
@@ -356,7 +356,7 @@ function wp_jquery_manager_plugin_front_end_scripts() {
 		// When debugging is enabled
 		if ( isset( $jquery_options['debug_mode'] ) ) {
 			if ( $jquery_options['debug_mode'] == 'on' ) {
-				echo '<h1 style="'. $style_j .'">jQuery version: ' . $jquery_options['jquery_version'] . '</h1>';
+				echo '<div style="'. $style_j .'">jQuery version: ' . $jquery_options['jquery_version'] . '</div>';
 			}
 		}
 	}
@@ -386,7 +386,7 @@ function wp_jquery_manager_plugin_front_end_scripts() {
 		// When debugging is enabled
 		if ( isset( $jquery_options['debug_mode'] ) ) {
 			if ( $jquery_options['debug_mode'] == 'on' ) {
-				echo '<h1 style="'. $style_jm .'">jQuery Migrate version: ' . WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_3X . '</h1>';
+				echo '<div style="'. $style_jm .'">jQuery Migrate version: ' . WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_3X . '</div>';
 			}
 		}
 	}
@@ -412,7 +412,7 @@ function wp_jquery_manager_plugin_front_end_scripts() {
 		// When debugging is enabled
 		if ( isset( $jquery_options['debug_mode'] ) ) {
 			if ( $jquery_options['debug_mode'] == 'on' ) {
-				echo '<h1 style="'. $style_jm .'">jQuery Migrate version: ' . $jquery_migrate_options['jquery_migrate_version'] . '</h1>';
+				echo '<div style="'. $style_jm .'">jQuery Migrate version: ' . $jquery_migrate_options['jquery_migrate_version'] . '</div>';
 			}
 		}
 	}
