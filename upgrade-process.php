@@ -17,10 +17,13 @@ register_activation_hook(__FILE__, 'wp_jquery_manager_plugin_activation');
 // Check if the user has changed the settings, has old versions of jQuery and/or jQuery Migrate settings and han excute the upgrade process
 function wp_jquery_manager_plugin_upgrade_process() {
 	// Get entire arrays - jQuery settings and jQuery Migrate settings
-	$jquery_options = (array) $GLOBALS['wp_jquery_manager_plugin_jquery_settings'];
-	$jquery_migrate_options = (array) $GLOBALS['wp_jquery_manager_plugin_jquery_migrate_settings'];
+	// if (isset($GLOBALS['wp_jquery_manager_plugin_jquery_settings'])) {
+	// 	echo "This var is set so I will print.";
+	// }
+	// $jquery_options = (array) $GLOBALS['wp_jquery_manager_plugin_jquery_settings']['jquery_version'];
+	// $jquery_migrate_options = (array) $GLOBALS['wp_jquery_manager_plugin_jquery_migrate_settings']['jquery_migrate_version'];
 
-	if ( empty( $jquery_options['jquery_version'] ) && empty( $jquery_migrate_options['jquery_migrate_version'] ) ) {
+	if ( !isset( $GLOBALS['wp_jquery_manager_plugin_jquery_settings']['jquery_version'] ) && !isset( $GLOBALS['wp_jquery_manager_plugin_jquery_migrate_settings']['jquery_migrate_version'] ) ) {
 		return;
 	}
 
