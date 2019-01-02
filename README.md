@@ -58,8 +58,8 @@ Report bugs, issues, questions and/or feature request on our GitHub
 
 ## Screenshots
 
-<img src="https://raw.githubusercontent.com/Remzi1993/wp-jquery-manager/master/assets/img/screenshot-1.jpg">
-<img src="https://raw.githubusercontent.com/Remzi1993/wp-jquery-manager/master/assets/img/screenshot-2.jpg">
+<img src="https://raw.githubusercontent.com/Remzi1993/wp-jquery-manager/master/assets/img/screenshot-1.png">
+<img src="https://raw.githubusercontent.com/Remzi1993/wp-jquery-manager/master/assets/img/screenshot-2.png">
 
 ## Do you want to help with development?
 
