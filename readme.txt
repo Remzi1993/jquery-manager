@@ -36,7 +36,8 @@ Installation via WordPress admin
 Installation via FTP, SFTP or SSH
 1. Unzip (extract/unpack/uncompress) the .zip file you downloaded from [GitHub releases](https://github.com/Remzi1993/wp-jquery-manager/releases)
 2. Upload the folder `wp-jquery-manager` to the `/wp-content/plugins/` directory on your server
-3. By activating the plugin, jQuery and jQuery Migrate are updated to the latest stable version. (Plugin settings are located under `Tools`)
+3. Activate the plugin through the 'Plugins' menu in WordPress
+4. By activating the plugin, jQuery and jQuery Migrate are updated to the latest stable version. (Plugin settings are located under `Tools`)
 
 == Frequently Asked Questions ==
 Is this plugin compatible with PHP 5.6, 7, 7.1, 7.2, HHVM and/or whatever?
