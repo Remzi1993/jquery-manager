@@ -70,11 +70,11 @@ require WP_JQUERY_MANAGER_PLUGIN_DIR_PATH . 'inc/settings-api.php';
 
 // Add settings link to our plugin section on the plugin list page
 function wp_jquery_manager_plugin_add_action_links ( $links ) {
-	$mylinks = array(
+	$plugin_links = array(
 		'<a href="' . WP_JQUERY_MANAGER_PLUGIN_ADMIN_URL . '">Settings</a>',
 	);
 
-	return array_merge( $links, $mylinks );
+	return array_merge( $links, $plugin_links );
 }
 add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), 'wp_jquery_manager_plugin_add_action_links' );
 
@@ -330,16 +330,16 @@ function wp_jquery_manager_plugin_front_end_scripts() {
     if ( isset( $jquery_migrate_options['jquery_migrate_version'] ) ) {
         switch ( $jquery_migrate_options['jquery_migrate_version'] ) {
             case 'jquery_migrate_3x':
-                define( 'WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_VERSION', WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_3X . '.js' );
+                $jquery_migrate_version = WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_3X . '.js';
                 break;
             case 'jquery_migrate_3x_min':
-                define( 'WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_VERSION', WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_3X . '.min.js' );
+                $jquery_migrate_version = WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_3X . '.min.js';
                 break;
             case 'jquery_migrate_1x':
-                define( 'WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_VERSION', WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_1X . '.js' );
+                $jquery_migrate_version = WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_1X . '.js';
                 break;
             case 'jquery_migrate_1x_min':
-                define( 'WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_VERSION', WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_1X . '.min.js' );
+                $jquery_migrate_version = WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_1X . '.min.js';
                 break;
         } // End switch case
     }
@@ -356,10 +356,10 @@ function wp_jquery_manager_plugin_front_end_scripts() {
 		wp_deregister_script( 'jquery-core' );
 
 		// Default jQuery version
-		$jquery_version = 'assets/js/' . WP_JQUERY_MANAGER_PLUGIN_JQUERY_3X . '.min.js';
+		$jquery = 'assets/js/' . WP_JQUERY_MANAGER_PLUGIN_JQUERY_3X . '.min.js';
 
 		// Register jQuery in the head
-		wp_register_script( 'jquery-core', WP_JQUERY_MANAGER_PLUGIN_DIR_URL . $jquery_version, array(), null, false );
+		wp_register_script( 'jquery-core', WP_JQUERY_MANAGER_PLUGIN_DIR_URL . $jquery, array(), null, false );
 
 		/**
 		 * Register jquery using jquery-core as a dependency, so other scripts could use the jquery handle
@@ -402,10 +402,10 @@ function wp_jquery_manager_plugin_front_end_scripts() {
 		wp_deregister_script( 'jquery-migrate' );
 
 		// Default jQuery Migrate version
-		$jquery_migrate_version = 'assets/js/' . WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_3X . '.js';
+		$jquery_migrate = 'assets/js/' . WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_3X . '.js';
 
 		// Register and than enqueue jQuery Migrate in the head
-		wp_register_script( 'jquery-migrate', WP_JQUERY_MANAGER_PLUGIN_DIR_URL . $jquery_migrate_version, array(), null, false );
+		wp_register_script( 'jquery-migrate', WP_JQUERY_MANAGER_PLUGIN_DIR_URL . $jquery_migrate, array(), null, false );
 		wp_enqueue_script( 'jquery-migrate' );
 
 	}
@@ -415,17 +415,17 @@ function wp_jquery_manager_plugin_front_end_scripts() {
 		wp_deregister_script( 'jquery-migrate' );
 
 		// Get jQuery Migrate version
-        $jquery_migrate_version = 'assets/js/' . WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_VERSION;
+        $jquery_migrate = 'assets/js/' . $jquery_migrate_version;
 
 		// Setting head or body
 		if ( $jquery_migrate_options['jquery_migrate_head_body'] == 'head' ) {
 			// Enqueue jQuery Migrate in the head
-			wp_register_script( 'jquery-migrate', WP_JQUERY_MANAGER_PLUGIN_DIR_URL . $jquery_migrate_version, array(), null, false );
+			wp_register_script( 'jquery-migrate', WP_JQUERY_MANAGER_PLUGIN_DIR_URL . $jquery_migrate, array(), null, false );
 			wp_enqueue_script( 'jquery-migrate' );
 		}
 		else {
 			// Enqueue jQuery Migrate before </body>
-			wp_register_script( 'jquery-migrate', WP_JQUERY_MANAGER_PLUGIN_DIR_URL . $jquery_migrate_version, array(), null, true );
+			wp_register_script( 'jquery-migrate', WP_JQUERY_MANAGER_PLUGIN_DIR_URL . $jquery_migrate, array(), null, true );
 			wp_enqueue_script( 'jquery-migrate' );
 		}
 
@@ -448,8 +448,8 @@ function wp_jquery_manager_plugin_front_end_scripts() {
             $style_j = "position: fixed; top: 0; left: 0; z-index: 9999; color: black; background: gray; " . $margin_j .  " padding: 20px; font-size: 30px;";
             $style_jm = "position: fixed; top: 0; left: 0; z-index: 9999; color: black; background: gray; " . $margin_jm .  " padding: 20px; font-size: 30px;";
 
-            echo '<div style="'. $style_j .'">jQuery version: ' . WP_JQUERY_MANAGER_PLUGIN_JQUERY_VERSION . '</div>';
-            echo '<div style="'. $style_jm .'">jQuery version: ' . WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_VERSION . '</div>';
+            echo '<div style="'. $style_j .'">jQuery version: ' . $jquery_version . '</div>';
+            echo '<div style="'. $style_jm .'">jQuery version: ' . $jquery_migrate_version . '</div>';
         }
     }
 
