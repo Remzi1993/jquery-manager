@@ -1,3 +1,6 @@
+[Download jQuery Manager v1.7.1](https://github.com/Remzi1993/wp-jquery-manager/releases/download/1.7.1/wp-jquery-manager.zip)
+[releases](https://github.com/Remzi1993/wp-jquery-manager/releases)
+
 [![GitHub release](https://img.shields.io/github/release/Remzi1993/wp-jquery-manager.svg)](https://github.com/Remzi1993/wp-jquery-manager/releases/latest)
 [![GitHub issues](https://img.shields.io/github/issues/Remzi1993/wp-jquery-manager.svg)](https://github.com/Remzi1993/wp-jquery-manager/issues)
 [![GitHub forks](https://img.shields.io/github/forks/Remzi1993/wp-jquery-manager.svg)](https://github.com/Remzi1993/wp-jquery-manager/network/members)
