@@ -2,7 +2,7 @@
 Contributors: remzicavdar
 Tags: jquery, update, jquery ui, javascript, jq, jquery migrate, jquery updater, jquery manager
 Requires at least: 4.9
-Tested up to: 5.2
+Tested up to: 5.3
 Requires PHP: 5.6
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0
