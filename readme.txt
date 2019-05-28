@@ -41,7 +41,7 @@ Installation via FTP, SFTP or SSH
 
 == Frequently Asked Questions ==
 Is this plugin compatible with PHP 5.6, 7, 7.1, 7.2, HHVM and/or whatever?
-1. Short answer: Properly
+1. Short answer: probably
 2. Long answer: I honestly don't know for sure. I didn't used PHP7's new features or something, but I don't know for sure. I made a simple plugin. That's why I recommend a minimum of PHP 5.6
 
 This plugin breaks my site! How do I fix it?
