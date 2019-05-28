@@ -39,7 +39,7 @@ define( 'WP_JQUERY_MANAGER_PLUGIN_SITE_URL', get_site_url() );
 define( 'WP_JQUERY_MANAGER_PLUGIN_DOMAIN_NAME', $_SERVER['HTTP_HOST'] );
 
 // jQuery versions, don't forget to update your files! .js and .min.js are automatically added accordingly at the end of the name/file.
-define( 'WP_JQUERY_MANAGER_PLUGIN_JQUERY_3X', 'jquery-3.3.1' );
+define( 'WP_JQUERY_MANAGER_PLUGIN_JQUERY_3X', 'jquery-3.4.1' );
 define( 'WP_JQUERY_MANAGER_PLUGIN_JQUERY_2X', 'jquery-2.2.4' );
 define( 'WP_JQUERY_MANAGER_PLUGIN_JQUERY_1X', 'jquery-1.12.4' );
 
@@ -249,16 +249,81 @@ if ( !class_exists( 'wp_jquery_manager_plugin' ) ) {
 
 	    public function plugin_settings_page() {
 			$jquery_options = $GLOBALS['wp_jquery_manager_plugin_jquery_settings'];
+            $jquery_migrate_options = $GLOBALS['wp_jquery_manager_plugin_jquery_migrate_settings'];
+
+            // Get jQuery version
+            if ( isset( $jquery_options['jquery_version'] ) ) {
+                switch ( $jquery_options['jquery_version'] ) {
+                    case 'jquery_3x_min':
+                        $jquery_version = WP_JQUERY_MANAGER_PLUGIN_JQUERY_3X . '.min.js';
+                        break;
+                    case 'jquery_3x':
+                        $jquery_version = WP_JQUERY_MANAGER_PLUGIN_JQUERY_3X . '.js';
+                        break;
+                    case 'jquery_2x_min':
+                        $jquery_version = WP_JQUERY_MANAGER_PLUGIN_JQUERY_2X . '.min.js';
+                        break;
+                    case 'jquery_2x':
+                        $jquery_version = WP_JQUERY_MANAGER_PLUGIN_JQUERY_2X . '.js';
+                        break;
+                    case 'jquery_1x_min':
+                        $jquery_version = WP_JQUERY_MANAGER_PLUGIN_JQUERY_1X . '.min.js';
+                        break;
+                    case 'jquery_1x':
+                        $jquery_version = WP_JQUERY_MANAGER_PLUGIN_JQUERY_1X . '.js';
+                        break;
+                } // End switch case
+            }
+
+            // Get jQuery Migrate version
+            if ( isset( $jquery_migrate_options['jquery_migrate_version'] ) ) {
+                switch ( $jquery_migrate_options['jquery_migrate_version'] ) {
+                    case 'jquery_migrate_3x':
+                        $jquery_migrate_version = WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_3X . '.js';
+                        break;
+                    case 'jquery_migrate_3x_min':
+                        $jquery_migrate_version = WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_3X . '.min.js';
+                        break;
+                    case 'jquery_migrate_1x':
+                        $jquery_migrate_version = WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_1X . '.js';
+                        break;
+                    case 'jquery_migrate_1x_min':
+                        $jquery_migrate_version = WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_1X . '.min.js';
+                        break;
+                } // End switch case
+            }
 
 			// For debugging
 			if ( isset( $jquery_options['debug_mode'] ) ) {
 				if ( $jquery_options['debug_mode'] == 'on' ) {
 					echo '<h1>Debug information</h1>';
-					echo '<strong>Plugin directory:</strong> ' . WP_JQUERY_MANAGER_PLUGIN_DIR_PATH . '<br>';
-					echo '<strong>Plugin URL:</strong> ' . WP_JQUERY_MANAGER_PLUGIN_DIR_URL . '<br>';
-					echo '<strong>Plugin admin URL:</strong> ' . WP_JQUERY_MANAGER_PLUGIN_ADMIN_URL . '<br>';
-					echo '<strong>Domain name:</strong> ' . WP_JQUERY_MANAGER_PLUGIN_DOMAIN_NAME . '<br>';
-					echo '<strong>URL:</strong> ' . WP_JQUERY_MANAGER_PLUGIN_SITE_URL . '<br>';
+
+                    echo '<p>';
+                    echo '<span><strong>Plugin directory:</strong> ' . WP_JQUERY_MANAGER_PLUGIN_DIR_PATH . '</span><br>';
+					echo '<span><strong>Plugin URL:</strong> ' . WP_JQUERY_MANAGER_PLUGIN_DIR_URL . '</span><br>';
+					echo '<span><strong>Plugin admin URL:</strong> ' . WP_JQUERY_MANAGER_PLUGIN_ADMIN_URL . '</span>';
+                    echo '</p>';
+
+                    echo '<p>';
+					echo '<span><strong>Domain name:</strong> ' . WP_JQUERY_MANAGER_PLUGIN_DOMAIN_NAME . '</span><br>';
+					echo '<span><strong>URL:</strong> ' . WP_JQUERY_MANAGER_PLUGIN_SITE_URL . '</span>';
+                    echo '</p>';
+
+                    echo '<p>';
+                    if ( $jquery_options['jquery'] == 'on' ) {
+                        echo '<span><strong>jQuery:</strong> ' . $jquery_version . '</span><br>';
+                    }
+                    elseif ( $jquery_options['jquery'] == 'off' ) {
+                        echo '<span><strong>jQuery:</strong> disabled</span><br>';
+                    }
+
+                    if ( $jquery_migrate_options['jquery_migrate'] == 'on' ) {
+                        echo '<strong>jQuery Migrate:</strong> ' . $jquery_migrate_version;
+                    }
+                    elseif ( $jquery_migrate_options['jquery_migrate'] == 'off' ) {
+                        echo '<span><strong>jQuery Migrate:</strong> disabled</span><br>';
+                    }
+                    echo '</p>';
 				}
 			}
 
@@ -448,8 +513,18 @@ function wp_jquery_manager_plugin_front_end_scripts() {
             $style_j = "position: fixed; top: 0; left: 0; z-index: 9999; color: black; background: gray; " . $margin_j .  " padding: 20px; font-size: 30px;";
             $style_jm = "position: fixed; top: 0; left: 0; z-index: 9999; color: black; background: gray; " . $margin_jm .  " padding: 20px; font-size: 30px;";
 
-            echo '<div style="'. $style_j .'">jQuery version: ' . $jquery_version . '</div>';
-            echo '<div style="'. $style_jm .'">jQuery version: ' . $jquery_migrate_version . '</div>';
+            if ( $jquery_options['jquery'] == 'on' ) {
+                echo '<div style="'. $style_j .'">jQuery version: ' . $jquery_version . '</div>';
+            }
+
+            if ( $jquery_migrate_options['jquery_migrate'] == 'on' ) {
+                echo '<div style="'. $style_jm .'">jQuery Migrate version: ' . $jquery_migrate_version . '</div>';
+            }
+
+            if ( $jquery_options['jquery'] == 'off' && $jquery_migrate_options['jquery_migrate'] == 'off' ) {
+                echo '<div style="'. $style_j .'">jQuery and jQuery Migrate are both disabled</div>';
+            }
+
         }
     }
 
