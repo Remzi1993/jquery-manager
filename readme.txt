@@ -2,7 +2,7 @@
 Contributors: remzicavdar
 Tags: jquery, update, jquery ui, javascript, jq, jquery migrate, jquery updater, jquery manager
 Requires at least: 4.9
-Tested up to: 5
+Tested up to: 5.2.1
 Requires PHP: 5.6
 Stable tag: trunk
 License: GPLv3

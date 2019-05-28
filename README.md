@@ -1,4 +1,4 @@
-# [Download jQuery Manager v1.7.1](https://github.com/Remzi1993/wp-jquery-manager/releases/download/1.7.1/wp-jquery-manager.zip)
+# [Download jQuery Manager v1.7.3](https://github.com/Remzi1993/wp-jquery-manager/releases/download/1.7.3/wp-jquery-manager.zip) (WordPress plugin)
 
 
 [![GitHub release](https://img.shields.io/github/release/Remzi1993/wp-jquery-manager.svg)](https://github.com/Remzi1993/wp-jquery-manager/releases/latest)
@@ -7,6 +7,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/Remzi1993/wp-jquery-manager.svg)](https://github.com/Remzi1993/wp-jquery-manager/stargazers)
 [![GitHub license](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://github.com/Remzi1993/wp-jquery-manager/blob/master/LICENSE)
 [![Travis (.org) branch](https://img.shields.io/travis/Remzi1993/wp-jquery-manager/master.svg)](https://travis-ci.org/Remzi1993/wp-jquery-manager)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FRemzi1993%2Fwp-jquery-manager.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FRemzi1993%2Fwp-jquery-manager?ref=badge_shield)
 
 # jQuery Manager for WordPress
 
