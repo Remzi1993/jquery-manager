@@ -12,7 +12,7 @@
  * Plugin Name:		jQuery Manager for WordPress
  * Plugin URI:		https://github.com/Remzi1993/wp-jquery-manager
  * Description:		Manage jQuery and jQuery Migrate on a WordPress website, select a specific jQuery and/or jQuery Migrate version. The ultimate jQuery debugging tool for WordPress. This plugin is a open source project, made possible by your contribution (code). Development is done on GitHub.
- * Version:			1.7.5
+ * Version:			1.7.6
  * Author:			Remzi Cavdar
  * Author URI:		https://twitter.com/remzicavdar
  * License:			GPLv3
@@ -40,6 +40,7 @@ define( 'WP_JQUERY_MANAGER_PLUGIN_DOMAIN_NAME', $_SERVER['HTTP_HOST'] );
 
 // jQuery versions, don't forget to update your files! .js and .min.js are automatically added accordingly at the end of the name/file.
 define( 'WP_JQUERY_MANAGER_PLUGIN_JQUERY_3X', 'jquery-3.4.1' );
+define( 'WP_JQUERY_MANAGER_PLUGIN_JQUERY_3X_SLIM', 'jquery-3.4.1.slim' );
 define( 'WP_JQUERY_MANAGER_PLUGIN_JQUERY_2X', 'jquery-2.2.4' );
 define( 'WP_JQUERY_MANAGER_PLUGIN_JQUERY_1X', 'jquery-1.12.4' );
 
@@ -145,6 +146,7 @@ if ( !class_exists( 'wp_jquery_manager_plugin' ) ) {
 	     */
 	    public function get_settings_fields() {
 			$jquery_3x = WP_JQUERY_MANAGER_PLUGIN_JQUERY_3X;
+            $jquery_3x_slim = WP_JQUERY_MANAGER_PLUGIN_JQUERY_3X_SLIM;
 			$jquery_2x = WP_JQUERY_MANAGER_PLUGIN_JQUERY_2X;
 			$jquery_1x = WP_JQUERY_MANAGER_PLUGIN_JQUERY_1X;
 
@@ -168,18 +170,20 @@ if ( !class_exists( 'wp_jquery_manager_plugin' ) ) {
 	                    'type'    => 'select',
 	                    'default' => 'jquery_3x_min',
 	                    'options' => array(
-	                        'jquery_3x_min' => $jquery_3x . '.min.js',
-							'jquery_3x'     => $jquery_3x . '.js',
-							'jquery_2x_min'	=> $jquery_2x . '.min.js',
-							'jquery_2x'		=> $jquery_2x . '.js',
-							'jquery_1x_min'	=> $jquery_1x . '.min.js',
-	                        'jquery_1x'		=> $jquery_1x . '.js'
+	                        'jquery_3x_min'      => $jquery_3x . '.min.js (default)',
+							'jquery_3x'          => $jquery_3x . '.js',
+                            'jquery_3x_slim_min' => $jquery_3x_slim . '.min.js',
+							'jquery_3x_slim'     => $jquery_3x_slim . '.js',
+							'jquery_2x_min'      => $jquery_2x . '.min.js',
+							'jquery_2x'          => $jquery_2x . '.js',
+							'jquery_1x_min'      => $jquery_1x . '.min.js',
+	                        'jquery_1x'          => $jquery_1x . '.js'
 	                    )
 	                ),
 					array(
 	                    'name'    => 'jquery_execution',
 	                    'label'   => __( 'jQuery execution', $this->text_domain ),
-	                    'desc'    => __( 'Experimental! Some plugins and/or themes may not support this', $this->text_domain ),
+	                    'desc'    => __( 'Experimental! Some plugins and/or themes may not support this. <strong>Broken for now, does nothing.</strong> See: https://github.com/Remzi1993/wp-jquery-manager/issues/8', $this->text_domain ),
 	                    'type'    => 'radio',
 						'default' => 'default',
 	                    'options' => array(
@@ -212,7 +216,7 @@ if ( !class_exists( 'wp_jquery_manager_plugin' ) ) {
 						'type'    => 'select',
 						'default' => 'jquery_migrate_3x_min',
 						'options' => array(
-							'jquery_migrate_3x_min'	=> $jquery_migrate_3x . '.min.js',
+							'jquery_migrate_3x_min'	=> $jquery_migrate_3x . '.min.js (default)',
                             'jquery_migrate_3x'		=> $jquery_migrate_3x . '.js',
 							'jquery_migrate_1x_min'	=> $jquery_migrate_1x . '.min.js',
                             'jquery_migrate_1x'		=> $jquery_migrate_1x . '.js'
@@ -221,18 +225,18 @@ if ( !class_exists( 'wp_jquery_manager_plugin' ) ) {
 					array(
 	                    'name'    => 'jquery_migrate_head_body',
 	                    'label'   => __( 'jQuery Migrate code', $this->text_domain ),
-	                    'desc'    => __( 'Choose where to put jQuery Migrate in the <strong>&lt;head&gt;</strong> or at the end of the <strong>&lt;body&gt;</strong> tag, just before it closes (default is in the head)', $this->text_domain ),
+	                    'desc'    => __( 'Choose where to put jQuery Migrate in the <strong>&lt;head&gt;</strong> or at the end of the <strong>&lt;body&gt;</strong> tag, just before it closes', $this->text_domain ),
 	                    'type'    => 'radio',
 						'default' => 'head',
 	                    'options' => array(
-							'head'	=> '&lt;head&gt;',
+							'head'	=> '&lt;head&gt; (default)',
 							'body'	=> '&lt;body&gt;'
 	                    )
 	                ),
 					array(
 						'name'		=> 'jquery_migrate_execution',
 						'label'		=> __( 'jQuery Migrate execution', $this->text_domain ),
-						'desc'		=> __( 'Experimental! Some plugins and/or themes do not support this', $this->text_domain ),
+						'desc'		=> __( 'Experimental! Some plugins and/or themes do not support this. <strong>Broken for now, does nothing.</strong> See: https://github.com/Remzi1993/wp-jquery-manager/issues/8', $this->text_domain ),
 						'type'		=> 'radio',
 						'default'	=> 'default',
 						'options'	=> array(
@@ -259,6 +263,12 @@ if ( !class_exists( 'wp_jquery_manager_plugin' ) ) {
                         break;
                     case 'jquery_3x':
                         $jquery_version = WP_JQUERY_MANAGER_PLUGIN_JQUERY_3X . '.js';
+                        break;
+                    case 'jquery_3x_slim_min':
+                        $jquery_version = WP_JQUERY_MANAGER_PLUGIN_JQUERY_3X_SLIM . '.min.js';
+                        break;
+                    case 'jquery_3x_slim':
+                        $jquery_version = WP_JQUERY_MANAGER_PLUGIN_JQUERY_3X_SLIM . '.js';
                         break;
                     case 'jquery_2x_min':
                         $jquery_version = WP_JQUERY_MANAGER_PLUGIN_JQUERY_2X . '.min.js';
@@ -376,6 +386,12 @@ function wp_jquery_manager_plugin_front_end_scripts() {
             case 'jquery_3x':
                 $jquery_version = WP_JQUERY_MANAGER_PLUGIN_JQUERY_3X . '.js';
                 break;
+            case 'jquery_3x_slim_min':
+                $jquery_version = WP_JQUERY_MANAGER_PLUGIN_JQUERY_3X_SLIM . '.min.js';
+                break;
+            case 'jquery_3x_slim':
+                $jquery_version = WP_JQUERY_MANAGER_PLUGIN_JQUERY_3X_SLIM . '.js';
+                break;
             case 'jquery_2x_min':
                 $jquery_version = WP_JQUERY_MANAGER_PLUGIN_JQUERY_2X . '.min.js';
                 break;
@@ -409,37 +425,44 @@ function wp_jquery_manager_plugin_front_end_scripts() {
         } // End switch case
     }
 
-	// jQuery
+    // Default setting
 	if ( $wp_admin || $wp_customizer ) {
 		// echo 'We are in the WP Admin or in the WP Customizer';
 		return;
 	}
-	elseif ( !isset( $jquery_options['jquery'] ) ) { // Default setting
+    elseif ( !isset( $jquery_options['jquery'] ) ) { // Default setting
 
         // Deregister WP core jQuery, see https://github.com/Remzi1993/wp-jquery-manager/issues/2 and https://github.com/WordPress/WordPress/blob/91da29d9afaa664eb84e1261ebb916b18a362aa9/wp-includes/script-loader.php#L226
-		wp_deregister_script( 'jquery' );
-		wp_deregister_script( 'jquery-core' );
+        wp_dequeue_script( 'jquery' );
+        wp_deregister_script( 'jquery' );
 
-		// Default jQuery version
-		$jquery = 'assets/js/' . WP_JQUERY_MANAGER_PLUGIN_JQUERY_3X . '.min.js';
+        // Removing WP core jQuery
+        wp_dequeue_script( 'jquery-core' );
+        wp_deregister_script( 'jquery-core' );
 
-		// Register jQuery in the head
-		wp_register_script( 'jquery-core', WP_JQUERY_MANAGER_PLUGIN_DIR_URL . $jquery, array(), null, false );
+        // Get jQuery version
+        $jquery = 'assets/js/' . WP_JQUERY_MANAGER_PLUGIN_JQUERY_3X . '.min.js';
 
-		/**
-		 * Register jquery using jquery-core as a dependency, so other scripts could use the jquery handle
-		 * see https://wordpress.stackexchange.com/questions/283828/wp-register-script-multiple-identifiers
-		 * We first register the script and afther that we enqueue it, see why:
-		 * https://wordpress.stackexchange.com/questions/82490/when-should-i-use-wp-register-script-with-wp-enqueue-script-vs-just-wp-enque
-		 * https://stackoverflow.com/questions/39653993/what-is-diffrence-between-wp-enqueue-script-and-wp-register-script
-		 */
-		wp_register_script( 'jquery', false, array( 'jquery-core' ), null, false ); // The jquery handle is an alias to load jquery-core
-		wp_enqueue_script( 'jquery' );
+        // Register jQuery in the head
+        wp_register_script( 'jquery-core', WP_JQUERY_MANAGER_PLUGIN_DIR_URL . $jquery, array(), null, false );
 
-	}
+        /**
+         * Register jquery using jquery-core as a dependency, so other scripts could use the jquery handle
+         * see https://wordpress.stackexchange.com/questions/283828/wp-register-script-multiple-identifiers
+         * We first register the script and afther that we enqueue it, see why:
+         * https://wordpress.stackexchange.com/questions/82490/when-should-i-use-wp-register-script-with-wp-enqueue-script-vs-just-wp-enque
+         * https://stackoverflow.com/questions/39653993/what-is-diffrence-between-wp-enqueue-script-and-wp-register-script
+         */
+        wp_register_script( 'jquery', false, array( 'jquery-core' ), null, false ); // The jquery handle is an alias to load jquery-core
+        wp_enqueue_script( 'jquery' );
+
+    }
 	elseif ( $jquery_options['jquery'] == 'on' ) {
-		// Deregister WP core jQuery
+
+        // Deregister WP core jQuery
+        wp_dequeue_script( 'jquery' );
 		wp_deregister_script( 'jquery' );
+        wp_dequeue_script( 'jquery-core' );
 		wp_deregister_script( 'jquery-core' );
 
         // Get jQuery version
@@ -449,34 +472,40 @@ function wp_jquery_manager_plugin_front_end_scripts() {
 		wp_register_script( 'jquery-core', WP_JQUERY_MANAGER_PLUGIN_DIR_URL . $jquery, array(), null, false );
 		wp_register_script( 'jquery', false, array( 'jquery-core' ), null, false ); // Alias
 		wp_enqueue_script( 'jquery' );
+
 	}
 	elseif ( $jquery_options['jquery'] == 'off' ) {
-		// Deregister WP core jQuery
+
+        // Deregister WP core jQuery
+        wp_dequeue_script( 'jquery' );
 		wp_deregister_script( 'jquery' );
+        wp_dequeue_script( 'jquery-core' );
 		wp_deregister_script( 'jquery-core' );
 
 	} // End jQuery
 
 	// jQuery Migrate
-	if ( $wp_admin || $wp_customizer ) {
+	if ( $wp_admin || $wp_customizer || !isset( $jquery_migrate_options['jquery_migrate'] ) ) {
 		return;
 	}
-	elseif ( !isset( $jquery_migrate_options['jquery_migrate'] ) ) { // Default setting
+    elseif ( !isset( $jquery_migrate_options['jquery_migrate'] ) ) { // Default setting
 
-		// Deregister WP core jQuery Migrate
+        // Removing WP core jQuery Migrate
+        wp_dequeue_script( 'jquery-migrate' );
 		wp_deregister_script( 'jquery-migrate' );
 
-		// Default jQuery Migrate version
-		$jquery_migrate = 'assets/js/' . WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_3X . '.js';
+        // Get jQuery Migrate version
+        $jquery_migrate = 'assets/js/' . WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_3X . '.js';
 
-		// Register and than enqueue jQuery Migrate in the head
-		wp_register_script( 'jquery-migrate', WP_JQUERY_MANAGER_PLUGIN_DIR_URL . $jquery_migrate, array(), null, false );
-		wp_enqueue_script( 'jquery-migrate' );
+        // Register and than enqueue jQuery Migrate in the head
+        wp_register_script( 'jquery-migrate', WP_JQUERY_MANAGER_PLUGIN_DIR_URL . $jquery_migrate, array(), null, false );
+        wp_enqueue_script( 'jquery-migrate' );
 
-	}
+    }
 	elseif ( $jquery_migrate_options['jquery_migrate'] == 'on' ) {
 
-		// Deregister WP core jQuery Migrate
+        // Removing WP core jQuery Migrate
+        wp_dequeue_script( 'jquery-migrate' );
 		wp_deregister_script( 'jquery-migrate' );
 
 		// Get jQuery Migrate version
@@ -496,10 +525,13 @@ function wp_jquery_manager_plugin_front_end_scripts() {
 
 	}
 	elseif ( $jquery_migrate_options['jquery_migrate'] == 'off' ) {
-		// Deregister WP core jQuery Migrate
+
+        // Removing WP core jQuery Migrate
+        wp_dequeue_script( 'jquery-migrate' );
 		wp_deregister_script( 'jquery-migrate' );
 
 	} // End jQuery Migrate
+
 
     // When debugging is enabled
     if ( $wp_admin || $wp_customizer ) {
