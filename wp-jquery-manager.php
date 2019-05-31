@@ -52,17 +52,6 @@ define( 'WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_1X', 'jquery-migrate-1.4.1' );
 $wp_jquery_manager_plugin_jquery_settings = (array) get_option( 'wp_jquery_manager_plugin_jquery_settings' );
 $wp_jquery_manager_plugin_jquery_migrate_settings = (array) get_option( 'wp_jquery_manager_plugin_jquery_migrate_settings' );
 
-// Plugin updater GitHub Repository
-require WP_JQUERY_MANAGER_PLUGIN_DIR_PATH . 'inc/plugin-update-checker/plugin-update-checker.php';
-$wp_jquery_manager_plugin_updater = Puc_v4_Factory::buildUpdateChecker(
-	'https://github.com/Remzi1993/wp-jquery-manager',
-	__FILE__,
-	'wp_jquery_manager_plugin'
-);
-// Updater options
-$wp_jquery_manager_plugin_updater->getVcsApi()->enableReleaseAssets();
-$wp_jquery_manager_plugin_updater->setBranch('master');
-
 // Activation / upgrade process
 require WP_JQUERY_MANAGER_PLUGIN_DIR_PATH . 'upgrade-process.php';
 
