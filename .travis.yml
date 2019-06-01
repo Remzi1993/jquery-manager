@@ -1,7 +1,3 @@
-env:
-  global:
-    CC_TEST_REPORTER_ID=cf97e13fd46018601673fd91a8f8df853e8ed6388b7f64e052b81c6d4818eb9c
-
 sudo: false
 dist: trusty
 
@@ -36,9 +32,6 @@ matrix:
       env: WP_VERSION=latest
 
 before_script:
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
   - "curl -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/fossas/fossa-cli/master/install.sh | sudo bash"
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
   - |
@@ -59,7 +52,6 @@ before_script:
     fi
 
 script:
-  - vendor/bin/codecept run unit --coverage --coverage-xml
   - |
     if [[ ! -z "$WP_VERSION" ]] ; then
       phpunit
@@ -71,7 +63,3 @@ script:
     fi
   - fossa init
   - fossa analyze
-
-after_script:
-  - mv tests/_output/coverage.xml clover.xml
-  - ./cc-test-reporter after-build --coverage-input-type clover --id 12345 --exit-code $TRAVIS_TEST_RESULT
