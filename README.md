@@ -1,4 +1,4 @@
-# [Download jQuery Manager v1.7.8](https://github.com/Remzi1993/wp-jquery-manager/archive/1.7.8.zip) (WordPress plugin)
+# [Download jQuery Manager](https://downloads.wordpress.org/plugin/jquery-manager.zip) (WordPress plugin)
 
 [![GitHub release](https://img.shields.io/github/release/Remzi1993/wp-jquery-manager.svg)](https://github.com/Remzi1993/wp-jquery-manager/releases/latest)
 [![GitHub issues](https://img.shields.io/github/issues/Remzi1993/wp-jquery-manager.svg)](https://github.com/Remzi1993/wp-jquery-manager/issues)
@@ -8,7 +8,6 @@
 [![Travis (.org) branch](https://img.shields.io/travis/Remzi1993/wp-jquery-manager/master.svg)](https://travis-ci.org/Remzi1993/wp-jquery-manager)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FRemzi1993%2Fwp-jquery-manager.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FRemzi1993%2Fwp-jquery-manager?ref=badge_shield)
 [![Maintainability](https://api.codeclimate.com/v1/badges/4e2f44a9b17bf6dbbdff/maintainability)](https://codeclimate.com/github/Remzi1993/wp-jquery-manager/maintainability)
-
 
 # jQuery Manager for WordPress
 
@@ -32,9 +31,8 @@ Because none of the developer tools let's you select a specific version of jQuer
 :thumbsup: Active support<br>
 :arrows_counterclockwise: Working on more features
 
-## [Download](https://github.com/Remzi1993/wp-jquery-manager/releases) jQuery Manager for WordPress
-
-Go to the [releases](https://github.com/Remzi1993/wp-jquery-manager/releases) page and download the .zip file.
+## [Download](https://downloads.wordpress.org/plugin/jquery-manager.zip) jQuery Manager for WordPress
+Go to the wordpress.org plugin page [wordpress.org/plugins/jquery-manager/](https://wordpress.org/plugins/jquery-manager/) and download the .zip file.
 
 ### Installation via WordPress admin
 

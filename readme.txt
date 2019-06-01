@@ -13,7 +13,8 @@ Manage jQuery and jQuery Migrate on a WordPress website, select a specific jQuer
 == Description ==
 Manage [jQuery](https://jquery.com) and [jQuery Migrate](https://jquery.com/download/#jquery-migrate-plugin) on a WordPress website, select a specific jQuery and/or jQuery Migrate version. The ultimate jQuery debugging tool for WordPress
 
-When activated, the latest stable version of jQuery and jQuery Migrate is added to your website. By default jQuery Migrate uses an uncompressed development build with logging active, so that developers are able to identify deprecated code.
+When the plugin is activated the latest stable version of jQuery and jQuery Migrate are added to your website. The default is sufficient for most people, however the settings provide a way for you to tweak your jQuery install.
+jQuery Manager for WordPress is an open source project and I would like to invite anyone to contribute. The development and issue tracker is located on GitHub, see: [github.com/Remzi1993/wp-jquery-manager](https://github.com/Remzi1993/wp-jquery-manager)
 
 **Warning, this is also a Developer / Debugging tool**
 
@@ -30,11 +31,11 @@ If you run into any bugs, turning this plugin off (by deactivation the plugin) w
 == Installation ==
 Installation via WordPress admin
 1. Navigate to > `Plugins` > `Add New`
-2. On your top left > click on `Upload Plugin` and select your .zip file you downloaded from [GitHub releases](https://github.com/Remzi1993/wp-jquery-manager/releases) and click `Install Now`
+2. On your top left > click on `Upload Plugin` and select your .zip file you downloaded from [wordpress.org](https://wordpress.org/plugins/jquery-manager/) and click `Install Now`
 3. By activating the plugin, jQuery and jQuery Migrate are updated to the latest stable version. (Plugin settings are located under `Tools`)
 
 Installation via FTP, SFTP or SSH
-1. Unzip (extract/unpack/uncompress) the .zip file you downloaded from [GitHub releases](https://github.com/Remzi1993/wp-jquery-manager/releases)
+1. Unzip (extract/unpack/uncompress) the .zip file you downloaded from [wordpress.org](https://wordpress.org/plugins/jquery-manager/)
 2. Upload the folder `wp-jquery-manager` to the `/wp-content/plugins/` directory on your server
 3. Activate the plugin through the 'Plugins' menu in WordPress
 4. By activating the plugin, jQuery and jQuery Migrate are updated to the latest stable version. (Plugin settings are located under `Tools`)
