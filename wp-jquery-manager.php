@@ -65,10 +65,14 @@ function wp_jquery_manager_plugin_add_action_links ( $links ) {
 }
 add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), 'wp_jquery_manager_plugin_add_action_links' );
 
-// Activation / upgrade process
+// Activation process
 register_activation_hook( __FILE__, 'wp_jquery_manager_plugin_activation' );
 
 function wp_jquery_manager_plugin_activation() {
+    if ( ! current_user_can( 'activate_plugins' ) ) {
+    	exit;
+    }
+
     global $wp_version;
 
 	$php = '5.6';
