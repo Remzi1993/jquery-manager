@@ -1,6 +1,6 @@
 {
   "name": "wp-jquery-manager",
-  "version": "1.7.1",
+  "version": "1.7.7",
   "description": "Manage jQuery and jQuery Migrate on a WordPress website, select a specific jQuery and/or jQuery Migrate version. The ultimate jQuery debugging tool for WordPress. This plugin is a open source project, made possible by your contribution (code). Development is done on GitHub.",
   "main": "index.js",
   "directories": {
