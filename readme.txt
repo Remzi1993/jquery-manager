@@ -1,9 +1,10 @@
 === jQuery Manager for WordPress ===
 Contributors: remzicavdar
-Tags: jquery, update, jquery ui, javascript, jq, jquery migrate, jquery updater, jquery manager
+Tags: jquery, update, jquery ui, javascript, jq, jquery migrate, jquery updater, jquery manager, jquery update, jquery wordpress, jquery wordpress updater, manage jquery, jquery settings, jquery tool, jquery debugger, debug
 Requires at least: 4.9
 Tested up to: 5.3
 Requires PHP: 5.6
+Stable tag: trunk
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0
 
