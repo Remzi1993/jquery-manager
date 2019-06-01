@@ -12,7 +12,7 @@
  * Plugin Name:		jQuery Manager for WordPress
  * Plugin URI:		https://github.com/Remzi1993/wp-jquery-manager
  * Description:		Manage jQuery and jQuery Migrate on a WordPress website, select a specific jQuery and/or jQuery Migrate version. The ultimate jQuery debugging tool for WordPress. This plugin is a open source project, made possible by your contribution (code). Development is done on GitHub.
- * Version:			1.7.6
+ * Version:			1.7.7
  * Author:			Remzi Cavdar
  * Author URI:		https://twitter.com/remzicavdar
  * License:			GPLv3
@@ -52,20 +52,6 @@ define( 'WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_1X', 'jquery-migrate-1.4.1' );
 $wp_jquery_manager_plugin_jquery_settings = (array) get_option( 'wp_jquery_manager_plugin_jquery_settings' );
 $wp_jquery_manager_plugin_jquery_migrate_settings = (array) get_option( 'wp_jquery_manager_plugin_jquery_migrate_settings' );
 
-// Plugin updater GitHub Repository
-require WP_JQUERY_MANAGER_PLUGIN_DIR_PATH . 'inc/plugin-update-checker/plugin-update-checker.php';
-$wp_jquery_manager_plugin_updater = Puc_v4_Factory::buildUpdateChecker(
-	'https://github.com/Remzi1993/wp-jquery-manager',
-	__FILE__,
-	'wp_jquery_manager_plugin'
-);
-// Updater options
-$wp_jquery_manager_plugin_updater->getVcsApi()->enableReleaseAssets();
-$wp_jquery_manager_plugin_updater->setBranch('master');
-
-// Activation / upgrade process
-require WP_JQUERY_MANAGER_PLUGIN_DIR_PATH . 'upgrade-process.php';
-
 // Include weDevs Settings API wrapper class
 require WP_JQUERY_MANAGER_PLUGIN_DIR_PATH . 'inc/settings-api.php';
 
@@ -78,6 +64,40 @@ function wp_jquery_manager_plugin_add_action_links ( $links ) {
 	return array_merge( $links, $plugin_links );
 }
 add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), 'wp_jquery_manager_plugin_add_action_links' );
+
+// Activation / upgrade process
+register_activation_hook( __FILE__, 'wp_jquery_manager_plugin_activation' );
+
+function wp_jquery_manager_plugin_activation() {
+    global $wp_version;
+
+	$php = '5.6';
+	$wp  = '4.9';
+
+	if ( version_compare( PHP_VERSION, $php, '<' ) ) {
+		deactivate_plugins( basename( __FILE__ ) );
+		wp_die(
+			'<p>' .
+			sprintf(
+				__( 'This plugin can not be activated because it requires a PHP version greater than %1$s. Your PHP version can be updated by your hosting company.', 'my_plugin' ),
+				$php
+			)
+			. '</p> <a href="' . admin_url( 'plugins.php' ) . '">' . __( 'go back', 'my_plugin' ) . '</a>'
+		);
+	}
+
+	if ( version_compare( $wp_version, $wp, '<' ) ) {
+		deactivate_plugins( basename( __FILE__ ) );
+		wp_die(
+			'<p>' .
+			sprintf(
+				__( 'This plugin can not be activated because it requires a WordPress version greater than %1$s. Please go to Dashboard &#9656; Updates to gran the latest version of WordPress .', 'my_plugin' ),
+				$php
+			)
+			. '</p> <a href="' . admin_url( 'plugins.php' ) . '">' . __( 'go back', 'my_plugin' ) . '</a>'
+		);
+	}
+}
 
 
 // Our plugin class
