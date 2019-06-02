@@ -18,8 +18,9 @@ jQuery Manager for WordPress is an open source project and I would like to invit
 
 **This is also a Developer / Debugging tool**
 
-Everything should work as intended, you should check your website if everything works fine. If things don't work, don't panic. You can deactivate the plugin or tweak it's settings until everything works as intended.
-You should understand that not all themes and/or plugins support the latest jQuery version. This is also a developer/debugging tool.
+Everything should work as intended, you should check your website if everything works fine. If things don't work, don't panic. You can deactivate the plugin and return to the state before or tweak it's settings until everything works as intended.
+You should understand that not all themes and/or plugins support the latest jQuery version even with jQuery Migrate turned on, but for you to encounter this is highly unlikely if your theme or plugins are up to date.
+This is also a developer/debugging tool.
 I will not provide support on debugging your own JavaScript and/or jQuery code. (Only if you like to hire me, of course)
 
 **Reporting problems**
