@@ -37,15 +37,14 @@ Go to the wordpress.org plugin page [wordpress.org/plugins/jquery-manager/](http
 ### Installation via WordPress admin
 
 1. Navigate to > `Plugins` > `Add New`
-2. On your top left > click on `Upload Plugin` and select your .zip file you downloaded earlier and click `Install Now`
-3. By activating the plugin, jQuery and jQuery Migrate are updated to the latest stable version. (Plugin settings are located under `Tools`)
+2. On your top left > click on `Upload Plugin` and select the .zip file you downloaded earlier and click `Install Now`
+3. By activating the plugin, jQuery and jQuery Migrate are updated to the latest stable version by default. (Plugin settings are located under `Tools`)
 
 ### Installation via FTP, SFTP or SSH
 
-1. Unzip (extract/unpack/uncompress) the .zip file you downloaded from
-   [GitHub releases](https://github.com/Remzi1993/wp-jquery-manager/releases)
+1. Unzip (extract/unpack/uncompress) the .zip file you downloaded earlier
 2. Upload the folder `wp-jquery-manager` to the `/wp-content/plugins/` directory on your server
-3. By activating the plugin, jQuery and jQuery Migrate are updated to the latest stable version.
+3. By activating the plugin, jQuery and jQuery Migrate are updated to the latest stable version by default.
    (Plugin settings are located under `Tools`)
 
 ## I have a few people I would like to thank

@@ -16,9 +16,10 @@ Manage [jQuery](https://jquery.com) and [jQuery Migrate](https://jquery.com/down
 When the plugin is activated the latest stable version of jQuery and jQuery Migrate are added to your website. The default is sufficient for most people, however the settings provide a way for you to tweak your jQuery install.
 jQuery Manager for WordPress is an open source project and I would like to invite anyone to contribute. The development and issue tracker is located on GitHub, see: [github.com/Remzi1993/wp-jquery-manager](https://github.com/Remzi1993/wp-jquery-manager)
 
-**Warning, this is also a Developer / Debugging tool**
+**This is also a Developer / Debugging tool**
 
-If you are not familiar with beta testing, bug fixing, JavaScript, jQuery and/or running bleeding edge software than I **don't** recommend using this plugin.
+Everything should work as intended, you should check your website if everything works fine. If things don't work, don't panic. You can deactivate the plugin or tweak it's settings until everything works as intended.
+You should understand that not all themes and/or plugins support the latest jQuery version. This is also a developer/debugging tool.
 I will not provide support on debugging your own JavaScript and/or jQuery code. (Only if you like to hire me, of course)
 
 **Reporting problems**
