@@ -48,11 +48,11 @@ Manual installation by uploading folder/directory via FTP, SFTP or SSH
 
 == Frequently Asked Questions ==
 
-= Is this plugin compatible with PHP 5.6, 7, 7.1, 7.2, HHVM, et cetera =
+= Is this plugin compatible with PHP 5.6, 7, 7.1, 7.2, HHVM, et cetera, et cetera? =
 Short answer: probably. Long answer: I honestly don't know for sure. As far as I know I didn't use specific PHP 7 features. I made a simple plugin. That's why I recommend a minimum of PHP 5.6. Also I do specific tests to ensure that I stay compatible with PHP 5.6
 
 = This plugin breaks my site! How do I fix it? =
-Deactivate the plugin and report this on the wp.org plugin support forum: https://wordpress.org/support/plugin/jquery-manager/ or report it on the [GitHub project page](https://github.com/Remzi1993/wp-jquery-manager/issues), so that I could take a look into the matter.
+Deactivate the plugin and report this on the [plugin support forum](https://wordpress.org/support/plugin/jquery-manager/) or report it on the [GitHub project page](https://github.com/Remzi1993/wp-jquery-manager/issues), so that I could take a look into the matter.
 
 = Does this plugin modify my WP installation? =
 **No** modification to the WordPress installation is made, therefore deactivation and/or uninstallation of this plugin returns your site to it`s original state.
