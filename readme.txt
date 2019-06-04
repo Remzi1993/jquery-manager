@@ -47,14 +47,14 @@ Manual installation by uploading folder/directory via FTP, SFTP or SSH
 4. By activating the plugin, jQuery and jQuery Migrate are updated to the latest stable version. (Plugin settings are located under `Tools`)
 
 == Frequently Asked Questions ==
-**1.** Is this plugin compatible with PHP 5.6, 7, 7.1, 7.2, HHVM and/or whatever?
-Short answer: probably
-Long answer: I honestly don't know for sure. As far as I know I didn't use PHP 7 features, but I don't know for sure. I made a simple plugin. That's why I recommend a minimum of PHP 5.6
 
-**2.** This plugin breaks my site! How do I fix it?
-Deactivate the plugin and [report](https://github.com/Remzi1993/wp-jquery-manager/issues) this to me, so that I could look into this.
+= Is this plugin compatible with PHP 5.6, 7, 7.1, 7.2, HHVM, et cetera =
+Short answer: probably. Long answer: I honestly don't know for sure. As far as I know I didn't use specific PHP 7 features. I made a simple plugin. That's why I recommend a minimum of PHP 5.6. Also I do specific tests to ensure that I stay compatible with PHP 5.6
 
-**3.** Does this plugin modify my WP installation?
+= This plugin breaks my site! How do I fix it? =
+Deactivate the plugin and report this on the wp.org plugin support forum: https://wordpress.org/support/plugin/jquery-manager/ or report it on the [GitHub project page](https://github.com/Remzi1993/wp-jquery-manager/issues), so that I could take a look into the matter.
+
+= Does this plugin modify my WP installation? =
 **No** modification to the WordPress installation is made, therefore deactivation and/or uninstallation of this plugin returns your site to it`s original state.
 
 == Changelog ==
