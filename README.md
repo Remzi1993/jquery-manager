@@ -1,13 +1,13 @@
 # [Download jQuery Manager](https://downloads.wordpress.org/plugin/jquery-manager.zip) (WordPress plugin)
 
-[![GitHub release](https://img.shields.io/github/release/Remzi1993/wp-jquery-manager.svg)](https://github.com/Remzi1993/wp-jquery-manager/releases/latest)
-[![GitHub issues](https://img.shields.io/github/issues/Remzi1993/wp-jquery-manager.svg)](https://github.com/Remzi1993/wp-jquery-manager/issues)
-[![GitHub forks](https://img.shields.io/github/forks/Remzi1993/wp-jquery-manager.svg)](https://github.com/Remzi1993/wp-jquery-manager/network/members)
-[![GitHub stars](https://img.shields.io/github/stars/Remzi1993/wp-jquery-manager.svg)](https://github.com/Remzi1993/wp-jquery-manager/stargazers)
-[![GitHub license](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://github.com/Remzi1993/wp-jquery-manager/blob/master/LICENSE)
-[![Travis (.org) branch](https://img.shields.io/travis/Remzi1993/wp-jquery-manager/master.svg)](https://travis-ci.org/Remzi1993/wp-jquery-manager)
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FRemzi1993%2Fwp-jquery-manager.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FRemzi1993%2Fwp-jquery-manager?ref=badge_shield)
-[![Maintainability](https://api.codeclimate.com/v1/badges/4e2f44a9b17bf6dbbdff/maintainability)](https://codeclimate.com/github/Remzi1993/wp-jquery-manager/maintainability)
+[![GitHub release](https://img.shields.io/github/release/Remzi1993/jquery-manager.svg)](https://github.com/Remzi1993/jquery-manager/releases/latest)
+[![GitHub issues](https://img.shields.io/github/issues/Remzi1993/jquery-manager.svg)](https://github.com/Remzi1993/jquery-manager/issues)
+[![GitHub forks](https://img.shields.io/github/forks/Remzi1993/jquery-manager.svg)](https://github.com/Remzi1993/jquery-manager/network/members)
+[![GitHub stars](https://img.shields.io/github/stars/Remzi1993/jquery-manager.svg)](https://github.com/Remzi1993/jquery-manager/stargazers)
+[![GitHub license](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://github.com/Remzi1993/jquery-manager/blob/master/LICENSE)
+[![Travis (.org) branch](https://img.shields.io/travis/Remzi1993/jquery-manager/master.svg)](https://travis-ci.org/Remzi1993/jquery-manager)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FRemzi1993%2Fjquery-manager.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FRemzi1993%2Fjquery-manager?ref=badge_shield)
+[![Maintainability](https://api.codeclimate.com/v1/badges/4e2f44a9b17bf6dbbdff/maintainability)](https://codeclimate.com/github/Remzi1993/jquery-manager/maintainability)
 
 # jQuery Manager for WordPress
 
@@ -43,7 +43,7 @@ Go to the wordpress.org plugin page [wordpress.org/plugins/jquery-manager/](http
 ### Manual installation by uploading folder/directory via FTP, SFTP or SSH
 
 1. Unzip (extract/unpack/uncompress) the .zip file you downloaded earlier
-2. Upload the folder `wp-jquery-manager` to the `/wp-content/plugins/` directory on your server
+2. Upload the folder `jquery-manager` to the `/wp-content/plugins/` directory on your server
 3. By activating the plugin, jQuery and jQuery Migrate are updated to the latest stable version by default.
    (Plugin settings are located under `Tools`)
 
@@ -56,7 +56,7 @@ open source project before we became an official WP plugin:<br> https://github.c
 ## Bug reports
 
 Report bugs, issues, questions and/or feature request on our GitHub
-[issues](https://github.com/Remzi1993/wp-jquery-manager/issues) page.
+[issues](https://github.com/Remzi1993/jquery-manager/issues) page.
 
 ## Screenshots
 
@@ -66,7 +66,7 @@ Report bugs, issues, questions and/or feature request on our GitHub
 ## Do you want to help with development?
 
 Use the following command to clone the repository:<br>
-`$ git clone git://github.com/Remzi1993/wp-jquery-manager.git`<br>
+`$ git clone git://github.com/Remzi1993/jquery-manager.git`<br>
 Working on some awesome feature? Create a new branch and when you're finished do a pull request.
 
 [![forthebadge](https://forthebadge.com/images/badges/built-with-wordpress.svg)](https://forthebadge.com)

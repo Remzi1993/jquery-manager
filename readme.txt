@@ -15,7 +15,7 @@ Manage [jQuery](https://jquery.com) and [jQuery Migrate](https://jquery.com/down
 
 When the plugin is activated the latest stable version of jQuery and jQuery Migrate are added to your website. The default is sufficient for most people, however the settings provide a way for you to tweak your jQuery install.
 
-jQuery Manager for WordPress is an open source project and I would like to invite anyone to contribute. The development and issue tracker is located on GitHub, see: [github.com/Remzi1993/wp-jquery-manager](https://github.com/Remzi1993/wp-jquery-manager)
+jQuery Manager for WordPress is an open source project and I would like to invite anyone to contribute. The development and issue tracker is located on GitHub, see: [github.com/Remzi1993/jquery-manager](https://github.com/Remzi1993/jquery-manager)
 
 **This is also a Developer / Debugging tool**
 
@@ -28,7 +28,7 @@ I will not provide support on debugging your own JavaScript and/or jQuery code. 
 
 **Reporting problems**
 
-Report bugs, issues, questions and/or feature request on our [GitHub issues page](https://github.com/Remzi1993/wp-jquery-manager/issues).
+Report bugs, issues, questions and/or feature request on our [GitHub issues page](https://github.com/Remzi1993/jquery-manager/issues).
 
 I will only provide support on issues caused by this plugin, not your own JavaScript and/or jQuery code. (Again, I will provide paid support or fix all your issues if you're willing to hire me to debug and/or optimize your website)
 
@@ -42,7 +42,7 @@ Manual installation by uploading .zip file via WordPress admin
 
 Manual installation by uploading folder/directory via FTP, SFTP or SSH
 1. Unzip (extract/unpack/uncompress) the .zip file you downloaded from [wordpress.org](https://wordpress.org/plugins/jquery-manager/)
-2. Upload the folder `wp-jquery-manager` to the `/wp-content/plugins/` directory on your server
+2. Upload the folder `jquery-manager` to the `/wp-content/plugins/` directory on your server
 3. Activate the plugin through the 'Plugins' menu in WordPress
 4. By activating the plugin, jQuery and jQuery Migrate are updated to the latest stable version. (Plugin settings are located under `Tools`)
 
@@ -52,13 +52,13 @@ Manual installation by uploading folder/directory via FTP, SFTP or SSH
 Short answer: probably. Long answer: I honestly don't know for sure. As far as I know I didn't use specific PHP 7 features. I made a simple plugin. That's why I recommend a minimum of PHP 5.6. Also I do specific tests to ensure that I stay compatible with PHP 5.6
 
 = This plugin breaks my site! How do I fix it? =
-Deactivate the plugin and report this on the [plugin support forum](https://wordpress.org/support/plugin/jquery-manager/) or report it on the [GitHub project page](https://github.com/Remzi1993/wp-jquery-manager/issues), so that I could take a look into the matter.
+Deactivate the plugin and report this on the [plugin support forum](https://wordpress.org/support/plugin/jquery-manager/) or report it on the [GitHub project page](https://github.com/Remzi1993/jquery-manager/issues), so that I could take a look into the matter.
 
 = Does this plugin modify my WP installation? =
 **No** modification to the WordPress installation is made, therefore deactivation and/or uninstallation of this plugin returns your site to it`s original state.
 
 == Changelog ==
-See changelog on [GitHub](https://github.com/Remzi1993/wp-jquery-manager/releases)
+See changelog on [GitHub](https://github.com/Remzi1993/jquery-manager/releases)
 
 == Upgrade Notice ==
-See changelog on [GitHub](https://github.com/Remzi1993/wp-jquery-manager/releases)
+See changelog on [GitHub](https://github.com/Remzi1993/jquery-manager/releases)
