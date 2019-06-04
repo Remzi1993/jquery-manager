@@ -34,13 +34,13 @@ Because none of the developer tools let's you select a specific version of jQuer
 ## [Download](https://downloads.wordpress.org/plugin/jquery-manager.zip) jQuery Manager for WordPress
 Go to the wordpress.org plugin page [wordpress.org/plugins/jquery-manager/](https://wordpress.org/plugins/jquery-manager/) and download the .zip file.
 
-### Installation via WordPress admin
+### Manual installation by uploading .zip file via WordPress admin
 
 1. Navigate to > `Plugins` > `Add New`
 2. On your top left > click on `Upload Plugin` and select the .zip file you downloaded earlier and click `Install Now`
 3. By activating the plugin, jQuery and jQuery Migrate are updated to the latest stable version by default. (Plugin settings are located under `Tools`)
 
-### Installation via FTP, SFTP or SSH
+### Manual installation by uploading folder/directory via FTP, SFTP or SSH
 
 1. Unzip (extract/unpack/uncompress) the .zip file you downloaded earlier
 2. Upload the folder `wp-jquery-manager` to the `/wp-content/plugins/` directory on your server
@@ -49,8 +49,8 @@ Go to the wordpress.org plugin page [wordpress.org/plugins/jquery-manager/](http
 
 ## I have a few people I would like to thank
 
-[@YahnisElsts](https://github.com/YahnisElsts) for his amazing work on a updater, that we're using in this
-open source project:<br> https://github.com/YahnisElsts/plugin-update-checker <br><br>
+[@YahnisElsts](https://github.com/YahnisElsts) for his amazing work on a updater, that we were using in this
+open source project before we became an official WP plugin:<br> https://github.com/YahnisElsts/plugin-update-checker <br><br>
 [@tareq1988](https://github.com/tareq1988) for his awesome WordPress Settings API abstraction class:<br> https://github.com/tareq1988/wordpress-settings-api-class <br>
 
 ## Bug reports
@@ -60,8 +60,8 @@ Report bugs, issues, questions and/or feature request on our GitHub
 
 ## Screenshots
 
-<img src="https://raw.githubusercontent.com/Remzi1993/wp-jquery-manager/master/assets/img/screenshot-1.png">
-<img src="https://raw.githubusercontent.com/Remzi1993/wp-jquery-manager/master/assets/img/screenshot-2.png">
+<img src="https://ps.w.org/jquery-manager/assets/screenshot-1.png">
+<img src="https://ps.w.org/jquery-manager/assets/screenshot-2.png">
 
 ## Do you want to help with development?
 

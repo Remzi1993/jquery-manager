@@ -8,7 +8,7 @@ Stable tag: trunk
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0
 
-Manage jQuery and jQuery Migrate on a WordPress website, activate a specific jQuery and/or jQuery Migrate version. The ultimate jQuery debugging tool for WordPress.
+Manage jQuery and jQuery Migrate on a WordPress website, activate a specific jQuery and/or jQuery Migrate version. The ultimate jQuery debugging tool for WordPress. This plugin is an open source project, made possible by your contribution (code). Development is done on GitHub.
 
 == Description ==
 Manage [jQuery](https://jquery.com) and [jQuery Migrate](https://jquery.com/download/#jquery-migrate-plugin) on a WordPress website, select a specific jQuery and/or jQuery Migrate version. The ultimate jQuery debugging tool for WordPress
@@ -35,12 +35,12 @@ I will only provide support on issues caused by this plugin, not your own JavaSc
 If you run into any bugs, turning this plugin off (by deactivation the plugin) will fully deactivate everything and return your website to it`s original state.
 
 == Installation ==
-Installation via WordPress admin
+Manual installation by uploading .zip file via WordPress admin
 1. Navigate to > `Plugins` > `Add New`
 2. On your top left > click on `Upload Plugin` and select your .zip file you downloaded from [wordpress.org](https://wordpress.org/plugins/jquery-manager/) and click `Install Now`
 3. By activating the plugin, jQuery and jQuery Migrate are updated to the latest stable version. (Plugin settings are located under `Tools`)
 
-Installation via FTP, SFTP or SSH
+Manual installation by uploading folder/directory via FTP, SFTP or SSH
 1. Unzip (extract/unpack/uncompress) the .zip file you downloaded from [wordpress.org](https://wordpress.org/plugins/jquery-manager/)
 2. Upload the folder `wp-jquery-manager` to the `/wp-content/plugins/` directory on your server
 3. Activate the plugin through the 'Plugins' menu in WordPress
