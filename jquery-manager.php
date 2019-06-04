@@ -344,18 +344,21 @@ if ( !class_exists( 'wp_jquery_manager_plugin' ) ) {
                     echo '</p>';
 
                     echo '<p>';
-                    if ( $jquery_options['jquery'] == 'on' ) {
-                        echo '<span><strong>jQuery:</strong> ' . $jquery_version . '</span><br>';
-                    }
-                    elseif ( $jquery_options['jquery'] == 'off' ) {
+                    if ( $jquery_options['jquery'] == 'off' ) {
                         echo '<span><strong>jQuery:</strong> disabled</span><br>';
                     }
+                    else {
+                        echo '<span><strong>jQuery:</strong> ' . $jquery_version . '</span><br>';
+                    }
 
-                    if ( $jquery_migrate_options['jquery_migrate'] == 'on' ) {
-                        echo '<strong>jQuery Migrate:</strong> ' . $jquery_migrate_version;
+                    if ( !isset( $jquery_migrate_options['jquery_migrate'] ) ) {
+                        echo '<strong>jQuery Migrate:</strong> ' . WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_3X . '.min.js';
                     }
                     elseif ( $jquery_migrate_options['jquery_migrate'] == 'off' ) {
                         echo '<span><strong>jQuery Migrate:</strong> disabled</span><br>';
+                    }
+                    else {
+                        echo '<strong>jQuery Migrate:</strong> ' . $jquery_migrate_version;
                     }
                     echo '</p>';
 				}
@@ -573,9 +576,18 @@ function wp_jquery_manager_plugin_front_end_scripts() {
             if ( $jquery_options['jquery'] == 'on' ) {
                 echo '<div style="'. $style_j .'">jQuery version: ' . $jquery_version . '</div>';
             }
+            else {
+                echo '<div style="'. $style_j .'">jQuery is disabled</div>';
+            }
 
-            if ( $jquery_migrate_options['jquery_migrate'] == 'on' ) {
+            if ( !isset( $jquery_migrate_options['jquery_migrate'] ) ) {
+                echo '<div style="'. $style_jm .'">jQuery Migrate version: ' . WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_3X . '.min.js</div>';
+            }
+            elseif ( $jquery_migrate_options['jquery_migrate'] == 'on' ) {
                 echo '<div style="'. $style_jm .'">jQuery Migrate version: ' . $jquery_migrate_version . '</div>';
+            }
+            else {
+                echo '<div style="'. $style_jm .'">jQuery Migrate is disabled</div>';
             }
 
             if ( $jquery_options['jquery'] == 'off' && $jquery_migrate_options['jquery_migrate'] == 'off' ) {

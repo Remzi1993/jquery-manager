@@ -1,5 +1,5 @@
 {
-    "name": "remzi1993/wp-jquery-manager",
+    "name": "remzi1993/jquery-manager",
     "description": "Manage jQuery on a WordPress website. The ultimate jQuery debugging tool for WordPress",
     "keywords": [
         "wordpress",
@@ -11,7 +11,7 @@
         "jQuery Debugging Tool",
         "jQuery Developer Tool"
     ],
-    "homepage": "https://github.com/Remzi1993/wp-jquery-manager",
+    "homepage": "https://github.com/Remzi1993/jquery-manager",
     "license": "GPL-3.0-only",
     "authors": [
         {
