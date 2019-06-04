@@ -12,7 +12,7 @@
  * Plugin Name:		jQuery Manager for WordPress
  * Plugin URI:		https://github.com/Remzi1993/wp-jquery-manager
  * Description:		Manage jQuery and jQuery Migrate on a WordPress website, activate a specific jQuery and/or jQuery Migrate version. The ultimate jQuery debugging tool for WordPress. This plugin is an open source project, made possible by your contribution (code). Development is done on GitHub.
- * Version:			1.8.0
+ * Version:			1.8.1
  * Author:			Remzi Cavdar
  * Author URI:		https://twitter.com/remzicavdar
  * License:			GPLv3
@@ -456,7 +456,7 @@ function wp_jquery_manager_plugin_front_end_scripts() {
 	}
     elseif ( !isset( $jquery_options['jquery'] ) ) { // Default setting
 
-        // Deregister WP core jQuery, see https://github.com/Remzi1993/wp-jquery-manager/issues/2 and https://github.com/WordPress/WordPress/blob/91da29d9afaa664eb84e1261ebb916b18a362aa9/wp-includes/script-loader.php#L226
+        // Removing WP core jQuery, see https://github.com/Remzi1993/wp-jquery-manager/issues/2 and https://github.com/WordPress/WordPress/blob/91da29d9afaa664eb84e1261ebb916b18a362aa9/wp-includes/script-loader.php#L226
         wp_dequeue_script( 'jquery' );
         wp_deregister_script( 'jquery' );
 
@@ -483,7 +483,7 @@ function wp_jquery_manager_plugin_front_end_scripts() {
     }
 	elseif ( $jquery_options['jquery'] == 'on' ) {
 
-        // Deregister WP core jQuery
+        // Removing WP core jQuery
         wp_dequeue_script( 'jquery' );
 		wp_deregister_script( 'jquery' );
         wp_dequeue_script( 'jquery-core' );
@@ -500,7 +500,7 @@ function wp_jquery_manager_plugin_front_end_scripts() {
 	}
 	elseif ( $jquery_options['jquery'] == 'off' ) {
 
-        // Deregister WP core jQuery
+        // Removing WP core jQuery
         wp_dequeue_script( 'jquery' );
 		wp_deregister_script( 'jquery' );
         wp_dequeue_script( 'jquery-core' );
@@ -508,10 +508,11 @@ function wp_jquery_manager_plugin_front_end_scripts() {
 
 	} // End jQuery
 
-	// jQuery Migrate
-	if ( $wp_admin || $wp_customizer || !isset( $jquery_migrate_options['jquery_migrate'] ) ) {
-		return;
-	}
+    // jQuery Migrate
+    if ( $wp_admin || $wp_customizer ) {
+        // echo 'We are in the WP Admin or in the WP Customizer';
+        return;
+    }
     elseif ( !isset( $jquery_migrate_options['jquery_migrate'] ) ) { // Default setting
 
         // Removing WP core jQuery Migrate
