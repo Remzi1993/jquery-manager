@@ -93,7 +93,6 @@ PHAR_BUILD_VERSION
 /cache
 /packages
 /*.phar
-/phpunit.xml.dist
 /codesniffer
 /PHP_Codesniffer-VariableAnalysis
 .*.swp
