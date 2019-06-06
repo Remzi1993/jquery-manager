@@ -5,7 +5,7 @@
 [![GitHub forks](https://img.shields.io/github/forks/Remzi1993/jquery-manager.svg)](https://github.com/Remzi1993/jquery-manager/network/members)
 [![GitHub stars](https://img.shields.io/github/stars/Remzi1993/jquery-manager.svg)](https://github.com/Remzi1993/jquery-manager/stargazers)
 [![GitHub license](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://github.com/Remzi1993/jquery-manager/blob/master/LICENSE)
-[![FOSSA Status](https://app.fossa.com/api/projects/custom%2B8653%2Fgithub.com%2FRemzi1993%2Fjquery-manager.svg?type=shield)](https://app.fossa.com/projects/custom%2B8653%2Fgithub.com%2FRemzi1993%2Fjquery-manager?ref=badge_shield)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FRemzi1993%2Fjquery-manager.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FRemzi1993%2Fjquery-manager?ref=badge_shield)
 [![Travis (.org) branch](https://img.shields.io/travis/Remzi1993/jquery-manager/master.svg)](https://travis-ci.org/Remzi1993/jquery-manager)
 [![Maintainability](https://api.codeclimate.com/v1/badges/4e2f44a9b17bf6dbbdff/maintainability)](https://codeclimate.com/github/Remzi1993/jquery-manager/maintainability)
 
