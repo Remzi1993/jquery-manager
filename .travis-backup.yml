@@ -18,22 +18,18 @@ cache:
 
 matrix:
   include:
-    - php: 7.3
-      env: WP_VERSION=latest
-    - php: 7.2
-      env: WP_VERSION=latest
-    - php: 7.1
-      env: WP_VERSION=latest
-    - php: 7.0
-      env: WP_VERSION=latest
     - php: 5.6
       env: WP_VERSION=4.9
     - php: 5.6
       env: WP_VERSION=latest
-    - php: 5.6
-      env: WP_VERSION=trunk
-    - php: 5.6
-      env: WP_TRAVISCI=phpcs
+    - php: 7.0
+      env: WP_VERSION=latest
+    - php: 7.1
+      env: WP_VERSION=latest
+    - php: 7.2
+      env: WP_VERSION=latest
+    - php: 7.3
+      env: WP_VERSION=latest
 
 before_script:
   - "curl -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/fossas/fossa-cli/master/install.sh | sudo bash"
@@ -56,8 +52,6 @@ before_script:
     fi
 
 script:
-  - fossa init
-  - fossa analyze
   - |
     if [[ ! -z "$WP_VERSION" ]] ; then
       phpunit
@@ -67,3 +61,5 @@ script:
     if [[ "$WP_TRAVISCI" == "phpcs" ]] ; then
       phpcs
     fi
+  - fossa init
+  - fossa analyze

@@ -2,7 +2,7 @@
 /**
  * Class SampleTest
  *
- * @package Wp_Jquery_Manager
+ * @package Jquery_Manager
  */
 
 /**
