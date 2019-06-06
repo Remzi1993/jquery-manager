@@ -74,35 +74,37 @@ function wp_jquery_manager_plugin_activation() {
     }
 
     global $wp_version;
-
 	$php = '5.6';
 	$wp  = '4.9';
 
-	if ( version_compare( PHP_VERSION, $php, '<' ) ) {
-		deactivate_plugins( basename( __FILE__ ) );
+	if ( version_compare( PHP_VERSION, $php, '<' ) || version_compare( $wp_version, $wp, '<' ) ) {
+        deactivate_plugins( basename( __FILE__ ) );
 		wp_die(
 			'<p>' .
 			sprintf(
-				__( 'This plugin can not be activated because it requires a PHP version greater than %1$s. Your PHP version can be updated by your hosting company.', 'my_plugin' ),
+				__( 'This plugin can not be activated because either your WordPress instalation has an outdated/unsuported PHP version or you are using an outdated/old WordPress version.<br><br>This plugin requires a minimum of <strong>PHP 5.6 or greater</strong> and <strong>WordPress 4.9 or greater</strong>.<br><br> Your install:<br><strong>PHP: ' . PHP_VERSION .  '</strong><br><strong>WordPress: ' . $wp_version . '</strong><br><br>You need to update either one of them or both, before you are able to activate and use this plugin.<br>- <a href="https://wordpress.org/support/update-php/" target="_blank" rel="noopener noreferrer">Learn more about updating PHP</a><br>- <a href="https://wordpress.org/support/article/updating-wordpress/" target="_blank" rel="noopener noreferrer">Learn more about updating WordPress</a>', 'wp_jquery_manager_plugin' ),
 				$php
 			)
-			. '</p> <a href="' . admin_url( 'plugins.php' ) . '">' . __( 'go back', 'my_plugin' ) . '</a>'
-		);
-	}
-
-	if ( version_compare( $wp_version, $wp, '<' ) ) {
-		deactivate_plugins( basename( __FILE__ ) );
-		wp_die(
-			'<p>' .
-			sprintf(
-				__( 'This plugin can not be activated because it requires a WordPress version greater than %1$s. Please go to Dashboard &#9656; Updates to gran the latest version of WordPress .', 'my_plugin' ),
-				$php
-			)
-			. '</p> <a href="' . admin_url( 'plugins.php' ) . '">' . __( 'go back', 'my_plugin' ) . '</a>'
+			. '</p> <a href="' . admin_url( 'plugins.php' ) . '">' . __( 'go back', 'wp_jquery_manager_plugin' ) . '</a>'
 		);
 	}
 }
 
+// Initial admin notice for new users of this plugin
+require  WP_JQUERY_MANAGER_PLUGIN_DIR_PATH . 'vendor/collizo4sky/persist-admin-notices-dismissal/persist-admin-notices-dismissal.php';
+function sample_admin_notice__success() {
+    if ( ! PAnD::is_admin_notice_active( 'disable-done-notice-forever' ) ) {
+		return;
+	}
+
+	?>
+    	<div data-dismissible="disable-done-notice-forever" class="updated notice notice-success is-dismissible">
+    		<p><?php _e( '<strong style="font-size: 21px;">Thank you for using jQuery Manager 👍</strong> <span style="margin-right: 10px;font-size: 18px;">This plugin is brand new, it could use some attention. Please leave a review 😉</span><a href="https://wordpress.org/support/plugin/jquery-manager/reviews/#new-post" class="button secondary" target="_blank" rel="noopener noreferrer">Add your review</a>', WP_JQUERY_MANAGER_PLUGIN_TEXT_DOMAIN ); ?></p>
+    	</div>
+	<?php
+}
+add_action( 'admin_init', array( 'PAnD', 'init' ) );
+add_action( 'admin_notices', 'sample_admin_notice__success' );
 
 // Our plugin class
 if ( !class_exists( 'wp_jquery_manager_plugin' ) ) {
