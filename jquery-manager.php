@@ -12,7 +12,7 @@
  * Plugin Name:		jQuery Manager for WordPress
  * Plugin URI:		https://github.com/Remzi1993/jquery-manager
  * Description:		Manage jQuery and jQuery Migrate on a WordPress website, activate a specific jQuery and/or jQuery Migrate version. The ultimate jQuery debugging tool for WordPress. This plugin is an open source project, made possible by your contribution (code). Development is done on GitHub.
- * Version:			1.8.2
+ * Version:			1.8.3
  * Author:			Remzi Cavdar
  * Author URI:		https://twitter.com/remzicavdar
  * License:			GPLv3
@@ -207,7 +207,7 @@ if ( !class_exists( 'wp_jquery_manager_plugin' ) ) {
 					array(
 	                    'name'    => 'jquery_execution',
 	                    'label'   => __( 'jQuery execution', $this->text_domain ),
-	                    'desc'    => __( 'Experimental! Some plugins and/or themes may not support this. <strong>Broken for now, does nothing.</strong> See: https://github.com/Remzi1993/wp-jquery-manager/issues/8', $this->text_domain ),
+	                    'desc'    => __( 'Experimental! Some plugins and/or themes may not support this. <strong>Broken for now, does nothing.</strong> See: https://github.com/Remzi1993/jquery-manager/issues/8', $this->text_domain ),
 	                    'type'    => 'radio',
 						'default' => 'default',
 	                    'options' => array(
@@ -260,7 +260,7 @@ if ( !class_exists( 'wp_jquery_manager_plugin' ) ) {
 					array(
 						'name'		=> 'jquery_migrate_execution',
 						'label'		=> __( 'jQuery Migrate execution', $this->text_domain ),
-						'desc'		=> __( 'Experimental! Some plugins and/or themes do not support this. <strong>Broken for now, does nothing.</strong> See: https://github.com/Remzi1993/wp-jquery-manager/issues/8', $this->text_domain ),
+						'desc'		=> __( 'Experimental! Some plugins and/or themes do not support this. <strong>Broken for now, does nothing.</strong> See: https://github.com/Remzi1993/jquery-manager/issues/8', $this->text_domain ),
 						'type'		=> 'radio',
 						'default'	=> 'default',
 						'options'	=> array(
@@ -459,7 +459,7 @@ function wp_jquery_manager_plugin_front_end_scripts() {
 	}
     elseif ( !isset( $jquery_options['jquery'] ) ) { // Default setting
 
-        // Removing WP core jQuery, see https://github.com/Remzi1993/wp-jquery-manager/issues/2 and https://github.com/WordPress/WordPress/blob/91da29d9afaa664eb84e1261ebb916b18a362aa9/wp-includes/script-loader.php#L226
+        // Removing WP core jQuery, see https://github.com/Remzi1993/jquery-manager/issues/2 and https://github.com/WordPress/WordPress/blob/91da29d9afaa664eb84e1261ebb916b18a362aa9/wp-includes/script-loader.php#L226
         wp_dequeue_script( 'jquery' );
         wp_deregister_script( 'jquery' );
 
