@@ -65,8 +65,14 @@ Report bugs, issues, questions and/or feature request on our GitHub
 
 ## Do you want to help with development?
 
+Go to your working directory / WordPress install: `/wp-content/plugins/` where you want to clone this project<br>
 Use the following command to clone the repository:<br>
-`$ git clone git://github.com/Remzi1993/jquery-manager.git`<br>
-Working on some awesome feature? Create a new branch and when you're finished do a pull request.
+`$ git clone https://github.com/Remzi1993/jquery-manager.git`<br>
+Working on some awesome feature? **Fork the repo** and **create a new branch (branche name for example: feature-name)** and when you're finished do a **pull request**.
 
-[![forthebadge](https://forthebadge.com/images/badges/built-with-wordpress.svg)](https://forthebadge.com)
+### Git workflow explained ###
+- https://nvie.com/posts/a-successful-git-branching-model/
+- https://guides.github.com/introduction/flow/
+- https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
+
+[![WordPress](https://forthebadge.com/images/badges/built-with-wordpress.svg)](https://wordpress.org)
