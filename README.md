@@ -65,10 +65,11 @@ Report bugs, issues, questions and/or feature request on our GitHub
 
 ## Do you want to help with development?
 
-Go to your working directory / WordPress install: `/wp-content/plugins/` where you want to clone this project<br>
+Go to your working WP plugins directory / WordPress install: `/wp-content/plugins/` this is where you want to clone this project.<br>
 Use the following command to clone the repository:<br>
-`$ git clone https://github.com/Remzi1993/jquery-manager.git`<br>
-Working on some awesome feature? **Fork the repo** and **create a new branch (branche name for example: feature-name)** and when you're finished do a **pull request**.
+`$ git clone https://github.com/Remzi1993/jquery-manager.git`<br><br>
+
+Working on some awesome feature? **Fork this repo** and **create a new branch** (branch name for example: feature-name) and when you're finished do a **pull request**.
 
 ### Git workflow explained ###
 - https://nvie.com/posts/a-successful-git-branching-model/
