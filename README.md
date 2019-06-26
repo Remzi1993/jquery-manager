@@ -70,7 +70,8 @@ Working on some awesome feature or a fix? **Fork this repo** and **create a new 
 Go to your working WP plugins directory / WordPress install: `/wp-content/plugins/` this is where you want to clone this project or your forked repo in.<br>
 
 Use the following command to clone this repository:
-`$ git clone https://github.com/Remzi1993/jquery-manager.git` (if you have forked this repo. You should clone your own repo)<br>
+`$ git clone https://github.com/Remzi1993/jquery-manager.git` (example)
+If you have forked this repo. You should clone your own repo. To begin working on your feature or fix you should create a branch, this will be easier for us to check your pull request later on.
 
 ### Git workflow explained ###
 - https://nvie.com/posts/a-successful-git-branching-model/
