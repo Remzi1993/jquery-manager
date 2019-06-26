@@ -68,8 +68,9 @@ Report bugs, issues, questions and/or feature request on our GitHub
 Working on some awesome feature or a fix? **Fork this repo** and **create a new branch** (branch name for example: feature-name or fix-name) and when you're finished do a **pull request**.
 
 Go to your working WP plugins directory / WordPress install: `/wp-content/plugins/` this is where you want to clone this project or your forked repo in.<br>
-Use the following command to clone this repository:<br>
-`$ git clone https://github.com/Remzi1993/jquery-manager.git` (this is an example, if you have forked this repo. You should clone your own repo)<br>
+
+Use the following command to clone this repository:
+`$ git clone https://github.com/Remzi1993/jquery-manager.git` (if you have forked this repo. You should clone your own repo)<br>
 
 ### Git workflow explained ###
 - https://nvie.com/posts/a-successful-git-branching-model/
