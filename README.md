@@ -15,7 +15,7 @@ jQuery Manager for WordPress is an open source project and I would like to invit
 
 ## About this debugging tool
 
-Manage jQuery and jQuery Migrate on a WordPress website, select a specific jQuery and/or jQuery Migrate version. The ultimate jQuery debugging tool for WordPress
+Manage jQuery and jQuery Migrate on a WordPress website, activate/select a specific jQuery and/or jQuery Migrate version. The ultimate jQuery debugging tool for WordPress.
 
 ## Why yet another jQuery Updater / Manager / Developer / Debugging tool?
 

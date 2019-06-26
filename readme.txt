@@ -8,10 +8,18 @@ Stable tag: trunk
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0
 
-Manage jQuery and jQuery Migrate on a WordPress website, activate a specific jQuery and/or jQuery Migrate version. The ultimate jQuery debugging tool for WordPress. This plugin is an open source project, made possible by your contribution (code). Development is done on GitHub.
+Manage jQuery and jQuery Migrate, activate a specific jQuery and/or jQuery Migrate version. The ultimate jQuery debugging tool for WordPress. This plugin is an open source project, made possible by your contribution (code). Development is done on GitHub.
 
 == Description ==
 Manage [jQuery](https://jquery.com) and [jQuery Migrate](https://jquery.com/download/#jquery-migrate-plugin) on a WordPress website, activate a specific jQuery and/or jQuery Migrate version. The ultimate jQuery debugging tool for WordPress
+
+### Features
+
+* Enable / disable / remove jQuery Migrate
+* Activate / select a specific version of jQuery (Migrate)
+* Debug mode for developers
+
+Note that jQuery Manager requires PHP 5.6+ to run.
 
 When the plugin is activated the latest stable version of jQuery and jQuery Migrate are added to your website. The default is sufficient for most people, however the settings provide a way for you to tweak your jQuery install.
 
@@ -59,7 +67,9 @@ Deactivate the plugin and report this on the [plugin support forum](https://word
 
 = Which jQuery (Migrate) version do you support? =
 This plugin supports the 3 jQuery branches/versions and 2 versions of jQuery Migrate. You're able to select/activate a specific version or to disable it/turn it off completely<br>
+
 There are two versions of jQuery Migrate. jQuery Migrate 1.x will help you update your pre-1.9 jQuery code to jQuery 1.9 up to 3.0.
+
 jQuery Migrate 3.x helps you update code to run on jQuery 3.0 or higher. Most websites need jQuery Migrate 3.x, but if you have a modern/well supported WP theme and/or plugin(s) than you could give it a try to disable it. Check your browser dev tools if you see any errors.
 
 **jQuery versions**
