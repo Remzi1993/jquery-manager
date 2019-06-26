@@ -69,11 +69,12 @@ Go to your working WP plugins directory / WordPress install: `/wp-content/plugin
 Use the following command to clone the repository:<br>
 `$ git clone https://github.com/Remzi1993/jquery-manager.git`<br>
 
-Working on some awesome feature? **Fork this repo** and **create a new branch** (branch name for example: feature-name) and when you're finished do a **pull request**.
+Working on some awesome feature or a fix? **Fork this repo** and **create a new branch** (branch name for example: feature-name or fix-name) and when you're finished do a **pull request**.
 
 ### Git workflow explained ###
 - https://nvie.com/posts/a-successful-git-branching-model/
 - https://guides.github.com/introduction/flow/
 - https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
+- https://en.wikipedia.org/wiki/Fork_and_pull_model
 
 [![WordPress](https://forthebadge.com/images/badges/built-with-wordpress.svg)](https://wordpress.org)
