@@ -1,6 +1,6 @@
 === jQuery Manager for WordPress ===
 Contributors: remzicavdar
-Tags: jquery, jquery manager, jquery updater, jquery migrate, jquery update, javascript, jquery ui, update, jquery update, jquery wordpress, jquery wordpress updater, manage jquery, jquery settings, jquery tool, jquery debugger, debug
+Tags: jquery, jquery manager, jquery updater, jquery migrate, jquery update, remove jquery migrate, javascript, jquery ui, update, jquery update, jquery wordpress, jquery wordpress updater, manage jquery, jquery settings, jquery tool, jquery debugger, debug
 Requires at least: 4.9
 Tested up to: 5.3
 Requires PHP: 5.6
@@ -56,6 +56,20 @@ Deactivate the plugin and report this on the [plugin support forum](https://word
 
 = Does this plugin modify my WP installation? =
 **No** modification to the WordPress installation is made, therefore deactivation and/or uninstallation of this plugin returns your site to it`s original state.
+
+= Which jQuery (Migrate) version do you support? =
+This plugin supports the 3 jQuery branches/versions and 2 versions of jQuery Migrate. You're able to select/activate a specific version or to disable it/turn it off completely<br>
+There are two versions of jQuery Migrate. jQuery Migrate 1.x will help you update your pre-1.9 jQuery code to jQuery 1.9 up to 3.0.
+jQuery Migrate 3.x helps you update code to run on jQuery 3.0 or higher. Most websites need jQuery Migrate 3.x, but if you have a modern/well supported WP theme and/or plugin(s) than you could give it a try to disable it. Check your browser dev tools if you see any errors.
+
+**jQuery versions**
+jQuery 3.x (default is compressed/minified production)
+jQuery 2.x
+jQuery 1.x
+
+**jQuery Migrate versions**
+jQuery Migrate 3.x (default is compressed/minified production)
+jQuery Migrate 1.x
 
 == Changelog ==
 See changelog on [GitHub](https://github.com/Remzi1993/jquery-manager/releases)
