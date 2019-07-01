@@ -15,7 +15,7 @@ Manage [jQuery](https://jquery.com) and [jQuery Migrate](https://jquery.com/down
 
 ### Features
 
-* Enable / disable / remove jQuery Migrate
+* Enable / disable jQuery Migrate
 * Activate / select a specific version of jQuery (Migrate)
 * Debug mode for developers
 
@@ -80,6 +80,21 @@ jQuery 1.x
 **jQuery Migrate versions**
 jQuery Migrate 3.x (default is compressed/minified production)
 jQuery Migrate 1.x
+
+= Is it possible to disable jQuery Migrate? =
+Yes, this is possible and done in the plugin settings.
+
+= Is it possible to enable a specific version of jQuery (Migrate) =
+Yes, this is possible and done in the plugin settings.
+
+= What is jQuery Migrate? =
+The jQuery Migrate plugin was created to simplify the transition from older versions of jQuery. The plugin restores deprecated features and behaviors so that older code will still run properly on newer versions of jQuery.
+
+Use the uncompressed development version to diagnose compatibility issues, it will generate warnings on the console that you can use to identify and fix problems. Use the compressed production version to simply fix compatibility issues without generating console warnings.
+
+There are two versions of jQuery Migrate. jQuery Migrate 1.x will help you update your pre-1.9 jQuery code to jQuery 1.9 up to 3.0.
+
+jQuery Migrate 3.x helps you update code to run on jQuery 3.0 or higher.
 
 == Changelog ==
 See changelog on [GitHub](https://github.com/Remzi1993/jquery-manager/releases)
