@@ -51,7 +51,10 @@ Go to the wordpress.org plugin page [wordpress.org/plugins/jquery-manager/](http
 
 [@YahnisElsts](https://github.com/YahnisElsts) for his amazing work on a updater, that we were using in this
 open source project before we became an official WP plugin:<br> https://github.com/YahnisElsts/plugin-update-checker <br><br>
-[@tareq1988](https://github.com/tareq1988) for his awesome WordPress Settings API abstraction class:<br> https://github.com/tareq1988/wordpress-settings-api-class <br>
+
+[@tareq1988](https://github.com/tareq1988) for his awesome WordPress Settings API abstraction class:<br> https://github.com/tareq1988/wordpress-settings-api-class<br><br>
+
+I thank [@collizo4sky](https://github.com/collizo4sky) for a library which made my live easier: https://github.com/collizo4sky/persist-admin-notices-dismissal
 
 ## Bug reports
 
