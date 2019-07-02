@@ -15,7 +15,7 @@ Manage [jQuery](https://jquery.com) and [jQuery Migrate](https://jquery.com/down
 
 ### Features
 
-* Enable / disable jQuery Migrate
+* Enable / disable remove jQuery Migrate
 * Activate / select a specific version of jQuery (Migrate)
 * Debug mode for developers
 
@@ -97,7 +97,7 @@ There are two versions of jQuery Migrate. jQuery Migrate 1.x will help you updat
 jQuery Migrate 3.x helps you update code to run on jQuery 3.0 or higher.
 
 == Changelog ==
-See changelog on [GitHub](https://github.com/Remzi1993/jquery-manager/releases)
+See changelog on the [GitHub project page](https://github.com/Remzi1993/jquery-manager/releases)
 
 == Upgrade Notice ==
-See changelog on [GitHub](https://github.com/Remzi1993/jquery-manager/releases)
+See changelog on the [GitHub project page](https://github.com/Remzi1993/jquery-manager/releases)

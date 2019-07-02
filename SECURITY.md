@@ -11,5 +11,5 @@ Only 1.9.x is supported with bug fixes and security updates.
 
 ## Reporting a Vulnerability
 
-Please, give me time to fix this in a timely manner. You could mail me this at: ict@remzi.info or create a issue on our GitHub project page (https://github.com/Remzi1993/jquery-manager/issues).
+Please, give me time to fix this in a timely manner. You could mail me this at: ict@remzi.info or create an issue on our GitHub project page (https://github.com/Remzi1993/jquery-manager/issues).
 I will reply/respond within 24 hours (due to diffrent time zones)
