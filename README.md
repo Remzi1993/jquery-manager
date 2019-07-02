@@ -1,10 +1,13 @@
-[![GitHub release](https://img.shields.io/github/release/Remzi1993/wp-jquery-manager.svg)](https://github.com/Remzi1993/wp-jquery-manager/releases/latest)
-[![GitHub issues](https://img.shields.io/github/issues/Remzi1993/wp-jquery-manager.svg)](https://github.com/Remzi1993/wp-jquery-manager/issues)
-[![GitHub forks](https://img.shields.io/github/forks/Remzi1993/wp-jquery-manager.svg)](https://github.com/Remzi1993/wp-jquery-manager/network/members)
-[![GitHub stars](https://img.shields.io/github/stars/Remzi1993/wp-jquery-manager.svg)](https://github.com/Remzi1993/wp-jquery-manager/stargazers)
-[![GitHub license](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://github.com/Remzi1993/wp-jquery-manager/blob/master/LICENSE)
-[![Travis (.org) branch](https://img.shields.io/travis/Remzi1993/wp-jquery-manager/master.svg)](https://travis-ci.org/Remzi1993/wp-jquery-manager)
+# [Download jQuery Manager](https://downloads.wordpress.org/plugin/jquery-manager.zip) (WordPress plugin)
+
+[![GitHub release](https://img.shields.io/github/release/Remzi1993/jquery-manager.svg)](https://github.com/Remzi1993/jquery-manager/releases/latest)
+[![GitHub issues](https://img.shields.io/github/issues/Remzi1993/jquery-manager.svg)](https://github.com/Remzi1993/jquery-manager/issues)
+[![GitHub forks](https://img.shields.io/github/forks/Remzi1993/jquery-manager.svg)](https://github.com/Remzi1993/jquery-manager/network/members)
+[![GitHub stars](https://img.shields.io/github/stars/Remzi1993/jquery-manager.svg)](https://github.com/Remzi1993/jquery-manager/stargazers)
+[![GitHub license](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://github.com/Remzi1993/jquery-manager/blob/master/LICENSE)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FRemzi1993%2Fwp-jquery-manager.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FRemzi1993%2Fwp-jquery-manager?ref=badge_shield)
+[![Travis (.org) branch](https://img.shields.io/travis/Remzi1993/jquery-manager/master.svg)](https://travis-ci.org/Remzi1993/jquery-manager)
+[![Maintainability](https://api.codeclimate.com/v1/badges/3dab8e92324e8227109e/maintainability)](https://codeclimate.com/github/Remzi1993/jquery-manager/maintainability)
 
 # jQuery Manager for WordPress
 
@@ -12,7 +15,7 @@ jQuery Manager for WordPress is an open source project and I would like to invit
 
 ## About this debugging tool
 
-Manage jQuery and jQuery Migrate on a WordPress website, select a specific jQuery and/or jQuery Migrate version. The ultimate jQuery debugging tool for WordPress
+Manage jQuery and jQuery Migrate on a WordPress website, activate/select a specific jQuery and/or jQuery Migrate version. The ultimate jQuery debugging tool for WordPress.
 
 ## Why yet another jQuery Updater / Manager / Developer / Debugging tool?
 
@@ -28,48 +31,59 @@ Because none of the developer tools let's you select a specific version of jQuer
 :thumbsup: Active support<br>
 :arrows_counterclockwise: Working on more features
 
-## [Download](https://github.com/Remzi1993/wp-jquery-manager/releases) jQuery Manager for WordPress
+## [Download](https://downloads.wordpress.org/plugin/jquery-manager.zip) jQuery Manager for WordPress
+Go to the wordpress.org plugin page [wordpress.org/plugins/jquery-manager/](https://wordpress.org/plugins/jquery-manager/) and download the .zip file.
 
-Go to the [releases](https://github.com/Remzi1993/wp-jquery-manager/releases) page and download the .zip file.
-
-### Installation via WordPress admin
+### Manual installation by uploading .zip file via WordPress admin
 
 1. Navigate to > `Plugins` > `Add New`
-2. On your top left > click on `Upload Plugin` and select your .zip file you downloaded earlier and click `Install Now`
-3. By activating the plugin, jQuery and jQuery Migrate are updated to the latest stable version. (Plugin settings are located under `Tools`)
+2. On your top left > click on `Upload Plugin` and select the .zip file you downloaded earlier and click `Install Now`
+3. By activating the plugin, jQuery and jQuery Migrate are updated to the latest stable version by default. (Plugin settings are located under `Tools`)
 
-### Installation via FTP, SFTP or SSH
+### Manual installation by uploading folder/directory via FTP, SFTP or SSH
 
-1. Unzip (extract/unpack/uncompress) the .zip file you downloaded from
-   [GitHub releases](https://github.com/Remzi1993/wp-jquery-manager/releases)
-2. Upload the folder `wp-jquery-manager` to the `/wp-content/plugins/` directory on your server
-3. By activating the plugin, jQuery and jQuery Migrate are updated to the latest stable version.
+1. Unzip (extract/unpack/uncompress) the .zip file you downloaded earlier
+2. Upload the folder `jquery-manager` to the `/wp-content/plugins/` directory on your server
+3. By activating the plugin, jQuery and jQuery Migrate are updated to the latest stable version by default.
    (Plugin settings are located under `Tools`)
 
 ## I have a few people I would like to thank
 
-[@YahnisElsts](https://github.com/YahnisElsts) for his amazing work on a updater, that we're using in this
-open source project:<br> https://github.com/YahnisElsts/plugin-update-checker <br><br>
-[@tareq1988](https://github.com/tareq1988) for his awesome WordPress Settings API abstraction class:<br> https://github.com/tareq1988/wordpress-settings-api-class <br>
+[@YahnisElsts](https://github.com/YahnisElsts) for his amazing work on a updater, that we were using in this
+open source project before we became an official WP plugin:<br> https://github.com/YahnisElsts/plugin-update-checker<br>
+
+[@tareq1988](https://github.com/tareq1988) for his awesome WordPress Settings API abstraction class:<br> https://github.com/tareq1988/wordpress-settings-api-class<br>
+
+I thank [@collizo4sky](https://github.com/collizo4sky) for a library which made my live easier: https://github.com/collizo4sky/persist-admin-notices-dismissal
 
 ## Bug reports
 
 Report bugs, issues, questions and/or feature request on our GitHub
-[issues](https://github.com/Remzi1993/wp-jquery-manager/issues) page.
+[issues](https://github.com/Remzi1993/jquery-manager/issues) page.
 
 ## Screenshots
 
-<img src="https://raw.githubusercontent.com/Remzi1993/wp-jquery-manager/master/assets/img/screenshot-1.png">
-<img src="https://raw.githubusercontent.com/Remzi1993/wp-jquery-manager/master/assets/img/screenshot-2.png">
+<img src="https://ps.w.org/jquery-manager/assets/screenshot-1.png">
+<img src="https://ps.w.org/jquery-manager/assets/screenshot-2.png">
 
 ## Do you want to help with development?
 
-Use the following command to clone the repository:<br>
-`$ git clone git://github.com/Remzi1993/wp-jquery-manager.git`<br>
-Working on some awesome feature? Create a new branch and when you're finished do a pull request.
+Working on some awesome feature or a fix? **Fork this repo** and **create a new branch** (branch name for example: feature-name or fix-name) and when you're finished do a **pull request**.
 
-[![forthebadge](https://forthebadge.com/images/badges/built-with-wordpress.svg)](https://forthebadge.com)
+Go to your working WP plugins directory / WordPress install: `/wp-content/plugins/` this is where you want to clone this project or your forked repo in.<br>
 
+Use the following command to clone this repository:<br>
+`$ git clone https://github.com/Remzi1993/jquery-manager.git` (example)<br>
+If you have forked this repo. You should clone your own repo. To begin working on your feature or fix you should create a branch, this will be easier for us to check your pull request later on.
+
+### Git workflow explained ###
+- https://nvie.com/posts/a-successful-git-branching-model/
+- https://guides.github.com/introduction/flow/
+- https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
+- https://en.wikipedia.org/wiki/Fork_and_pull_model
+
+
+[![WordPress](https://forthebadge.com/images/badges/built-with-wordpress.svg)](https://wordpress.org)
 
 ## License
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FRemzi1993%2Fwp-jquery-manager.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FRemzi1993%2Fwp-jquery-manager?ref=badge_large)

@@ -1,5 +1,43 @@
-# Created by https://www.gitignore.io/api/windows
-# Edit at https://www.gitignore.io/?templates=windows
+
+# Created by https://www.gitignore.io/api/macos,windows,composer,wordpress
+# Edit at https://www.gitignore.io/?templates=macos,windows,composer,wordpress
+
+### Composer ###
+composer.phar
+/vendor/*
+!vendor/collizo4sky/
+
+# Commit your application's lock file https://getcomposer.org/doc/01-basic-usage.md#commit-your-composer-lock-file-to-version-control
+# You may choose to ignore a library lock file http://getcomposer.org/doc/02-libraries.md#lock-file
+# composer.lock
+
+### macOS ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
 
 ### Windows ###
 # Windows thumbnail cache files
@@ -26,48 +64,8 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.gitignore.io/api/windows
-
-# Compiled source #
-###################
-*.com
-*.class
-*.dll
-*.exe
-*.o
-*.so
-
-# Packages #
-############
-# it's better to unpack these files and commit the raw source
-# git has its own built in compression methods
-*.7z
-*.dmg
-*.gz
-*.iso
-*.jar
-*.rar
-*.tar
-*.zip
-
-# Logs and databases #
-######################
+### WordPress ###
 *.log
-*.sql
-*.sqlite
-
-# OS generated files #
-######################
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-
-# WordPress #
-######################
 wp-config.php
 wp-content/advanced-cache.php
 wp-content/backup-db/
@@ -86,22 +84,37 @@ wp-content/plugins/hello.php
 /sitemap.xml
 /sitemap.xml.gz
 
-composer.phar
-/vendor/
 
-# Commit your application's lock file https://getcomposer.org/doc/01-basic-usage.md#commit-your-composer-lock-file-to-version-control
-# You may choose to ignore a library lock file http://getcomposer.org/doc/02-libraries.md#lock-file
-# composer.lock
+# End of https://www.gitignore.io/api/macos,windows,composer,wordpress
 
 # WP-CLI
 config.yml
 PHAR_BUILD_VERSION
 /cache
 /packages
-/vendor
 /*.phar
-/phpunit.xml.dist
 /codesniffer
 /PHP_Codesniffer-VariableAnalysis
 .*.swp
 *.log
+
+# PHPUnit
+/.ant_targets
+/.idea
+/.php_cs
+/.php_cs.cache
+/build/documentation
+/build/logfiles
+/build/phar
+/build/phar-scoped
+/build/phpdox
+/build/*.phar
+/build/*.phar.asc
+/build/binary-phar-autoload.php
+/cache.properties
+/tests/end-to-end/*.diff
+/tests/end-to-end/*.exp
+/tests/end-to-end/*.log
+/tests/end-to-end/*.out
+/tests/end-to-end/*.php
+.phpunit.result.cache
