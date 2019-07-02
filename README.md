@@ -5,7 +5,7 @@
 [![GitHub forks](https://img.shields.io/github/forks/Remzi1993/jquery-manager.svg)](https://github.com/Remzi1993/jquery-manager/network/members)
 [![GitHub stars](https://img.shields.io/github/stars/Remzi1993/jquery-manager.svg)](https://github.com/Remzi1993/jquery-manager/stargazers)
 [![GitHub license](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://github.com/Remzi1993/jquery-manager/blob/master/LICENSE)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FRemzi1993%2Fwp-jquery-manager.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FRemzi1993%2Fwp-jquery-manager?ref=badge_shield)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FRemzi1993%2Fjquery-manager.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FRemzi1993%2Fjquery-manager?ref=badge_shield)
 [![Travis (.org) branch](https://img.shields.io/travis/Remzi1993/jquery-manager/master.svg)](https://travis-ci.org/Remzi1993/jquery-manager)
 [![Maintainability](https://api.codeclimate.com/v1/badges/3dab8e92324e8227109e/maintainability)](https://codeclimate.com/github/Remzi1993/jquery-manager/maintainability)
 
@@ -86,4 +86,4 @@ If you have forked this repo. You should clone your own repo. To begin working o
 [![WordPress](https://forthebadge.com/images/badges/built-with-wordpress.svg)](https://wordpress.org)
 
 ## License
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FRemzi1993%2Fwp-jquery-manager.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FRemzi1993%2Fwp-jquery-manager?ref=badge_large)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FRemzi1993%2Fjquery-manager.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FRemzi1993%2Fjquery-manager?ref=badge_large)
