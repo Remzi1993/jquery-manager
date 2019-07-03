@@ -25,7 +25,7 @@ Note that jQuery Manager requires PHP 5.6+ to run.
 
 When the plugin is activated the latest stable version of jQuery and jQuery Migrate are added to your website. The default is sufficient for most people, however the settings provide a way for you to tweak your jQuery install.
 
-jQuery Manager for WordPress is an open source project and I would like to invite anyone to contribute. The development and issue tracker is located on GitHub, see: (https://github.com/Remzi1993/jquery-manager)
+jQuery Manager for WordPress is an open source project and I would like to invite anyone to contribute. The development and issue tracker is located on GitHub, see: [https://github.com/Remzi1993/jquery-manager](https://github.com/Remzi1993/jquery-manager)
 
 ### Also a Developer / Debugging tool ###
 Everything should work as intended, you should check your website if everything works fine. If things don't work, don't panic. You can deactivate the plugin and return to the state before or tweak it's settings until everything works as intended.
@@ -106,7 +106,7 @@ See changelog on the [GitHub project page](https://github.com/Remzi1993/jquery-m
 See changelog on the [GitHub project page](https://github.com/Remzi1993/jquery-manager/releases)
 
 == Translations ==
-This plugin is not ready for translation. Plugin Internationalization (i18n) will eventually happen, see: (https://github.com/Remzi1993/jquery-manager/issues/14)
+This plugin is not ready for translation. Plugin Internationalization (i18n) will eventually happen, see: [https://github.com/Remzi1993/jquery-manager/issues/14](https://github.com/Remzi1993/jquery-manager/issues/14)
 
 == Additional Info ==
 **Idea Behind / Philosophy:** It began as a plugin internally at our company, we would uses jQuery Updater plugin and this plugin was buggy and slow. That's why we decided to fork this plugin and create our own WP plugin.
