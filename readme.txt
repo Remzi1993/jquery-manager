@@ -12,6 +12,7 @@ Manage jQuery and jQuery Migrate, activate a specific jQuery and/or jQuery Migra
 
 == Description ==
 Manage [jQuery](https://jquery.com) and [jQuery Migrate](https://jquery.com/download/#jquery-migrate-plugin) on a WordPress website, activate a specific jQuery and/or jQuery Migrate version. The ultimate jQuery debugging tool for WordPress
+TLDR: Update jQuery / Remove jQuery Migrate / get notified of a jQuery update / manage jQuery
 
 ### Features
 
