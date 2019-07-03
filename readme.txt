@@ -13,11 +13,12 @@ Manage jQuery and jQuery Migrate, activate a specific jQuery and/or jQuery Migra
 == Description ==
 Manage [jQuery](https://jquery.com) and [jQuery Migrate](https://jquery.com/download/#jquery-migrate-plugin) on a WordPress website, activate a specific jQuery and/or jQuery Migrate version. The ultimate jQuery debugging tool for WordPress
 
-**TLDR:** Update jQuery / Remove jQuery Migrate / get notified of a jQuery update / manage jQuery
+**TLDR:** Update jQuery / Remove jQuery Migrate / jQuery Updater and get notified of a jQuery update / manage jQuery
 
 ### Features ###
 * **Remove jQuery Migrate** - if you use plugins which are updated regularly, then you can probably disable / remove jQuery Migrate.
-* **Select jQuery (Migrate) version** — Activate / select a specific version of jQuery or jQuery Migrate.
+* **jQuery Updater** - If this plugin is installed and activated, jQuery will be updated when you update this plugin
+* **Select jQuery (Migrate) version** — Activate / select a specific version of jQuery and/or jQuery Migrate.
 * **Debug mode** - Debug mode for developers
 * **Active support** - Active support through [WordPress support forum](https://wordpress.org/support/plugin/jquery-manager/) and [GitHub issues page](https://github.com/Remzi1993/jquery-manager/issues)
 
