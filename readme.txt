@@ -12,6 +12,7 @@ Manage jQuery and jQuery Migrate, activate a specific jQuery and/or jQuery Migra
 
 == Description ==
 Manage [jQuery](https://jquery.com) and [jQuery Migrate](https://jquery.com/download/#jquery-migrate-plugin) on a WordPress website, activate a specific jQuery and/or jQuery Migrate version. The ultimate jQuery debugging tool for WordPress
+
 TLDR: Update jQuery / Remove jQuery Migrate / get notified of a jQuery update / manage jQuery
 
 ### Features
@@ -24,7 +25,7 @@ Note that jQuery Manager requires PHP 5.6+ to run.
 
 When the plugin is activated the latest stable version of jQuery and jQuery Migrate are added to your website. The default is sufficient for most people, however the settings provide a way for you to tweak your jQuery install.
 
-jQuery Manager for WordPress is an open source project and I would like to invite anyone to contribute. The development and issue tracker is located on GitHub, see: [github.com/Remzi1993/jquery-manager](https://github.com/Remzi1993/jquery-manager)
+jQuery Manager for WordPress is an open source project and I would like to invite anyone to contribute. The development and issue tracker is located on GitHub, see: [https://github.com/Remzi1993/jquery-manager](https://github.com/Remzi1993/jquery-manager)
 
 **This is also a Developer / Debugging tool**
 
