@@ -85,5 +85,11 @@ If you have forked this repo. You should clone your own repo. To begin working o
 
 [![WordPress](https://forthebadge.com/images/badges/built-with-wordpress.svg)](https://wordpress.org)
 
+## This project uses [Semantic Versioning](https://semver.org/) ##
+Given a version number MAJOR.MINOR.PATCH, increment the:
+1. MAJOR version when you make incompatible API changes,
+2. MINOR version when you add functionality in a backwards-compatible manner, and
+3. PATCH version when you make backwards-compatible bug fixes.
+
 ## License
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FRemzi1993%2Fjquery-manager.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FRemzi1993%2Fjquery-manager?ref=badge_large)
