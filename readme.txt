@@ -105,4 +105,10 @@ See changelog on the [GitHub project page](https://github.com/Remzi1993/jquery-m
 == Upgrade Notice ==
 See changelog on the [GitHub project page](https://github.com/Remzi1993/jquery-manager/releases)
 
-== Additional Info One (Optional) ==
+== Translations ==
+This plugin is not ready for translation. Plugin Internationalization (i18n) will eventually happen, see: (https://github.com/Remzi1993/jquery-manager/issues/14)
+
+== Additional Info ==
+**Idea Behind / Philosophy:** It began as a plugin internally at our company, we would uses jQuery Updater plugin and this plugin was buggy and slow. That's why we decided to fork this plugin and create our own WP plugin.
+
+ I think this plugin solves a major shortcoming in WordPress and gives you finite control over jQuery
