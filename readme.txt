@@ -13,22 +13,21 @@ Manage jQuery and jQuery Migrate, activate a specific jQuery and/or jQuery Migra
 == Description ==
 Manage [jQuery](https://jquery.com) and [jQuery Migrate](https://jquery.com/download/#jquery-migrate-plugin) on a WordPress website, activate a specific jQuery and/or jQuery Migrate version. The ultimate jQuery debugging tool for WordPress
 
-TLDR: Update jQuery / Remove jQuery Migrate / get notified of a jQuery update / manage jQuery
+**TLDR:** Update jQuery / Remove jQuery Migrate / get notified of a jQuery update / manage jQuery
 
-### Features
-
-* Enable / disable remove jQuery Migrate
-* Activate / select a specific version of jQuery (Migrate)
-* Debug mode for developers
+### Features ###
+* **Remove jQuery Migrate** - if you use plugins which are updated regularly, then you can probably disable / remove jQuery Migrate.
+* **Select jQuery (Migrate) version** — Activate / select a specific version of jQuery or jQuery Migrate.
+* **Debug mode** - Debug mode for developers
+* **Active support** - Active support through [WordPress support forum](https://wordpress.org/support/plugin/jquery-manager/) and [GitHub issues page](https://github.com/Remzi1993/jquery-manager/issues)
 
 Note that jQuery Manager requires PHP 5.6+ to run.
 
 When the plugin is activated the latest stable version of jQuery and jQuery Migrate are added to your website. The default is sufficient for most people, however the settings provide a way for you to tweak your jQuery install.
 
-jQuery Manager for WordPress is an open source project and I would like to invite anyone to contribute. The development and issue tracker is located on GitHub, see: [https://github.com/Remzi1993/jquery-manager](https://github.com/Remzi1993/jquery-manager)
+jQuery Manager for WordPress is an open source project and I would like to invite anyone to contribute. The development and issue tracker is located on GitHub, see: (https://github.com/Remzi1993/jquery-manager)
 
-**This is also a Developer / Debugging tool**
-
+### Also a Developer / Debugging tool ###
 Everything should work as intended, you should check your website if everything works fine. If things don't work, don't panic. You can deactivate the plugin and return to the state before or tweak it's settings until everything works as intended.
 
 You should understand that not all themes and/or plugins support the latest jQuery version even with jQuery Migrate turned on, but for you to encounter this is highly unlikely if your theme or plugins are up to date.
@@ -36,8 +35,7 @@ This is also a developer/debugging tool.
 
 I will not provide support on debugging your own JavaScript and/or jQuery code. (Only if you like to hire me, of course)
 
-**Reporting problems**
-
+### Reporting problems ###
 Report bugs, issues, questions and/or feature request on our [GitHub issues page](https://github.com/Remzi1993/jquery-manager/issues).
 
 I will only provide support on issues caused by this plugin, not your own JavaScript and/or jQuery code. (Again, I will provide paid support or fix all your issues if you're willing to hire me to debug and/or optimize your website)
@@ -57,7 +55,6 @@ Manual installation by uploading folder/directory via FTP, SFTP or SSH
 4. By activating the plugin, jQuery and jQuery Migrate are updated to the latest stable version. (Plugin settings are located under `Tools`)
 
 == Frequently Asked Questions ==
-
 = Is this plugin compatible with PHP 5.6, 7, 7.1, 7.2, HHVM, et cetera, et cetera? =
 Short answer: probably. Long answer: I honestly don't know for sure. As far as I know I didn't use specific PHP 7 features. I made a simple plugin. That's why I recommend a minimum of PHP 5.6. Also I do specific tests to ensure that I stay compatible with PHP 5.6
 
@@ -98,8 +95,14 @@ There are two versions of jQuery Migrate. jQuery Migrate 1.x will help you updat
 
 jQuery Migrate 3.x helps you update code to run on jQuery 3.0 or higher.
 
+== Screenshots ==
+1. jQuery settings: enable / disable jQuery, select version and etc
+2. jQuery Migrate settings: enable / disable jQuery Migrate, select version and etc
+
 == Changelog ==
 See changelog on the [GitHub project page](https://github.com/Remzi1993/jquery-manager/releases)
 
 == Upgrade Notice ==
 See changelog on the [GitHub project page](https://github.com/Remzi1993/jquery-manager/releases)
+
+== Additional Info One (Optional) ==

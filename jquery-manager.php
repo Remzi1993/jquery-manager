@@ -38,7 +38,7 @@ define( 'WP_JQUERY_MANAGER_PLUGIN_TEXT_DOMAIN', 'wp-jquery-manager' );
 define( 'WP_JQUERY_MANAGER_PLUGIN_SITE_URL', get_site_url() );
 define( 'WP_JQUERY_MANAGER_PLUGIN_DOMAIN_NAME', $_SERVER['HTTP_HOST'] );
 
-// jQuery versions, don't forget to update your files! .js and .min.js are automatically added accordingly at the end of the name/file.
+// jQuery versions, don't forget to update the files! .js and .min.js are automatically added accordingly at the end of the name/file.
 define( 'WP_JQUERY_MANAGER_PLUGIN_JQUERY_3X', 'jquery-3.4.1' );
 define( 'WP_JQUERY_MANAGER_PLUGIN_JQUERY_3X_SLIM', 'jquery-3.4.1.slim' );
 define( 'WP_JQUERY_MANAGER_PLUGIN_JQUERY_2X', 'jquery-2.2.4' );
@@ -105,6 +105,16 @@ function sample_admin_notice__success() {
 }
 add_action( 'admin_init', array( 'PAnD', 'init' ) );
 add_action( 'admin_notices', 'sample_admin_notice__success' );
+
+/**
+ * Load plugin textdomain.
+ * This feature is not stable, so it is commented out.
+ */
+// function wp_jquery_manager_plugin_load_textdomain() {
+//     load_plugin_textdomain( WP_JQUERY_MANAGER_PLUGIN_TEXT_DOMAIN, false, WP_JQUERY_MANAGER_PLUGIN_DIR_PATH . 'languages' );
+// }
+// add_action( 'init', 'wp_jquery_manager_plugin_load_textdomain' );
+
 
 // Our plugin class
 if ( !class_exists( 'wp_jquery_manager_plugin' ) ) {
