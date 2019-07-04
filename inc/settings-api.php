@@ -136,6 +136,7 @@ if ( !class_exists( 'WeDevs_Settings_API' ) ) {
                         'section'           => $section,
                         'size'              => isset( $option['size'] ) ? $option['size'] : null,
                         'options'           => isset( $option['options'] ) ? $option['options'] : '',
+                        'options_groups'    => isset( $option['options_groups'] ) ? $option['options_groups'] : '',
                         'std'               => isset( $option['default'] ) ? $option['default'] : '',
                         'sanitize_callback' => isset( $option['sanitize_callback'] ) ? $option['sanitize_callback'] : '',
                         'type'              => $type,
@@ -287,14 +288,32 @@ if ( !class_exists( 'WeDevs_Settings_API' ) ) {
          * @param array   $args settings field args
          */
         function callback_select( $args ) {
+            $jquery_options = $GLOBALS['wp_jquery_manager_plugin_jquery_settings'];
+            $jquery_migrate_options = $GLOBALS['wp_jquery_manager_plugin_jquery_migrate_settings'];
+
 
             $value = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
             $size  = isset( $args['size'] ) && !is_null( $args['size'] ) ? $args['size'] : 'regular';
             $html  = sprintf( '<select class="%1$s" name="%2$s[%3$s]" id="%2$s[%3$s]">', $size, $args['section'], $args['id'] );
 
+
+
+            foreach ( $args['options_groups'] as $key => $label ) {
+
+                $html .= sprintf( '<optgroup label="%s"%s>%s', $key, selected( $value, $key, false ), $label );
+
+
+
             foreach ( $args['options'] as $key => $label ) {
                 $html .= sprintf( '<option value="%s"%s>%s</option>', $key, selected( $value, $key, false ), $label );
             }
+
+            $html .='</optgroup>';
+
+
+
+        }
+
 
             $html .= sprintf( '</select>' );
             $html .= $this->get_field_description( $args );

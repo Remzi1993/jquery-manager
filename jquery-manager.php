@@ -205,11 +205,15 @@ if ( !class_exists( 'wp_jquery_manager_plugin' ) ) {
 	                    'desc'    => __( 'Select a particular jQuery version', $this->text_domain ),
 	                    'type'    => 'select',
 	                    'default' => 'jquery_3x_min',
+                        'options_groups' => array(
+                            'test'      => 'Swedish Cars',
+                            'test2'     => 'German Cars'
+                        ),
 	                    'options' => array(
 	                        'jquery_3x_min'      => $jquery_3x . '.min.js (default)',
 							'jquery_3x'          => $jquery_3x . '.js',
-                            'jquery_3x_slim_min' => $jquery_3x_slim . '.min.js',
-							'jquery_3x_slim'     => $jquery_3x_slim . '.js',
+                            'jquery_3x_slim_min' => $jquery_3x_slim . '.min.js (excludes ajax & effects modules, minified)',
+							'jquery_3x_slim'     => $jquery_3x_slim . '.js (excludes the ajax and effects modules)',
 							'jquery_2x_min'      => $jquery_2x . '.min.js',
 							'jquery_2x'          => $jquery_2x . '.js',
 							'jquery_1x_min'      => $jquery_1x . '.min.js',
@@ -680,5 +684,4 @@ register_deactivation_hook( __FILE__, 'wp_jquery_manager_plugin_deactivation' );
 function wp_jquery_manager_plugin_deactivation() {
 	delete_option( 'wp_jquery_manager_plugin_jquery_settings' );
 	delete_option( 'wp_jquery_manager_plugin_jquery_migrate_settings' );
-	delete_option( 'external_updates-wp_jquery_manager_plugin' );
 }
