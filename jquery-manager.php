@@ -92,7 +92,7 @@ function wp_jquery_manager_plugin_activation() {
 
 // Initial admin notice for new users of this plugin
 require  WP_JQUERY_MANAGER_PLUGIN_DIR_PATH . 'vendor/collizo4sky/persist-admin-notices-dismissal/persist-admin-notices-dismissal.php';
-function sample_admin_notice__success() {
+function wp_jquery_manager_plugin_admin_notice() {
     if ( ! PAnD::is_admin_notice_active( 'disable-done-notice-forever' ) ) {
 		return;
 	}
@@ -104,7 +104,7 @@ function sample_admin_notice__success() {
 	<?php
 }
 add_action( 'admin_init', array( 'PAnD', 'init' ) );
-add_action( 'admin_notices', 'sample_admin_notice__success' );
+add_action( 'admin_notices', 'wp_jquery_manager_plugin_admin_notice' );
 
 /**
  * Load plugin textdomain.
@@ -140,6 +140,8 @@ if ( !class_exists( 'wp_jquery_manager_plugin' ) ) {
 
 	        add_action( 'admin_init', array( $this, 'admin_init' ) );
 	        add_action( 'admin_menu', array( $this, 'admin_menu' ) );
+
+            add_filter('autoptimize_filter_js_dontmove','autoptimize_support');
 	    }
 
 	    public function admin_init() {
@@ -160,6 +162,11 @@ if ( !class_exists( 'wp_jquery_manager_plugin' ) ) {
 
 			add_management_page( $page_title, $menu_title, $capability, $menu_slug, $function );
 	    }
+
+        public function autoptimize_support($dontmove_array) {
+            $dontmove_array[]='/jquery-manager/assets/js';
+            return $dontmoveIn;
+        }
 
 	    public function get_settings_sections() {
 	        $sections = array(
@@ -680,5 +687,4 @@ register_deactivation_hook( __FILE__, 'wp_jquery_manager_plugin_deactivation' );
 function wp_jquery_manager_plugin_deactivation() {
 	delete_option( 'wp_jquery_manager_plugin_jquery_settings' );
 	delete_option( 'wp_jquery_manager_plugin_jquery_migrate_settings' );
-	delete_option( 'external_updates-wp_jquery_manager_plugin' );
 }
