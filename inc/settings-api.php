@@ -288,32 +288,20 @@ if ( !class_exists( 'WeDevs_Settings_API' ) ) {
          * @param array   $args settings field args
          */
         function callback_select( $args ) {
-            $jquery_options = $GLOBALS['wp_jquery_manager_plugin_jquery_settings'];
-            $jquery_migrate_options = $GLOBALS['wp_jquery_manager_plugin_jquery_migrate_settings'];
-
-
             $value = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
             $size  = isset( $args['size'] ) && !is_null( $args['size'] ) ? $args['size'] : 'regular';
             $html  = sprintf( '<select class="%1$s" name="%2$s[%3$s]" id="%2$s[%3$s]">', $size, $args['section'], $args['id'] );
 
+            foreach ( $args['options_groups'] as $key_group => $label_group ) {
+                foreach ( $args['options'] as $key_options => $label_options ) {
+                    $html .= sprintf( '<optgroup label="%s">', $label_group );
 
+                        $selected_option = selected( $value, $key_options, false );
+                        $html .= sprintf( '<option value="%s" %s>%s</option>', $key_options, $selected_option, $label_options );
 
-            foreach ( $args['options_groups'] as $key => $label ) {
-
-                $html .= sprintf( '<optgroup label="%s"%s>%s', $key, selected( $value, $key, false ), $label );
-
-
-
-            foreach ( $args['options'] as $key => $label ) {
-                $html .= sprintf( '<option value="%s"%s>%s</option>', $key, selected( $value, $key, false ), $label );
+                    $html .='</optgroup>';
+                }
             }
-
-            $html .='</optgroup>';
-
-
-
-        }
-
 
             $html .= sprintf( '</select>' );
             $html .= $this->get_field_description( $args );
