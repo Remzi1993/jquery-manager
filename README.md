@@ -96,3 +96,4 @@ Given a version number MAJOR.MINOR.PATCH, increment the:
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FRemzi1993%2Fjquery-manager.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FRemzi1993%2Fjquery-manager?ref=badge_large)
 
 ## First timers test - add your name below!
+Akhil
