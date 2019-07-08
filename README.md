@@ -77,6 +77,8 @@ Use the following command to clone this repository:<br>
 `$ git clone https://github.com/Remzi1993/jquery-manager.git` (example)<br>
 If you have forked this repo. You should clone your own repo. To begin working on your feature or fix you should create a branch, this will be easier for us to check your pull request later on.
 
+## First timers test - add your name below!
+
 ### Git workflow explained ###
 - https://nvie.com/posts/a-successful-git-branching-model/
 - https://guides.github.com/introduction/flow/
