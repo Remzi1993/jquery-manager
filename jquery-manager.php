@@ -12,7 +12,7 @@
  * Plugin Name:     jQuery Manager for WordPress
  * Plugin URI:      https://github.com/Remzi1993/jquery-manager
  * Description:     Manage jQuery and jQuery Migrate, activate a specific jQuery and/or jQuery Migrate version. The ultimate jQuery debugging tool for WordPress. This plugin is an open source project, made possible by your contribution (code). Development is done on GitHub.
- * Version:         1.9.3
+ * Version:         1.10.0
  * Author:          Remzi Cavdar
  * Author URI:      https://twitter.com/remzicavdar
  * License:			GPLv3
@@ -55,6 +55,15 @@ $wp_jquery_manager_plugin_jquery_migrate_settings = (array) get_option( 'wp_jque
 // Include weDevs Settings API wrapper class
 require WP_JQUERY_MANAGER_PLUGIN_DIR_PATH . 'inc/settings-api.php';
 
+// All filters
+add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), 'wp_jquery_manager_plugin_add_action_links' );
+add_filter( 'autoptimize_filter_js_dontmove', array( 'wp_jquery_manager_plugin', 'autoptimize_support' ) );
+add_filter( 'script_loader_tag', 'wp_jquery_manager_plugin_add_attribute', 10, 2 );
+
+// All actions
+add_action( 'admin_init', array( 'PAnD', 'init' ) );
+add_action( 'admin_notices', 'wp_jquery_manager_plugin_admin_notice' );
+
 // Add settings link to our plugin section on the plugin list page
 function wp_jquery_manager_plugin_add_action_links ( $links ) {
 	$plugin_links = array(
@@ -63,7 +72,6 @@ function wp_jquery_manager_plugin_add_action_links ( $links ) {
 
 	return array_merge( $links, $plugin_links );
 }
-add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), 'wp_jquery_manager_plugin_add_action_links' );
 
 // Activation process
 register_activation_hook( __FILE__, 'wp_jquery_manager_plugin_activation' );
@@ -92,7 +100,7 @@ function wp_jquery_manager_plugin_activation() {
 
 // Initial admin notice for new users of this plugin
 require  WP_JQUERY_MANAGER_PLUGIN_DIR_PATH . 'vendor/collizo4sky/persist-admin-notices-dismissal/persist-admin-notices-dismissal.php';
-function sample_admin_notice__success() {
+function wp_jquery_manager_plugin_admin_notice() {
     if ( ! PAnD::is_admin_notice_active( 'disable-done-notice-forever' ) ) {
 		return;
 	}
@@ -103,8 +111,6 @@ function sample_admin_notice__success() {
     	</div>
 	<?php
 }
-add_action( 'admin_init', array( 'PAnD', 'init' ) );
-add_action( 'admin_notices', 'sample_admin_notice__success' );
 
 /**
  * Load plugin textdomain.
@@ -160,6 +166,11 @@ if ( !class_exists( 'wp_jquery_manager_plugin' ) ) {
 
 			add_management_page( $page_title, $menu_title, $capability, $menu_slug, $function );
 	    }
+
+        public function autoptimize_support( $dontmove_array ) {
+            $dontmove_array[] = '/jquery-manager/assets/js';
+            return $dontmove_array;
+        }
 
 	    public function get_settings_sections() {
 	        $sections = array(
@@ -671,8 +682,6 @@ function wp_jquery_manager_plugin_add_attribute( $tag, $handle ) {
 
 	return $tag;
 }
-add_filter( 'script_loader_tag', 'wp_jquery_manager_plugin_add_attribute', 10, 2 );
-
 
 // Deactivation
 register_deactivation_hook( __FILE__, 'wp_jquery_manager_plugin_deactivation' );
@@ -680,5 +689,4 @@ register_deactivation_hook( __FILE__, 'wp_jquery_manager_plugin_deactivation' );
 function wp_jquery_manager_plugin_deactivation() {
 	delete_option( 'wp_jquery_manager_plugin_jquery_settings' );
 	delete_option( 'wp_jquery_manager_plugin_jquery_migrate_settings' );
-	delete_option( 'external_updates-wp_jquery_manager_plugin' );
 }
