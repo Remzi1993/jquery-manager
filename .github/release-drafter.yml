@@ -1,0 +1,17 @@
+name-template: 'jQuery Manager v$NEXT_PATCH_VERSION'
+tag-template: 'v$NEXT_PATCH_VERSION'
+categories:
+  - title: '🚀 Features'
+    labels:
+      - 'Feature'
+  - title: '🐛 Bug Fixes'
+    labels:
+      - 'Fix'
+      - 'Bug'
+  - title: '🧰 Maintenance'
+    label: 'chore'
+change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+template: |
+  ## Changes
+
+  $CHANGES
