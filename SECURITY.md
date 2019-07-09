@@ -2,12 +2,16 @@
 
 ## Supported Versions
 
-Only 1.9.x is supported with bug fixes and security updates.
+Only the latest stable version is supported with bug fixes and security updates.
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 1.9.x   | :white_check_mark: |
-| < 1.9.x | :x:                |
+| Version                     | Supported          |
+| --------------------------- | ------------------ |
+| 1.10.x (MAJOR.MINOR.PATCH)  | :white_check_mark: |
+
+1. MAJOR version incompatible API changes
+2. MINOR version functionality added in a backwards-compatible manner
+3. PATCH version backwards-compatible bug fixes and security updates
+
 
 ## Reporting a Vulnerability
 
