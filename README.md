@@ -21,6 +21,7 @@ Manage jQuery and jQuery Migrate on a WordPress website, activate/select a speci
 ## Why yet another jQuery Updater / Manager / Developer / Debugging tool?
 
 Because none of the developer tools let's you select a specific version of jQuery and/or jQuery Migrate. Providing both the compressed minified / production and the uncompressed / development version. See features below! :trophy:<br>
+
 :white_check_mark: **Turn on/off** jQuery and/or jQuery Migrate<br>
 :white_check_mark: Activate a **specific version** of jQuery and/or jQuery Migrate<br>
 :white_check_mark: Choose how to load **jQuery Migrate** in the **`Head`** or at the end of the **`Body`** **What's the effect?** [source 1](https://flaviocopes.com/javascript-async-defer/)<br>
