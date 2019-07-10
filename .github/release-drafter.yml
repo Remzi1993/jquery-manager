@@ -15,8 +15,11 @@ categories:
   - title: '🧰 Maintenance'
     label: 'Library'
     label: 'Code Climate'
+    label: 'Docs'
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+
 template: |
-  # Changes
-  
+  # What's changed (changelog)
   $CHANGES
+  ## Thanks to
+  $CONTRIBUTORS
