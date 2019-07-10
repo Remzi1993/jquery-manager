@@ -17,6 +17,6 @@ categories:
     label: 'Code Climate'
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 template: |
-  ## Changes
-
+  # Changes
+  
   $CHANGES
