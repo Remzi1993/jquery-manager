@@ -6,7 +6,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/Remzi1993/jquery-manager.svg)](https://github.com/Remzi1993/jquery-manager/stargazers)
 [![GitHub license](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://github.com/Remzi1993/jquery-manager/blob/master/LICENSE)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FRemzi1993%2Fjquery-manager.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FRemzi1993%2Fjquery-manager?ref=badge_shield)
-[![Travis (.org) branch](https://img.shields.io/travis/Remzi1993/jquery-manager/master.svg)](https://travis-ci.org/Remzi1993/jquery-manager)
+![Travis (.com) branch](https://img.shields.io/travis/com/Remzi1993/jquery-manager/master.svg)
 [![Maintainability](https://api.codeclimate.com/v1/badges/3dab8e92324e8227109e/maintainability)](https://codeclimate.com/github/Remzi1993/jquery-manager/maintainability)
 [![first-timers-only](https://img.shields.io/badge/first--timers--only-friendly-blue.svg?style=flat-square)](https://www.firsttimersonly.com)
 
