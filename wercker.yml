@@ -1,42 +1,26 @@
-box:
-  id: php
-  ports:
-    - "8080"
+# This references a standard debian container from the
+# Docker Hub https://registry.hub.docker.com/_/debian/
+# Read more about containers on our dev center
+# https://devcenter.wercker.com/overview-and-core-concepts/containers/
+box: debian
+# You can also use services such as databases. Read more on our dev center:
+# https://devcenter.wercker.com/administration/services/
+# services:
+    # - postgres
+    # https://devcenter.wercker.com/administration/services/examples/postgresql/
 
-dev:
-  steps:
-    - install-packages:
-        packages: git
-    - script:
-        name: install composer
-        code: curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
-    - script:
-        name: install dependencies
-        code: composer install --no-interaction
-    - internal/watch:
-        code: php -S 0.0.0.0:8080
-        reload: true
+    # - mongo
+    # https://devcenter.wercker.com/administration/services/examples/mongodb/
 
+# This is the build pipeline. Pipelines are the core of wercker
+# Read more about pipelines on our dev center
+# https://devcenter.wercker.com/development/pipelines/
 build:
+    # Steps make up the actions in your pipeline
+    # Read more about steps on our dev center:
+    # https://devcenter.wercker.com/development/steps/
   steps:
-    - install-packages:
-        packages: git
     - script:
-        name: install php-xdebug
-    - script:
-        name: install phpunit
-        code: |-
-          curl -L https://phar.phpunit.de/phpunit.phar -o /usr/local/bin/phpunit
-          chmod +x /usr/local/bin/phpunit
-    - script:
-        name: install composer
-        code: curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
-    - script:
-        name: install dependencies
-        code: composer install --no-interaction
-    - script:
-        name: Serve application
-        code: php -S localhost:8080 >> /dev/null &
-    - script:
-        name: PHPUnit integration tests
-        code: phpunit --configuration phpunit.xml
+        name: echo
+        code: |
+          echo "hello world!"
