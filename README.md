@@ -99,3 +99,4 @@ Given a version number MAJOR.MINOR.PATCH:
 ## First timers test - add your name below!
 - Akhil
 - tavaresjaime00
+- Arun
