@@ -62,3 +62,7 @@ script:
     if [[ "$WP_TRAVISCI" == "phpcs" ]] ; then
       phpcs
     fi
+  - vendor/bin/phpunit --coverage-clover=coverage.xml
+  
+after_success:
+    - bash <(curl -s https://codecov.io/bash) -t 50f56b24-5452-429b-baed-92df84de2412
