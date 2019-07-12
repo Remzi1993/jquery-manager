@@ -22,6 +22,8 @@ build:
     - install-packages:
         packages: git
     - script:
+        name: install php-xdebug
+    - script:
         name: install phpunit
         code: |-
           curl -L https://phar.phpunit.de/phpunit.phar -o /usr/local/bin/phpunit
