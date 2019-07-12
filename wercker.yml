@@ -1,0 +1,29 @@
+box: wercker/default
+services:
+    - wercker/mysql
+build:
+    # Steps make up the actions in your pipeline
+    # Read more about steps on our dev center:
+    # https://devcenter.wercker.com/development/steps/
+  steps:
+    -  script:
+        name: install WordPress
+        code: |-
+          # install PHP 5 with MySQL support, and Apache with PHP support.
+          sudo apt-get update
+          sudo apt-get install php5 php5-mysql
+          sudo apt-get install libapache2-mod-php5
+          sudo a2enmod php5
+          sudo service apache2 restart
+          # install WordPress
+          tar zxf wordpress-5.2.2.tar.gz
+          sudo mv wordpress/* /var/www/
+          # replace tokens with values from Wercker ENV
+          sed -e "s/{{DB_NAME}}/$WERCKER_MYSQL_DATABASE/" -e "s/{{DB_USER}}/$WERCKER_MYSQL_USERNAME/" -e "s/{{DB_PASSWORD}}/$WERCKER_MYSQL_PASSWORD/" -e "s/{{DB_HOST}}/$WERCKER_MYSQL_HOST:$WERCKER_MYSQL_PORT/" < wp-config.template > wp-config.php
+          sudo mv wp-config.php /var/www/wp-config.php
+          # delete the default index file
+          sudo rm /var/www/index.html
+          # POST the install variables
+          curl -X POST --data "weblog_title=test&user_name=admin&admin_password=admin&admin_password2=admin&admin_email=admin@example.com" -i http://localhost/wp-admin/install.php?step=2
+          # validate the install worked
+          curl http://localhost | grep "Welcome to WordPress. This is your first post."
