@@ -16,7 +16,8 @@ Only the latest stable version is supported with bug fixes and security updates.
 ## Reporting a vulnerability
 
 Due to different time zones (I live in Europe/Amsterdam) it may take me longer to reply. Please, bear this in mind.
-You can mail me at: ict@remzi.info or create an issue on the GitHub project page at https://github.com/Remzi1993/jquery-manager/issues.
+
+You can mail me at: ict@remzi.info (in private for serious security issues) or create an issue on the GitHub project page at https://github.com/Remzi1993/jquery-manager/issues.
 
 I will reply/respond within 24 / 48 hours
 Please, give me time to fix this in a timely manner.
