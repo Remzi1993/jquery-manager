@@ -13,9 +13,10 @@ categories:
     labels:
       - 'Security'
   - title: '🧰 Maintenance'
-    label: 'Library'
-    label: 'Code Climate'
-    label: 'Docs'
+    labels:
+      - 'Library'
+      - 'Code Climate'
+      - 'Docs'
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 
 template: |
