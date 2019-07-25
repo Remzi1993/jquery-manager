@@ -79,11 +79,11 @@ Use the following command to clone this repository:<br>
 If you have forked this repo. You should clone your own repo. To begin working on your feature or fix you should create a branch, this will be easier for us to check your pull request later on.
 
 ### Git workflow explained ###
-- https://nvie.com/posts/a-successful-git-branching-model/
+- https://opensource.guide/how-to-contribute/#opening-a-pull-request and http://makeapullrequest.com
 - https://guides.github.com/introduction/flow/
-- https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
+- https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow
 - https://en.wikipedia.org/wiki/Fork_and_pull_model
-
+- https://nvie.com/posts/a-successful-git-branching-model/
 
 [![WordPress](https://forthebadge.com/images/badges/built-with-wordpress.svg)](https://wordpress.org)
 
@@ -96,7 +96,7 @@ Given a version number MAJOR.MINOR.PATCH:
 ## License
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FRemzi1993%2Fjquery-manager.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FRemzi1993%2Fjquery-manager?ref=badge_large)
 
-## First timers test - add your name below!
+## First timers test - add your name below! - https://www.firsttimersonly.com
 - Akhil
 - tavaresjaime00
 - Arun
