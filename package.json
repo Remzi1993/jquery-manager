@@ -7,7 +7,7 @@
         "test": "tests"
     },
     "dependencies": {
-        "persist-admin-notices-dismissal": "^1.4.3",
+        "collizo4sky/persist-admin-notices-dismissal": "^1.4.3",
         "tareq1988/wordpress-settings-api-class": "^1.2",
         "pull": "^2.1.1"
     },
