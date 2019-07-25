@@ -23,6 +23,8 @@ change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 template: |
   # What's changed (changelog)
   $CHANGES
+  
   ## 👍 Thanks to
   $CONTRIBUTORS
-  ## [Download v$NEXT_PATCH_VERSION](https://downloads.wordpress.org/plugin/jquery-manager.zip) from [wordpress.org](https://wordpress.org/plugins/jquery-manager/)
+  
+  ## [Download latest version](https://downloads.wordpress.org/plugin/jquery-manager.zip) from [wordpress.org](https://wordpress.org/plugins/jquery-manager/)
