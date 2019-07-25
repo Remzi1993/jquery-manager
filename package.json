@@ -20,7 +20,8 @@
     },
     "keywords": [
         "wordpress",
-        "wordpress plugin"
+        "wordpress plugin",
+        "jquery"
     ],
     "author": "Remzi Cavdar <ict@remzi.info> (https://twitter.com/remzicavdar)",
     "license": "GPL-3.0",
