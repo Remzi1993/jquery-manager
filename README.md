@@ -8,6 +8,7 @@
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FRemzi1993%2Fjquery-manager.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FRemzi1993%2Fjquery-manager?ref=badge_shield)
 [![Travis (.com) branch](https://img.shields.io/travis/com/Remzi1993/jquery-manager/master.svg)](https://travis-ci.com/Remzi1993/jquery-manager)
 [![Maintainability](https://api.codeclimate.com/v1/badges/3dab8e92324e8227109e/maintainability)](https://codeclimate.com/github/Remzi1993/jquery-manager/maintainability)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![first-timers-only](https://img.shields.io/badge/first--timers--only-friendly-blue.svg?style=flat-square)](https://www.firsttimersonly.com)
 
 # jQuery Manager for WordPress
@@ -79,11 +80,16 @@ Use the following command to clone this repository:<br>
 If you have forked this repo. You should clone your own repo. To begin working on your feature or fix you should create a branch, this will be easier for us to check your pull request later on.
 
 ### Git workflow explained ###
-- https://opensource.guide/how-to-contribute/#opening-a-pull-request and http://makeapullrequest.com
+- https://opensource.guide/how-to-contribute/#opening-a-pull-request
 - https://guides.github.com/introduction/flow/
 - https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow
 - https://en.wikipedia.org/wiki/Fork_and_pull_model
 - https://nvie.com/posts/a-successful-git-branching-model/
+
+#### Keep your forks up to date with the upstream repo - or use the [Pull](https://github.com/apps/pull) GitHub App
+- https://help.github.com/en/articles/syncing-a-fork
+
+Tutorial: http://makeapullrequest.com 
 
 [![WordPress](https://forthebadge.com/images/badges/built-with-wordpress.svg)](https://wordpress.org)
 
