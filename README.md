@@ -91,6 +91,8 @@ If you have forked this repo. You should clone your own repo. To begin working o
 
 Tutorial: http://makeapullrequest.com 
 
+**Working on your first Pull Request?** You can learn how from this *free* series [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github)
+
 [![WordPress](https://forthebadge.com/images/badges/built-with-wordpress.svg)](https://wordpress.org)
 
 ## This project uses [Semantic Versioning](https://semver.org/) ##
