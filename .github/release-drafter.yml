@@ -17,6 +17,7 @@ categories:
       - 'Library'
       - 'Code Climate'
       - 'Docs'
+      - 'dependencies'
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 
 template: |
