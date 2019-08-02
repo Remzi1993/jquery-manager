@@ -1,5 +1,13 @@
 **Working on your first Pull Request?** You can learn how from this *free* series [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github)
 
+Some reading about the [fork and pull model](https://en.wikipedia.org/wiki/Fork_and_pull_model)
+- https://opensource.guide/how-to-contribute/#opening-a-pull-request
+- https://guides.github.com/introduction/flow/
+- https://hisham.hm/2016/01/01/how-to-make-a-pull-request-on-github-a-quick-tutorial/
+- https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow
+- https://nvie.com/posts/a-successful-git-branching-model/
+- https://help.github.com/en/articles/syncing-a-fork
+
 # Contributing
 
 When contributing to this repository, please first discuss the change you wish to make via issue,
