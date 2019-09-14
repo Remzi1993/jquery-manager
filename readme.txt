@@ -28,6 +28,13 @@ When the plugin is activated the latest stable version of jQuery and jQuery Migr
 
 jQuery Manager for WordPress is an open source project and I would like to invite anyone to contribute. The development and issue tracker is located on GitHub, see: [https://github.com/Remzi1993/jquery-manager](https://github.com/Remzi1993/jquery-manager)
 
+### jQuery Updater - checks jQuery version ###
+This plugin is especially designed to update and keep track of jQuery. When a new version of jQuery is released we update the plugin.
+
+Updating the plugin will updates the jQuery version activated. Updates will be periodic, we also do (small) optimizations to our plugin from time to time.
+
+Keep the plugin activated if you want to be alerted for any jQuery updates.
+
 ### Also a Developer / Debugging tool ###
 Everything should work as intended, you should check your website if everything works fine. If things don't work, don't panic. You can deactivate the plugin and return to the state before or tweak it's settings until everything works as intended.
 
@@ -95,6 +102,9 @@ Use the uncompressed development version to diagnose compatibility issues, it wi
 There are two versions of jQuery Migrate. jQuery Migrate 1.x will help you update your pre-1.9 jQuery code to jQuery 1.9 up to 3.0.
 
 jQuery Migrate 3.x helps you update code to run on jQuery 3.0 or higher.
+
+= How does the jQuery Updater work? =
+We update the plugin if a new version of jQuery is released. If you update the plugin, all jQuery versions will be updated.
 
 == Screenshots ==
 1. jQuery settings: enable / disable jQuery, select version and etc
