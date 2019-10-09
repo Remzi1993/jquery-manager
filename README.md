@@ -110,3 +110,4 @@ Given a version number MAJOR.MINOR.PATCH:
 - Arun
 - sharduldesai7
 - Anushka
+- Finewitch
