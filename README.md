@@ -35,6 +35,7 @@ Because none of the developer tools let's you select a specific version of jQuer
 :arrows_counterclockwise: Working on more features
 
 ## [Download](https://downloads.wordpress.org/plugin/jquery-manager.zip) jQuery Manager for WordPress
+
 Go to the wordpress.org plugin page [wordpress.org/plugins/jquery-manager/](https://wordpress.org/plugins/jquery-manager/) and download the .zip file.
 
 ### Manual installation by uploading .zip file via WordPress admin
@@ -79,35 +80,42 @@ Use the following command to clone this repository:<br>
 `$ git clone git@github.com:Remzi1993/jquery-manager.git` (example)<br>
 If you have forked this repo. You should clone your own repo. To begin working on your feature or fix you should create a branch, this will be easier for us to check your pull request later on.
 
-### Git workflow explained ###
-- https://opensource.guide/how-to-contribute/#opening-a-pull-request
-- https://guides.github.com/introduction/flow/
-- https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow
-- https://en.wikipedia.org/wiki/Fork_and_pull_model
-- https://nvie.com/posts/a-successful-git-branching-model/
+### Git workflow explained
+
+-   https://opensource.guide/how-to-contribute/#opening-a-pull-request
+-   https://guides.github.com/introduction/flow/
+-   https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow
+-   https://en.wikipedia.org/wiki/Fork_and_pull_model
+-   https://nvie.com/posts/a-successful-git-branching-model/
 
 #### Keep your forks up to date with the upstream repo - or use the [Pull](https://github.com/apps/pull) GitHub App
-- https://help.github.com/en/articles/syncing-a-fork
 
-Tutorial: http://makeapullrequest.com 
+-   https://help.github.com/en/articles/syncing-a-fork
 
-**Working on your first Pull Request?** You can learn how from this *free* series [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github)
+Tutorial: http://makeapullrequest.com
+
+**Working on your first Pull Request?** You can learn how from this _free_ series [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github)
 
 [![WordPress](https://forthebadge.com/images/badges/built-with-wordpress.svg)](https://wordpress.org)
 
-## This project uses [Semantic Versioning](https://semver.org/) ##
+## This project uses [Semantic Versioning](https://semver.org/)
+
 Given a version number MAJOR.MINOR.PATCH:
+
 1. MAJOR version number increases when incompatible API changes are made
 2. MINOR version number increases when functionality in a backwards-compatible manner are added
 3. PATCH version number increases when backwards-compatible bug fixes are made
 
 ## License
+
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FRemzi1993%2Fjquery-manager.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FRemzi1993%2Fjquery-manager?ref=badge_large)
 
 ## First timers test - add your name below! - https://www.firsttimersonly.com
-- Akhil
-- tavaresjaime00
-- Arun
-- sharduldesai7
-- Anushka
-- Finewitch
+
+-   Akhil
+-   tavaresjaime00
+-   Arun
+-   sharduldesai7
+-   Anushka
+-   Finewitch
+-   SkelleyBelly
