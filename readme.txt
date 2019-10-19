@@ -122,4 +122,4 @@ This plugin is not ready for translation. Plugin Internationalization (i18n) wil
 == Additional Info ==
 **Idea Behind / Philosophy:** It began as a plugin internally at our company, we would uses jQuery Updater plugin and this plugin was buggy and slow. That's why we decided to fork this plugin and create our own WP plugin.
 
- I think this plugin solves a major shortcoming in WordPress and gives you finite control over jQuery
+ I think this plugin solves a major shortcoming in WordPress and gives you finite control over jQuery (giving you control which version you want to use).
