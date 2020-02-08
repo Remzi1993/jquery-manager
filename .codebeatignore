@@ -1,5 +1,5 @@
-tests/
-assets/js/
-bin/
-inc/
-vendor/
+tests/**
+assets/**
+bin/**
+inc/**
+vendor/**
