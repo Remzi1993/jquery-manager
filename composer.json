@@ -27,7 +27,7 @@
         "collizo4sky/persist-admin-notices-dismissal": "1.4.3"
     },
     "require-dev": {
-        "phpunit/phpunit": "9.2.3",
+        "phpunit/phpunit": "9.2.5",
         "squizlabs/php_codesniffer": "*",
         "phpcompatibility/php-compatibility": "*",
         "dealerdirect/phpcodesniffer-composer-installer": "*",
