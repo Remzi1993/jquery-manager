@@ -39,13 +39,13 @@ define( 'WP_JQUERY_MANAGER_PLUGIN_SITE_URL', get_site_url() );
 define( 'WP_JQUERY_MANAGER_PLUGIN_DOMAIN_NAME', $_SERVER['HTTP_HOST'] );
 
 // jQuery versions, don't forget to update the files! .js and .min.js are automatically added accordingly at the end of the name/file.
-define( 'WP_JQUERY_MANAGER_PLUGIN_JQUERY_3X', 'jquery-3.4.1' );
-define( 'WP_JQUERY_MANAGER_PLUGIN_JQUERY_3X_SLIM', 'jquery-3.4.1.slim' );
+define( 'WP_JQUERY_MANAGER_PLUGIN_JQUERY_3X', 'jquery-3.5.1' );
+define( 'WP_JQUERY_MANAGER_PLUGIN_JQUERY_3X_SLIM', 'jquery-3.5.1.slim' );
 define( 'WP_JQUERY_MANAGER_PLUGIN_JQUERY_2X', 'jquery-2.2.4' );
 define( 'WP_JQUERY_MANAGER_PLUGIN_JQUERY_1X', 'jquery-1.12.4' );
 
 // jQuery Migrate versions, don't forget to update your files! .js and .min.js are automatically added accordingly at the end of the name/file.
-define( 'WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_3X', 'jquery-migrate-3.1.0' );
+define( 'WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_3X', 'jquery-migrate-3.3.0' );
 define( 'WP_JQUERY_MANAGER_PLUGIN_JQUERY_MIGRATE_1X', 'jquery-migrate-1.4.1' );
 
 // Settings
