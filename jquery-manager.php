@@ -112,16 +112,6 @@ function wp_jquery_manager_plugin_admin_notice() {
 	<?php
 }
 
-/**
- * Load plugin textdomain.
- * This feature is not stable, so it is commented out.
- */
-// function wp_jquery_manager_plugin_load_textdomain() {
-//     load_plugin_textdomain( WP_JQUERY_MANAGER_PLUGIN_TEXT_DOMAIN, false, WP_JQUERY_MANAGER_PLUGIN_DIR_PATH . 'languages' );
-// }
-// add_action( 'init', 'wp_jquery_manager_plugin_load_textdomain' );
-
-
 // Our plugin class
 if ( !class_exists( 'wp_jquery_manager_plugin' ) ) {
 
