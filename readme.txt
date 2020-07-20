@@ -2,7 +2,7 @@
 Contributors: remzicavdar
 Tags: jquery, jquery manager, jquery updater, jquery migrate, jquery update, remove jquery migrate, javascript, jquery ui, update, jquery update, jquery wordpress, jquery wordpress updater, manage jquery, jquery settings, jquery tool, jquery debugger, debug
 Requires at least: 4.9
-Tested up to: 5.3
+Tested up to: 5.5
 Requires PHP: 5.6
 Stable tag: trunk
 License: GPLv3
