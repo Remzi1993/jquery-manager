@@ -12,12 +12,12 @@
  * Plugin Name:     jQuery Manager for WordPress
  * Plugin URI:      https://github.com/Remzi1993/jquery-manager
  * Description:     Manage jQuery and jQuery Migrate, activate a specific jQuery and/or jQuery Migrate version. The ultimate jQuery debugging tool for WordPress. This plugin is an open source project, made possible by your contribution (code). Development is done on GitHub.
- * Version:         1.10.5
+ * Version:         1.10.6
  * Author:          Remzi Cavdar
  * Author URI:      https://twitter.com/remzicavdar
  * License:			GPLv3
  * License URI:		https://www.gnu.org/licenses/gpl-3.0
- * Text Domain:		wp-jquery-manager
+ * Text Domain:		jquery-manager
  * Domain Path:		/languages
  */
 
@@ -34,7 +34,7 @@ define( 'WP_JQUERY_MANAGER_PLUGIN_DIR_PATH', str_replace( "\\", "/", plugin_dir_
 define( 'WP_JQUERY_MANAGER_PLUGIN_DIR_URL', plugin_dir_url( __FILE__ ) );
 define( 'WP_JQUERY_MANAGER_PLUGIN_SLUG', 'wp-jquery-manager-plugin-settings' );
 define( 'WP_JQUERY_MANAGER_PLUGIN_ADMIN_URL', admin_url( 'tools.php?page=' . WP_JQUERY_MANAGER_PLUGIN_SLUG ) );
-define( 'WP_JQUERY_MANAGER_PLUGIN_TEXT_DOMAIN', 'wp-jquery-manager' );
+define( 'WP_JQUERY_MANAGER_PLUGIN_TEXT_DOMAIN', 'jquery-manager' );
 define( 'WP_JQUERY_MANAGER_PLUGIN_SITE_URL', get_site_url() );
 define( 'WP_JQUERY_MANAGER_PLUGIN_DOMAIN_NAME', $_SERVER['HTTP_HOST'] );
 

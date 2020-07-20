@@ -75,8 +75,7 @@
 	<rule ref="WordPress.WP.I18n">
 		<properties>
 			<property name="text_domain" type="array">
-				<element value="my-textdomain"/>
-				<element value="library-textdomain"/>
+				<element value="jquery-manager"/>
 			</property>
 		</properties>
 	</rule>
@@ -84,7 +83,7 @@
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
 		<properties>
 			<property name="prefixes" type="array">
-				<element value="my_prefix"/>
+				<element value="wp_jquery_manager"/>
 			</property>
 		</properties>
 	</rule>
