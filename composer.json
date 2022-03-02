@@ -30,7 +30,7 @@
         "phpunit/phpunit": "9.2.6",
         "squizlabs/php_codesniffer": "*",
         "phpcompatibility/php-compatibility": "*",
-        "dealerdirect/phpcodesniffer-composer-installer": "*",
+        "dealerdirect/phpcodesniffer-composer-installer": "0.7.2",
         "ext-xdebug": "*",
         "roave/security-advisories": "dev-master"
     }
