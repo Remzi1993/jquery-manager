@@ -1,3 +1,7 @@
+# I'm studying Software Engineering and I don't have any time anymore to maintain this project as an individual.
+Also WP 5+ don't need this third party plugin anymore since there is an offical WP plugin for Jquery from the WP Dev team.
+
+
 # [Download jQuery Manager](https://downloads.wordpress.org/plugin/jquery-manager.zip) (WordPress plugin)
 
 [![GitHub release](https://img.shields.io/github/release/Remzi1993/jquery-manager.svg)](https://github.com/Remzi1993/jquery-manager/releases/latest)
